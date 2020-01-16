@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WWWController@splashscreen')->name('www.splashscreen');
+Route::get('/portfolio', 'WWWController@portfolio')->name('www.portfolio');
+Route::get('/more', 'WWWController@more')->name('www.more');
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/rendersurfer', 'RenderSurferController@index')->name('rendersurfer.index');
