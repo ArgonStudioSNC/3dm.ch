@@ -1,6 +1,7 @@
 :root {
 	/* Theme colors */
 	--theme-gray: #3D5D6B;
+	--bg-brown: #D9D9D6;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,8 +64,8 @@ body {
 	background-color: #ffffff;
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
-	line-height: 25px;
-	font-weight: 400;
+	line-height: 24px;
+	font-weight: 300;
 	color: black;
 	position: relative;
 	min-width: 100%;
@@ -78,6 +79,16 @@ body {
 
 .my-auto{
 	margin: auto;
+}
+
+h1 {
+	font-size: 25px;
+	line-height: 33px;
+	font-weight: 400;
+}
+
+h2 {
+	font-weight: 400;
 }
 
 /*----------------------------HOME FULLSCREEN--------------------------------*/
@@ -98,11 +109,6 @@ body {
 	background-size: cover;
 }
 
-.custom-navbar {
-	position: absolute;
-	top: 80px;
-}
-
 .down-arrow {
 	width: 100%;
 	position: absolute;
@@ -111,6 +117,14 @@ body {
 
 .down-arrow img {
 	height: 40px;
+}
+
+/*--------------------------------NAVBAR------------------------------------*/
+
+.custom-navbar {
+	z-index: 10;
+	position: fixed;
+	top: 80px;
 }
 
 .navbar-logo img{
@@ -125,13 +139,18 @@ body {
 	-webkit-transform: rotate(180deg); /* Safari prior 9.0 */
 	transform: rotate(180deg);
 	writing-mode: vertical-lr;
-
+	text-align: center;
 	color: white;
 	background-color: var(--theme-gray);
 	text-transform: uppercase;
 	font-size: 11px;
 	line-height: 18px;
-	padding: 6px 4px 6px 1px;
+	padding: 0 6px 0 1px;
+	height: 96px;
+	-moz-transition: height 0.1s;
+	-o-transition: height 0.1s;
+	-webkit-transition: height 0.1s;
+	transition: height 0.1s;
 }
 
 .navbar-menu:hover{
@@ -142,10 +161,35 @@ body {
 	.navbar-logo img{
 		height: 200px;
 	}
-
 	.navbar-menu {
+		height: 120px;
 		font-size: 13px;
 		line-height: 20px;
-		padding: 8px 6px 8px 1px;
 	}
+}
+
+/*-------------------------------MORE PAGE-----------------------------------*/
+
+@media only screen and (min-width: 576px) {
+	#more h1 {
+		padding: 2rem 0;
+	}
+
+	#vision.jumbotron{
+		padding-top: 12rem;
+	}
+}
+
+#more p {
+	padding-bottom: 1rem;
+}
+#more h2 {
+	padding-bottom: 1.2rem;
+}
+#more img {
+	padding: 2rem 0;
+}
+
+#vision .lead{
+	padding-bottom: 2rem;
 }
