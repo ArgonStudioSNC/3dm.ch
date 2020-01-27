@@ -14,14 +14,16 @@
 @endsection
 
 @section('content')
-<div id='portfolio'>
-    <!-- HOME -->
-    <div class='w-100 fullscreen-img' style="background-image: url( '{{asset('/img/156_Ipsach_WR_exterieur_v3.jpg')}}')">
+<div id='splashscreen'>
+     <!--HOME-->
+    <div class="parallax" data-src="{{ asset('/img/156_Ipsach_WR_exterieur_v3.jpg') }}" data-z-index="0" data-speed="0" data-parallax style="min-height:100vh">
         <div class='down-arrow d-flex justify-content-center'>
             <img src="{{ asset('/img/3dm-down-arrow.svg') }}" alt='down-arrow'>
         </div>
     </div>
+ </div>
 
+<div id='portfolio'>
     <!-- MATTENSTRASSE -->
     <div id='mattenstrasse' class='container-fluid portfolio-bordered'>
         <div class="row">
@@ -38,7 +40,7 @@
     <!-- NOUVEAU COLLEGE -->
     <div id='nouveau-college' class='container-fluid portfolio-fullwidth' style="background-color: #A4B2BF;">
         <div class="row">
-            <img class="img-fluid" src="{{ asset('/img/146_Macolin_KV_Photoshop_Ext_v4.jpg') }}" alt='image'>
+            <div class="parallax" data-src="{{ asset('/img/146_Macolin_KV_Photoshop_Ext_v4.jpg') }}" data-z-index="0" data-parallax style="min-height:75vh"></div>
             <div class='legend' style="background-color: #A4B2BF;">
                 <h1>Nouveau collège</h1>
                 <h2 style="font-style:italic;">Sion, CH</h2>
@@ -64,7 +66,7 @@
     <!-- ECOLE ENFANTINE 1 -->
     <div id='ecole-enfantine-1' class='container-fluid portfolio-fullwidth' style="background-color: #DBC1C1;">
         <div class="row">
-            <img class="img-fluid" src="{{ asset('/img/141_Marly_BBH_Photoshop_v4.jpg') }}" alt='image'>
+            <div class="parallax" data-src="{{ asset('/img/141_Marly_BBH_Photoshop_v4.jpg') }}" data-z-index="0" data-parallax style="min-height:75vh"></div>
             <div class='legend' style="background-color: #DBC1C1;">
                 <h1>Ecole enfantine et mensa</h1>
                 <h2 style="font-style:italic;">Cadro, CH</h2>
@@ -89,7 +91,12 @@
     <!-- NOUVEAU COLLEGE -->
     <div id='wegmatten' class='container-fluid portfolio-fullwidth' style="background-color: #CAC2BF;">
         <div class="row">
-            <img class="img-fluid" src="{{ asset('/img/137_Allschwill_Bricks_P1_v3.jpg') }}" alt='image'>
+            <div class="parallax" data-src="{{ asset('/img/137_Allschwill_Bricks_P1_v3.jpg') }}" data-z-index="0" data-parallax style="min-height:80vh"></div>
+            <div class='legend' style="background-color: #CAC2BF;">
+                <h1>Ecole enfantine et mensa</h1>
+                <h2 style="font-style:italic;">Cadro, CH</h2>
+                <h2>Epure Architecture et Urbanisme</h2>
+            </div>
         </div>
     </div>
 </div>

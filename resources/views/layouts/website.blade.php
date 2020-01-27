@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('/js/jquery.paroller.min.js') }}" defer></script>
+    <script src="{{ asset('/js/jquery.parallax.min.js') }}" defer></script>
     <script src="{{ asset('/js/3dm.website.js') }}" defer></script>
 
     <!-- Fonts -->

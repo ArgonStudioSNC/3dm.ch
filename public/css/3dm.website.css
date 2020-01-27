@@ -92,6 +92,9 @@ h2 {
 }
 
 /*----------------------------HOME FULLSCREEN--------------------------------*/
+#splashscreen .parallax {
+	position: relative;
+}
 
 .fullscreen-img {
 	position: relative;
@@ -190,26 +193,30 @@ h2 {
 }
 
 /*-----------------------------PORTFOLIO PAGE--------------------------------*/
-
-.portfolio-bordered {
-	padding: 0;
-}
-
-.portfolio-fullwidth{
-	padding: 25px;
-}
-
-.portfolio-bordered .row {
-	margin: 115px;
-	position: relative;
-}
-
 .legend {
+	z-index: 5;
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
 }
+.legend h1{
+	font-size: 17px;
+	line-height: 19px;
+	font-weight: 400;
+}
+.legend h2{
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 300;
+}
 
+.portfolio-bordered {
+	padding: 0;
+}
+.portfolio-bordered .row {
+	margin: 115px;
+	position: relative;
+}
 .portfolio-bordered .legend {
 	padding-right: 0.8rem;
 	-webkit-transform: rotate(180deg) translateX(-100%); /* Safari prior 9.0 */
@@ -217,24 +224,20 @@ h2 {
 	writing-mode: vertical-lr;
 }
 
-.portfolio-fullwidth .legend {
-	padding: 12px;
-	min-width: 300px;
+.portfolio-fullwidth{
+	padding: 25px;
 }
-
-.legend h1{
-	font-size: 17px;
-	line-height: 23px;
-	font-weight: 400;
-}
-
-.legend h2{
-	font-size: 12px;
-	line-height: 16px;
-	font-weight: 300;
-}
-
 .portfolio-fullwidth .row {
 	margin: 0;
 	position: relative;
+}
+.portfolio-fullwidth .legend {
+	align-items: baseline;
+	margin: -25px;
+	padding: 16px;
+	min-width: 300px;
+}
+.portfolio-fullwidth .parallax {
+	width: 100%;
+	background: transparent;
 }
