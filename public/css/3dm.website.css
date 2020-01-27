@@ -94,13 +94,8 @@ h2 {
 /*----------------------------HOME FULLSCREEN--------------------------------*/
 
 .fullscreen-img {
-	display: inline;
-	position: absolute;
-	padding: 0;
-	top: 0;
-	left: 0;
+	position: relative;
 	height: 100%;
-	width: 100%;
 	z-index: -100;
 
 	/* Center and scale the image nicely */
@@ -112,7 +107,7 @@ h2 {
 .down-arrow {
 	width: 100%;
 	position: absolute;
-	bottom: 0px;
+	bottom: -1px;
 }
 
 .down-arrow img {
@@ -128,11 +123,11 @@ h2 {
 }
 
 .navbar-logo img{
-	height: 160px;
-	-moz-transition: height 0.1s;
-	-o-transition: height 0.1s;
-	-webkit-transition: height 0.1s;
-	transition: height 0.1s;
+	width: 90px;
+	-moz-transition: width 0.1s;
+	-o-transition: width 0.1s;
+	-webkit-transition: width 0.1s;
+	transition: width 0.1s;
 }
 
 .navbar-menu {
@@ -159,7 +154,7 @@ h2 {
 
 @media only screen and (min-width: 768px) {
 	.navbar-logo img{
-		height: 200px;
+		width: 115px;
 	}
 	.navbar-menu {
 		height: 120px;
@@ -192,4 +187,55 @@ h2 {
 
 #vision .lead{
 	padding-bottom: 2rem;
+}
+
+/*-----------------------------PORTFOLIO PAGE--------------------------------*/
+
+.portfolio-bordered {
+	padding: 0;
+}
+
+.portfolio-fullwidth{
+	padding: 25px;
+}
+
+.portfolio-bordered .row {
+	margin: 115px;
+	position: relative;
+}
+
+.legend {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.portfolio-bordered .legend {
+	padding-right: 0.8rem;
+	-webkit-transform: rotate(180deg) translateX(-100%); /* Safari prior 9.0 */
+	transform: rotate(180deg) translateX(-100%);
+	writing-mode: vertical-lr;
+}
+
+.portfolio-fullwidth .legend {
+	padding: 12px;
+	min-width: 300px;
+	background-color: #A4B2BF;
+}
+
+.legend h1{
+	font-size: 17px;
+	line-height: 23px;
+	font-weight: 400;
+}
+
+.legend h2{
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 300;
+}
+
+.portfolio-fullwidth .row {
+	margin: 0;
+	position: relative;
 }
