@@ -39,7 +39,7 @@
     <div id='nouveau-college' class='container-fluid portfolio-fullwidth' style="background-color: #A4B2BF;">
         <div class="row">
             <img class="img-fluid" src="{{ asset('/img/146_Macolin_KV_Photoshop_Ext_v4.jpg') }}" alt='image'>
-            <div class='legend'>
+            <div class='legend' style="background-color: #A4B2BF;">
                 <h1>Nouveau collège</h1>
                 <h2 style="font-style:italic;">Sion, CH</h2>
                 <h2>BBH Architectes Sàrl</h2>
@@ -67,7 +67,7 @@
             <img class="img-fluid" src="{{ asset('/img/141_Marly_BBH_Photoshop_v4.jpg') }}" alt='image'>
             <div class='legend' style="background-color: #DBC1C1;">
                 <h1>Ecole enfantine et mensa</h1>
-                <h2 style="font-style:italic;">Cadro, CH/h2>
+                <h2 style="font-style:italic;">Cadro, CH</h2>
                 <h2>Epure Architecture et Urbanisme</h2>
             </div>
         </div>
