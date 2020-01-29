@@ -8,7 +8,7 @@
 </script>
 
 <div id='splashscreen' class="container-fluid">
-    <img class="img-fluid" src="{{ asset('/img/3DM_newsite.svg') }}">
+    <img class="img-fluid" src="{{ asset('/media/branding/3dm-logo-grand.svg') }}" alt="[Logo de 3DM]">
 </div>
 <script>history.scrollRestoration = "manual"</script>
 

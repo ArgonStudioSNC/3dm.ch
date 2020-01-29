@@ -1,8 +1,8 @@
 :root {
 	/* Theme colors */
 	--light-black: #333333;
-	--theme-gray: #3D5D6B;
-	--bg-brown: #F2EFEB;
+	--theme-blue: #3D5D6B;
+	--light-brown: #F2EFEB;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -53,11 +53,11 @@ table {
 /*---------------------------------------------------------------------------*/
 a, a * {
 	outline: 0;
-	color: inherit;
+	color: var(--theme-blue);
 }
 
 a:hover {
-	color: inherit;
+	color: grey;
 	text-decoration: none;
 }
 
@@ -99,7 +99,7 @@ h2 {
 	position: fixed;
 	height: 100vh;
 	width: 100%;
-	background-color: var(--theme-gray);
+	background-color: var(--theme-blue);
 }
 
 #splashscreen img {
@@ -156,7 +156,7 @@ h2 {
 	writing-mode: vertical-lr;
 	text-align: center;
 	color: white;
-	background-color: var(--theme-gray);
+	background-color: var(--theme-blue);
 	text-transform: uppercase;
 	font-size: 11px;
 	line-height: 18px;

@@ -7,7 +7,7 @@
 @include('shared.navigation', ['text' => 'Portfolio', 'route' => route('www.portfolio')])
 
 <div id='more'>
-    <section id='vision' class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);">
+    <section id='vision' class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-    <section id='team' class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);">
+    <section id='team' class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
@@ -131,7 +131,7 @@
                             <p>Argon Studio | Réalité augmentée et virtuelle</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{ asset('/img/3dm_bureau.gif') }}" alt='team'>
+                    <img class="img-fluid" src="{{ asset('/media/3dm-bureau.gif') }}" alt="[Image de l'équipe 3DM]">
                 </div>
             </div>
         </div>
@@ -151,21 +151,37 @@
                         </div>
                         <div class="col">
                             <h2>Réseaux sociaux</h2>
-                            <p>Facebook<br>Instagram<br>Linkedin </p>
+                            <p>
+                                <a href="https://www.facebook.com/www.3dm.ch/" target="_blank">Facebook <i class="fab fa-facebook"></i></a><br>
+                                <a href="https://www.instagram.com/3dm_visuals/" target="_blank">Instagram <i class="fab fa-instagram"></i></a><br>
+                                <a href="https://www.linkedin.com/company/3dm-visualisations-architecturales/" target="_blank">Linkedin <i class="fab fa-linkedin"></i></a>
+                            </p>
                         </div>
                         <div class="col">
                             <h2>Contact</h2>
-                            <p>contact@3dm.ch<br>+41 (0)32 323 25 03</p>
+                                <p>
+                                    <a href="mailto:contact@3dm.ch" target="_top">contact@3dm.ch</a><br>
+                                    <a href="tel:+41323232503">+41 (0)32 323 25 03</a>
+                                </p>
                         </div>
                         <div class="col">
                             <h2>Revue de presse</h2>
-                            <p>TEC21 (10.01.19) : Siège de la voirie DSU, Lugano<br>RJB (31.08.18) : Centre scolaire, Prêles<br>Ticinonline (24.05.18) : Centre scolaire, Lugano<br>Tracés (27.02.17) : Sacré-coeur, Estavayer<br>Le Nouvelliste (24.12.16) : Centre scolaire, Ardon<br>La Liberté (3.11.16) : Sacré-coeur, Estavayer<br>Der Bund (25.11.15) : Via Felsenau, Berne </p>
+                            <p>
+                                TEC21 (10.01.19) : <a href="https://www.espazium.ch/werkhof-lugano" target="_blank">Siège de la voirie DSU, Lugano <i class="far fa-file-alt"></i></a><br>
+                                RJB (31.08.18) : <a href="https://www.rjb.ch/rjb/Actualite/Region/20180831-Plateau-de-Diesse-une-ecole-nommee-Equisetum.html" target="_blank">Centre scolaire, Prêles <i class="far fa-file-alt"></i></a><br>
+                                Ticinonline (24.05.18) : <a href="https://www.tio.ch/ticino/attualita/1260947/primo-premio-al-progetto--aria--per-la-scuola-di-viganello" target="_blank">Centre scolaire, Lugano <i class="far fa-file-alt"></i></a><br>
+                                Tracés (27.02.17) : <a href="https://www.espazium.ch/agrandissement-du-btiment-scolaire-du-sacrcoeur--estavayerlelac" target="_blank">Sacré-coeur, Estavayer <i class="far fa-file-alt"></i></a><br>
+                                Le Nouvelliste (24.12.16) : <a href="https://www.lenouvelliste.ch/articles/valais/valais-central/trois-batiments-un-seul-but-616418" target="_blank">Centre scolaire, Ardon <i class="far fa-file-alt"></i></a><br>
+                                La Liberté (3.11.16) : <a href="https://www.lenouvelliste.ch/articles/valais/valais-central/trois-batiments-un-seul-but-616418" target="_blank">Sacré-coeur, Estavayer <i class="far fa-file-alt"></i></a><br>
+                                Der Bund (25.11.15) : <a href="https://www.derbund.ch/bern/stadt/via-felsenau-oder-die-quadratur-des-kreises/story/29261249" target="_blank">Via Felsenau, Berne <i class="far fa-file-alt"></i></a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);"></footer>
+    <footer class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);"></footer>
 </div>
+
 @endsection

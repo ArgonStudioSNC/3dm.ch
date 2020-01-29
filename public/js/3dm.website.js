@@ -1,23 +1,26 @@
 // SPLASHSCREEN
+
 var skipss = false;
 $(document).ready(function(){
-    window.setTimeout(function(){
-        skipss = true;
-        closeSplashscreen();
-    }, 3000);
+    if(document.getElementById("splashscreen")){
+            window.setTimeout(function(){
+                skipss = true;
+                closeSplashscreen();
+            }, 3000);
 
-    $(document).on("scroll",function(){
-        if(!skipss){
-            skipss = true;
-            closeSplashscreen();
-        }
-        $("#navigation").fadeIn();
+            $(document).on("scroll",function(){
+                if(!skipss){
+                    skipss = true;
+                    closeSplashscreen();
+                }
+                $("#navigation").fadeIn();
 
-    });
-});
+            });
 
-$(window).on("load", function() {
-    closeSplashscreen();
+            $(window).on("load", function() {
+                closeSplashscreen();
+            });
+    }
 });
 
 function closeSplashscreen(){
@@ -32,7 +35,9 @@ function closeSplashscreen(){
     }
 }
 
+
 // SMOOTH SCROLLING
+
 $(document).ready(function(){
     // Add smooth scrolling to all links
     $(".smooth-scrolling").on('click', function(event) {
