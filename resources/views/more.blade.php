@@ -2,27 +2,19 @@
 
 @section('page-title', 'En savoir plus - ')
 
-@section('navigation')
-<nav id='navigation' class='custom-navbar d-flex flex-row align-items-center' role='navigation'>
-    <a class="navbar-logo" href="{{ route('www.portfolio') }}">
-        <img src="{{ asset('/img/3dm-logo-navigation.svg') }}" alt='3dm-logo'>
-    </a>
-    <a class='navbar-menu' href="{{ route('www.portfolio') }}">
-        Portfolio
-    </a>
-</nav>
-@endsection
-
 @section('content')
+
+@include('shared.navigation', ['text' => 'Portfolio', 'route' => route('www.portfolio')])
+
 <div id='more'>
-    <div id='vision' class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);">
+    <section id='vision' class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <h1>Vision</h1>
                 </div>
-                <div class="col-sm-9">
-                    <div class="row lead">
+                <div class="col-sm-8">
+                    <div class="row my-lead">
                         <div class="col">
                             <p>3DM est une entreprise jeune et créative spécialisée dans la réalisation d'images et de media pour la visualisation architecturale. Notre expérience dans le domaine de l'architecture, nous permet de comprendre les enjeux de vos projets et de les communiquer efficacement. Durant tout le processus d'élaboration, nous plaçons une attention particulière à l’expression du concept, de la représentation de son atmosphère à sa narration, jusque dans ses moindres détails.</p>
                         </div>
@@ -48,15 +40,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id='clients' class="jumbotron jumbotron-fluid" style="background-color:white;">
+    <section id='clients' class="jumbotron jumbotron-fluid" style="background-color:white;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <h1>Clients</h1>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <div class="row">
                         <div class="col-md-6">
                             <p>Ad'A architecture Sàrl</p>
@@ -94,15 +86,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id='team' class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);">
+    <section id='team' class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <h1>Team</h1>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <div class="row">
                         <div class="col">
                             <h2>Nathan Boder</h2>
@@ -139,19 +131,19 @@
                             <p>Argon Studio | Réalité augmentée et virtuelle</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{ asset('/img/140_Neirivue_BBH_Photoshop_Frontal_V4.jpg') }}" alt='3dm-logo'>
+                    <img class="img-fluid" src="{{ asset('/img/3dm_bureau.gif') }}" alt='team'>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id='contact' class="jumbotron jumbotron-fluid" style="background-color:white;">
+    <section id='contact' class="jumbotron jumbotron-fluid" style="background-color:white;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <h1>Contact</h1>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col">
                             <h2>Bureau</h2>
@@ -173,6 +165,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <footer class="jumbotron jumbotron-fluid" style="background-color:var(--bg-brown);"></footer>
 </div>
 @endsection

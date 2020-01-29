@@ -1,7 +1,8 @@
 :root {
 	/* Theme colors */
+	--light-black: #333333;
 	--theme-gray: #3D5D6B;
-	--bg-brown: #D9D9D6;
+	--bg-brown: #F2EFEB;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,10 +64,10 @@ a:hover {
 body {
 	background-color: #ffffff;
 	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 15px;
+	line-height: 1.6;
 	font-weight: 300;
-	color: black;
+	color: var(--light-black);
 	position: relative;
 	min-width: 100%;
 	min-height: 100%;
@@ -82,20 +83,36 @@ body {
 }
 
 h1 {
-	font-size: 25px;
-	line-height: 33px;
+	font-size: 28px;
+	line-height: 30.5px;
 	font-weight: 400;
 }
 
 h2 {
+	font-size: 17px;
 	font-weight: 400;
 }
 
-/*----------------------------HOME FULLSCREEN--------------------------------*/
-#splashscreen .parallax {
-	position: relative;
+/*-----------------------------SPLASHSCREEN----------------------------------*/
+#splashscreen {
+	z-index: 50;
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	background-color: var(--theme-gray);
 }
 
+#splashscreen img {
+  	position:absolute;
+	top: 0;
+	bottom: 0;
+	right: 50px;
+	left: 50px;
+	margin: auto;
+	max-width: 600px;
+}
+
+/*----------------------------HOME FULLSCREEN--------------------------------*/
 .fullscreen-img {
 	position: relative;
 	height: 100%;
@@ -170,7 +187,7 @@ h2 {
 
 @media only screen and (min-width: 576px) {
 	#more h1 {
-		padding: 2rem 0;
+		padding: 1.5rem 0;
 	}
 
 	#vision.jumbotron{
@@ -182,14 +199,18 @@ h2 {
 	padding-bottom: 1rem;
 }
 #more h2 {
-	padding-bottom: 1.2rem;
+	padding-bottom: 0.25rem;
 }
 #more img {
 	padding: 2rem 0;
 }
 
-#vision .lead{
-	padding-bottom: 2rem;
+#vision .my-lead{
+	padding-bottom: 1rem;
+}
+
+#more footer.jumbotron {
+	margin: 0;
 }
 
 /*-----------------------------PORTFOLIO PAGE--------------------------------*/

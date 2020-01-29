@@ -10,9 +10,10 @@
     <title>@yield('page-title')3DM - Visualisations architecturales</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('/js/jquery.parallax.min.js') }}" defer></script>
     <script src="{{ asset('/js/3dm.website.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/bf8f37f6e5.js" crossorigin="anonymous" defer></script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400&display=swap" rel="stylesheet">
@@ -29,9 +30,6 @@
 </head>
 
 <body>
-    <div id="app">
-        @yield('navigation', '')
-        @yield('content', '')
-    </div>
+    @yield('content')
 </body>
 </html>
