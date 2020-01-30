@@ -4,7 +4,7 @@
 
 @section('content')
 
-@include('shared.navigation', ['text' => 'Portfolio', 'route' => route('www.portfolio')])
+@include('shared.navigation', ['text' => 'Portfolio', 'routeLogo' => route('www.splashscreen'), 'routeBar' => route('www.portfolio')])
 
 <div id='more'>
     <section id='vision' class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);">

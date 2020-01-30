@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('shared.navigation', ['text' => 'En savoir plus', 'route' => route('www.more')])
+@include('shared.navigation', ['text' => 'En savoir plus', 'routeLogo' => route('www.portfolio'), 'routeBar' => route('www.more')])
 <script>
     $("#navigation").css("display", "none");
 </script>

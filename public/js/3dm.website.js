@@ -1,5 +1,4 @@
 // SPLASHSCREEN
-
 var skipss = false;
 $(document).ready(function(){
     if(document.getElementById("splashscreen")){
@@ -8,13 +7,14 @@ $(document).ready(function(){
                 closeSplashscreen();
             }, 3000);
 
-            $(document).on("scroll",function(){
+            $(document).on("scroll click",function(){
                 if(!skipss){
                     skipss = true;
                     closeSplashscreen();
                 }
+            });
+            $(document).on("scroll",function(){
                 $("#navigation").fadeIn();
-
             });
 
             $(window).on("load", function() {
@@ -37,7 +37,6 @@ function closeSplashscreen(){
 
 
 // SMOOTH SCROLLING
-
 $(document).ready(function(){
     // Add smooth scrolling to all links
     $(".smooth-scrolling").on('click', function(event) {
