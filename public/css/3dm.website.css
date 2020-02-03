@@ -118,39 +118,28 @@ h2 {
 }
 
 /*----------------------------HOME FULLSCREEN--------------------------------*/
-.fullscreen-img {
-	position: relative;
-	height: 100vh;
-
-	background: url("../media/renders/render-ipsach-wahliruefli-2019@640x.jpg") no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-@media only screen and (min-width: 576px), screen and (min-height: 324px){
+@media only screen and (min-width: 576px){
 	.fullscreen-img {
-		background-image: url("../media/renders/render-ipsach-wahliruefli-2019@1280x.jpg");
+		position: relative;
+		height: 100vh;
+		background: url("../media/renders/render-ipsach-wahliruefli-2019@2560x.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
-}
-@media only screen and (min-width: 1200px), screen and (min-height: 675px){
-	.fullscreen-img {
-		background-image: url("../media/renders/render-ipsach-wahliruefli-2019@2560x.jpg");
+	.down-arrow {
+		width: 100%;
+		position: absolute;
+		bottom: -1px;
 	}
-}
 
-.down-arrow {
-	width: 100%;
-	position: absolute;
-	bottom: -1px;
-}
-
-.down-arrow img {
-	height: 40px;
+	.down-arrow img {
+		height: 40px;
+	}
 }
 
 /*--------------------------------NAVBAR------------------------------------*/
-
 #navigation {
 	z-index: 10;
 	position: fixed;
@@ -158,7 +147,7 @@ h2 {
 }
 
 .navbar-logo img{
-	width: 90px;
+	width: 5.5rem;
 	-moz-transition: width 0.1s;
 	-o-transition: width 0.1s;
 	-webkit-transition: width 0.1s;
@@ -189,7 +178,7 @@ h2 {
 
 @media only screen and (min-width: 768px) {
 	.navbar-logo img{
-		width: 115px;
+		width: 7rem;
 	}
 	.navbar-menu {
 		height: 120px;
@@ -231,9 +220,7 @@ h2 {
 /*-----------------------------PORTFOLIO PAGE--------------------------------*/
 .legend {
 	z-index: 5;
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
+	padding: 0.8rem;
 }
 .legend h1{
 	font-size: 17px;
@@ -246,35 +233,68 @@ h2 {
 	font-weight: 300;
 }
 
-.portfolio-bordered {
-	padding: 0;
-}
-.portfolio-bordered .row {
-	margin: 115px;
+[class^="portfolio"] {
+	margin: 1rem;
 	position: relative;
-}
-.portfolio-bordered .legend {
-	padding-right: 0.8rem;
-	-webkit-transform: rotate(180deg) translateX(-100%); /* Safari prior 9.0 */
-	transform: rotate(180deg) translateX(-100%);
-	writing-mode: vertical-lr;
 }
 
-.portfolio-fullwidth{
-	padding: 25px;
-}
-.portfolio-fullwidth .row {
-	margin: 0;
-	position: relative;
-}
-.portfolio-fullwidth .legend {
-	align-items: baseline;
-	margin-bottom: -1px;
-	padding-top: 15px;
-	padding-left: 17px;
-	min-width: 300px;
-}
 .portfolio-fullwidth .parallax-window {
 	width: 100%;
 	background: transparent;
+}
+
+@media screen and (min-width: 576px){
+	.portfolio-bordered {
+		margin: 0.8rem 1.6rem;
+	}
+	.portfolio-bordered .d-flex {
+		margin: 0 -0.8rem;
+	}
+	.portfolio-bordered .flex-child {
+		margin: 0.8rem 0;
+		padding: 0 0.8rem;
+	}
+	.portfolio-bordered .legend {
+		padding: 0;
+		background-color: inherit!important;
+	}
+
+	.portfolio-fullwidth{
+		margin: 0;
+		padding: 1.6rem;
+	}
+	.portfolio-fullwidth .fullwidth-container{
+		position: relative;
+	}
+	.portfolio-fullwidth .legend {
+		position: absolute;
+		bottom: -1px;
+		right: -1px;
+
+		align-items: baseline;
+		padding-bottom: 0;
+		min-width: 300px;
+	}
+}
+
+@media screen and (min-width: 992px){
+	.portfolio-bordered {
+		margin: 3.5rem 7rem;
+	}
+	.portfolio-bordered .d-flex {
+		margin: 0 -3.5rem;
+	}
+	.portfolio-bordered .flex-child {
+		margin: 3.5rem 0;
+		padding: 0 3.5rem;
+	}
+	.portfolio-bordered .legend {
+		position: absolute;
+		bottom: 3.5rem;
+		right: 0px;
+		padding: 0 0.8rem 0 0;
+		-webkit-transform: rotate(180deg) translateX(-100%); /* Safari prior 9.0 */
+		transform: rotate(180deg) translateX(-100%);
+		writing-mode: vertical-rl;
+	}
 }

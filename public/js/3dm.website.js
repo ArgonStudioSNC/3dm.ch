@@ -68,3 +68,9 @@ $(document).ready(function(){
         } // End if
     });
 });
+
+// RESPONSIVE FLEX
+
+function updateFlex(elem){
+    elem.parentElement.style.flex = elem.width / elem.height;
+}
