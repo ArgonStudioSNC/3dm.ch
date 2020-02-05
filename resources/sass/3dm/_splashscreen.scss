@@ -1,0 +1,28 @@
+@use  'base';
+
+#splashscreen {
+	position: fixed;
+	z-index: 50;
+	height: 101%;
+	width: 100%;
+	background-color: base.$theme-blue;
+
+	.my-flex-logo {
+		height: 100%;
+	}
+
+	img {
+		margin: 2.5rem;
+		width: 100%;
+		max-width: 37rem;
+	}
+}
+
+.my-fix {
+	padding-top: 1px;
+	margin-top: -1px;
+}
+
+.appear-on-load {
+	display: none;
+}

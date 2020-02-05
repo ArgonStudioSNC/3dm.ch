@@ -4,22 +4,23 @@
 
 @section('content')
 
-@include('shared.navigation', ['text' => 'Portfolio', 'routeLogo' => route('www.splashscreen'), 'routeBar' => route('www.portfolio')])
+@include('shared.navigation', ['text' => 'Portfolio', 'route' => route('www.portfolio')])
 
-<div id='more'>
-    <section id='vision' class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);">
+<div id='more' class="appear-on-load">
+    <section id='vision' style="background-color:var(--light-brown);">
+        <div class="d-sm-none" style="height:12rem;"></div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-3 col-xl-4">
                     <h1>Vision</h1>
                 </div>
-                <div class="col-sm-8">
-                    <div class="row my-lead">
+                <div class="col-md-9 col-xl-8">
+                    <div class="row">
                         <div class="col">
                             <p>3DM est une entreprise jeune et créative spécialisée dans la réalisation d'images et de media pour la visualisation architecturale. Notre expérience dans le domaine de l'architecture, nous permet de comprendre les enjeux de vos projets et de les communiquer efficacement. Durant tout le processus d'élaboration, nous plaçons une attention particulière à l’expression du concept, de la représentation de son atmosphère à sa narration, jusque dans ses moindres détails.</p>
                         </div>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-2">
+                    <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col">
                             <h2>Champs d'activité</h2>
                             <p>Nous sommes principalement actifs dans la création d'images de concours d'architecture, mais également présents pour la présentation de projets et la promotion immobilière. L'architecture se tient toujours au cœur de nos réalisations.</p>
@@ -42,41 +43,49 @@
         </div>
     </section>
 
-    <section id='clients' class="jumbotron jumbotron-fluid" style="background-color:white;">
+    <section id='clients' style="background-color:white;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-3 col-xl-4">
                     <h1>Clients</h1>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-md-9 col-xl-8">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <p>Ad'A architecture Sàrl</p>
                             <p>Atba architecture + énergie SA</p>
                             <p>Atelier 78 Sàrl</p>
+                            <p>Ateliers du passage</p>
                             <p>Bart & Buchhofer Architekten AG</p>
+                            <p>BBA Archipole SA</p>
                             <p>BBH Architectes Sàrl</p>
                             <p>Boegli Kramp Architekten AG</p>
                             <p>Bricks AG</p>
                             <p>Bunq SA</p>
                             <p>Chappuis Architectes SA</p>
+                            <p>CFF SA</p>
                             <p>Deschenaux Follonier</p>
                             <p>Dietziker Architekten GmbH</p>
                             <p>Dupasquier Rebetez Architectes</p>
                             <p>Esposito + Javet</p>
                             <p>Epure Architecture et Urbanisme SA</p>
+                            <p>GDW architectes sa</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
+                            <p>GXM Architekten GmbH</p>
                             <p>IPAS architectes SA</p>
                             <p>Itten + Brechbühl SA</p>
-                            <p>IUB Engineering AG | CFF SA</p>
+                            <p>IUB Engineering AG</p>
                             <p>Kistler Vogt Architekten AG</p>
+                            <p>Lateltin Monnerat architectes SA</p>
                             <p>LVPH Architectes Sàrl</p>
+                            <p>Mangeat-Wahlen architectes Sàrl</p>
                             <p>Meno architectes Sàrl</p>
                             <p>Marques AG</p>
                             <p>Maillard Immobilier SA</p>
                             <p>Pierre Gianoli Architectes</p>
                             <p>Previmm Sàrl</p>
+                            <p>R2A architectes</p>
                             <p>RBRC architectes Sàrl</p>
                             <p>Rollimarchini Architekten AG</p>
                             <p>Wahlirüefli Architekten und Raumplaner AG</p>
@@ -88,47 +97,49 @@
         </div>
     </section>
 
-    <section id='team' class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);">
+    <section id='team' style="background-color:var(--light-brown);">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-3 col-xl-4">
                     <h1>Team</h1>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-md-9 col-xl-8">
                     <div class="row">
                         <div class="col">
-                            <h2>Nathan Boder</h2>
-                            <p>Fondateur & directeur</p>
-                            <p>1990 Né à Bienne</p>
-                            <p>2010 - 2013 Bachelor of Arts in Architecture HES, Fribourg</p>
-                            <p>2014 Service civil au sein du service d'urbanisme et d'architecture, Fribourg</p>
-                            <p>2015 Architecte chez Kistler Vogt Architectes</p>
-                            <p>> 2015 Directeur chez 3DM</p>
-                            <p>> 2018 Chargé de cours en expression informatique à la Haute école d'ingénieurie et d'architecture Fribourg</p>
-                            <p>> 2019 Co-directeur chez Argon Studio</p>
-                            <p>> 2019 Membre de la CPS Jura bernois - Seeland (Commission pour la protection des sites et du paysage)</p>
+                            <h3>Nathan Boder</h3>
+                            <p style="padding-bottom: 0.25rem;">Fondateur & directeur<br>Architecte HES</p>
+                            <p>
+                                1990 Né à Bienne<br>
+                                2013 Bachelor of Arts in Architecture HES, Fribourg<br>
+                                2014 Service civil au sein du service d'urbanisme et d'architecture, Fribourg<br>
+                                2015 Architecte chez Kistler Vogt Architectes<br>
+                                > 2015 Directeur chez 3DM<br>
+                                > 2018 Chargé de cours en expression informatique, filière architecture, EIA Fribourg<br>
+                                > 2019 Co-directeur chez Argon Studio<br>
+                                > 2019 Membre de la CPS Jura bernois - Seeland
+                            </p>
                         </div>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-2">
+                    <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col">
-                            <h2>Michela Parrini</h2>
-                            <p>Collaboratrice en visualisations architecturales</p>
+                            <h3>Michela Parrini</h3>
+                            <p>Collaboratrice en visualisations architecturales<br>Architetto Università degli Studi di Firenze</p>
                         </div>
                         <div class="col">
-                            <h2>Lucien Bösiger</h2>
-                            <p>Stagiaire en visualisations architecturales</p>
+                            <h3>Lucien Bösiger</h3>
+                            <p>Collaborateur en visualisations architecturales<br>Designer ES en communication visuelle</p>
                         </div>
                         <div class="col">
-                            <h2>Aline Dauwalder</h2>
-                            <p>Stagiaire en visualisations architecturales</p>
+                            <h3>Aline Dauwalder</h3>
+                            <p>Stagiaire en visualisations architecturales<br>Architecte HES</p>
                         </div>
                         <div class="col">
-                            <h2>Loïc Charrière</h2>
-                            <p>Développement informatique</p>
+                            <h3>Loïc Charrière</h3>
+                            <p>Développement informatique<br>Ingénieur Informaticien HES</p>
                         </div>
                         <div class="col">
-                            <h2>Entreprises partenaires</h2>
-                            <p>Argon Studio | Réalité augmentée et virtuelle</p>
+                            <h3>Entreprises partenaires</h3>
+                            <p><a href="https://www.argonstudio.ch" target="_blank">Argon Studio | Réalité augmentée et virtuelle</a></p>
                         </div>
                     </div>
                     <img class="img-fluid" src="{{ asset('/media/3dm-bureau.gif') }}" alt="[Image de l'équipe 3DM]">
@@ -137,20 +148,20 @@
         </div>
     </section>
 
-    <section id='contact' class="jumbotron jumbotron-fluid" style="background-color:white;">
+    <section id='contact' style="background-color:white;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-3 col-xl-4">
                     <h1>Contact</h1>
                 </div>
-                <div class="col-sm-8">
-                    <div class="row row-cols-1 row-cols-md-2">
+                <div class="col-md-9 col-xl-8">
+                    <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col">
-                            <h2>Bureau</h2>
+                            <h3>Bureau</h3>
                             <p>3DM<br>Rue du Contrôle 28<br>2503 Biel/Bienne</p>
                         </div>
                         <div class="col">
-                            <h2>Réseaux sociaux</h2>
+                            <h3>Réseaux sociaux</h3>
                             <p>
                                 <a href="https://www.facebook.com/www.3dm.ch/" target="_blank">Facebook <i class="fab fa-facebook"></i></a><br>
                                 <a href="https://www.instagram.com/3dm_visuals/" target="_blank">Instagram <i class="fab fa-instagram"></i></a><br>
@@ -158,14 +169,14 @@
                             </p>
                         </div>
                         <div class="col">
-                            <h2>Contact</h2>
+                            <h3>Contact</h3>
                                 <p>
                                     <a href="mailto:contact@3dm.ch" target="_top">contact@3dm.ch</a><br>
                                     <a href="tel:+41323232503">+41 (0)32 323 25 03</a>
                                 </p>
                         </div>
                         <div class="col">
-                            <h2>Revue de presse</h2>
+                            <h3>Revue de presse</h3>
                             <p>
                                 TEC21 (10.01.19) : <a href="https://www.espazium.ch/werkhof-lugano" target="_blank">Siège de la voirie DSU, Lugano <i class="far fa-file-alt"></i></a><br>
                                 RJB (31.08.18) : <a href="https://www.rjb.ch/rjb/Actualite/Region/20180831-Plateau-de-Diesse-une-ecole-nommee-Equisetum.html" target="_blank">Centre scolaire, Prêles <i class="far fa-file-alt"></i></a><br>
@@ -181,7 +192,6 @@
             </div>
         </div>
     </section>
-    <footer class="jumbotron jumbotron-fluid" style="background-color:var(--light-brown);"></footer>
 </div>
 
 @endsection

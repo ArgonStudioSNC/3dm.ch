@@ -12,4 +12,11 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+   .babel([
+    'resources/js/3dm.js',
+    'resources/js/jquery.parallax.min.js'
+], 'public/js/all.js')
+    .options({
+       processCssUrls: false
+   });

@@ -1,0 +1,115 @@
+@use  'base';
+
+#portfolio {
+	h1, h2, p {
+		margin: 0;
+	}
+
+	@include media-breakpoint-up(sm) {
+		.fullscreen-img {
+			position: relative;
+			height: 100vh;
+			background: url("../media/renders/render-communaux-ambilly-construction-thonex-exterieur-ittenbrechbuhlsa-2018@2560.jpg") no-repeat center center fixed;
+			@include background-size(cover);
+		}
+		.down-arrow {
+			width: 100%;
+			position: absolute;
+			bottom: -1px;
+
+			img {
+				height: 2.5rem;
+			}
+		}
+	}
+
+	.legend {
+		z-index: 5;
+		padding: 0.8rem;
+
+		h1 {
+			font-size: 1.07rem;
+			font-weight: 400;
+			line-height: 1.4;
+		}
+
+		h2 {
+			font-size: 12px;
+			font-weight: 300;
+			line-height: 1.4;
+		}
+	}
+
+	[class^="portfolio"] {
+		margin: 1rem;
+		position: relative;
+	}
+
+	.portfolio-fullwidth .parallax-window {
+		width: 100%;
+		background: transparent;
+	}
+
+	@include media-breakpoint-up(sm) {
+		.portfolio-bordered {
+			margin: 0.8rem 1.6rem;
+
+			.d-flex {
+				margin: 0 -0.8rem;
+			}
+			.flex-child {
+				margin: 0.8rem 0;
+				padding: 0 0.8rem;
+			}
+			.legend {
+				padding: 0 0 0.8rem 0;
+				background-color: inherit!important;
+			}
+		}
+
+		.portfolio-fullwidth{
+			margin: 0;
+			padding: 1.6rem;
+
+			.fullwidth-container{
+				position: relative;
+			}
+			.legend {
+				position: absolute;
+				bottom: -1px;
+				right: -1px;
+
+				align-items: baseline;
+				padding-bottom: 0;
+				min-width: 18rem;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		.portfolio-bordered {
+			margin: 3.5rem 7rem;
+
+			.d-flex {
+				margin: 0 -3.5rem;
+			}
+			.flex-child {
+				margin: 3.5rem 0;
+				padding: 0 3.5rem;
+			}
+			.legend {
+				position: absolute;
+				bottom: 3.5rem;
+				right: 0px;
+				padding: 0 0.8rem 0 0;
+				@include transform(rotate(180deg) translate(-100%,0));
+				writing-mode: vertical-rl;
+			}
+		}
+	}
+}
+
+.parallax-slider img {
+	width: 100%;
+	height: auto;
+}

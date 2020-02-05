@@ -1,0 +1,59 @@
+@use  'base';
+
+#navigation {
+	z-index: 10;
+	position: fixed;
+	top: 5rem;
+
+	left: 0%;
+	@include transition(left 0.3s);
+	&.hide {
+		left: -100% !important;
+	}
+
+	.navbar-logo {
+		img{
+			width: 4.5rem;
+			@include transition(width 0.1s);
+		}
+	}
+
+	.navbar-menu {
+		@include rotate(180);
+		writing-mode: vertical-lr;
+		text-align: center;
+		color: white;
+		background-color: base.$theme-blue;
+		text-transform: uppercase;
+		font-size: 0.55rem;
+		padding: 0.3em 0.3em 0.3em 0.1em;
+		min-height: 9em;
+		@include transition(min-height 0.1s);
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		.navbar-logo {
+			img{
+				width: 5.5rem;
+			}
+		}
+		.navbar-menu {
+			font-size: 0.65rem;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		.navbar-logo {
+			img{
+				width: 7rem;
+			}
+		}
+		.navbar-menu {
+			font-size: 0.8rem;
+		}
+	}
+}

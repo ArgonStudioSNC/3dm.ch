@@ -1,0 +1,51 @@
+@import 'variables';
+
+:root {
+	--light-black: #{$light-black};
+	--theme-blue: #{$theme-blue};
+	--light-brown: #{$light-brown};
+	--font-family-sans-serif: #{$font-family-sans-serif};
+}
+
+a, a * {
+	outline: 0;
+	color: $theme-blue;
+}
+
+a:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+body {
+	position: relative;
+	box-sizing: border-box;
+	min-width: 100%;
+	min-height: 100%;
+
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-weight: 300;
+	color: $light-black;
+
+	background-color: $body-bg;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.my-auto{
+	margin: auto;
+}
+
+h1 {
+	font-size: 1.75rem;
+	font-weight: 400;
+}
+
+h2, h3 {
+	font-size: 1.1rem;
+	font-weight: 400;
+}
