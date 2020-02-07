@@ -6,7 +6,7 @@
 
 @include('shared.navigation', ['text' => 'Portfolio', 'route' => route('www.portfolio')])
 
-<div id='more' class="appear-on-load">
+<div id='about'>
     <section id='vision' style="background-color:var(--light-brown);">
         <div class="d-sm-none" style="height:12rem;"></div>
         <div class="container">

@@ -1,72 +1,53 @@
-// SPLASHSCREEN
-var skipss = false;
+var MQ = {};
+
+// INITIALIZE
 $(document).ready(function(){
-    if(document.getElementById("splashscreen")){
-            window.setTimeout(function(){
-                skipss = true;
-                closeSplashscreen();
-            }, 3000);
+    MQ.sm = window.matchMedia("(min-width: 576px)");
+    splashscreen();
+    hideShowNavbar();
 
-            $(document).on("scroll click",function(){
-                if(!skipss){
-                    skipss = true;
-                    closeSplashscreen();
-                }
-            });
-            $(document).on("scroll",function(){
-                $("#navigation").fadeIn();
-            });
-
-            $(window).on("load", function() {
-                closeSplashscreen();
-            });
-    }
+    // APPEAR ON DOCUMENT READY
+    $('body').css('display', 'block');
 });
 
-function closeSplashscreen(){
-    if (skipss && document.readyState === "complete"){
-        $("#splashscreen").fadeOut("slow");
-        history.scrollRestoration = "auto";
-        if (history.replaceState) {
-            window.history.replaceState(null, "Portfolio - 3DM - Visualisations architecturales", "/portfolio");
-        } else {
-            document.location.href = "/portfolio";
+// SPLASHSCREEN
+function splashscreen(){
+    if($("#splashscreen").length){
+        window.setTimeout(function(){
+            closeSplashscreen();
+        }, 2500);
+
+        if (!MQ.sm) {
+            $(document).one("scroll click",function(){
+                closeSplashscreen();
+            });
         }
     }
 }
 
-// SMOOTH SCROLLING
-$(document).ready(function(){
-    // Add smooth scrolling to all links
-    $(".smooth-scrolling").on('click', function(event) {
-        $this = this;
-        // Make sure we access an element from the same page
-        if (this.pathname.indexOf(window.location.pathname) == 0){
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: (hash != "") ? ($(hash).offset().top) : 0
-            }, 800, 'swing', function(){
-
-                if (!$this.classList.contains('silent')){
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    if(history.pushState) {
-                        history.pushState(null, null, hash);
-                    }
-                    else {
-                        location.hash = hash;
-                    }
-                }
+function closeSplashscreen(){
+    var bgImage = window.getComputedStyle(document.querySelector('#home-fullscreen'), ':after').getPropertyValue('background-image');
+    var isBgImageLoaded = bgImage.localeCompare('none');
+    if (MQ.sm.matches) {
+        if(isBgImageLoaded != 0) {
+            $("#navigation").css('display', 'none');
+            $("#portfolio").removeClass("d-none");
+            $(window).trigger('resize').trigger('scroll');
+            $("#splashscreen").fadeOut("slow");
+            $(document).one("scroll",function(){
+                $("#navigation").fadeIn();
             });
-        } // End if
-    });
-});
+        } else {
+            window.setTimeout(function(){
+                console.log('timeout');
+                closeSplashscreen();
+            }, 500);
+        }
+    } else {
+        $("#portfolio").removeClass("d-none");
+        $("#splashscreen").fadeOut("slow");
+    }
+}
 
 // RESPONSIVE FLEX
 function updateFlex(elem){
@@ -81,22 +62,17 @@ function setParallaxRatio(elem){
             aspectRatio: elem.naturalWidth / elem.naturalHeight,
             mirrorSelector: "#parallax-mirror-container",
             zIndex: "5",
-            afterRender: $(window).trigger('resize'),
+            overScrollFix: true,
+            afterSetup: window.setTimeout(function(){$(window).trigger('resize')}, 500)
         })
     }
 }
 
-// APPEAR ON LOAD
-$(window).on('load', function(){
-    $('.appear-on-load').fadeIn('fast');
-});
-
 // HIDE NAVBAR ON SCROLL DOWN @MOBILE
-var mediaQuerySm = window.matchMedia("(max-width: 576px)");
 var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-function hideShowNavbar(mediaQuerySm){
-    if(!mediaQuerySm.matches){
+function hideShowNavbarInner(){
+    if(MQ.sm.matches){
         $('#navigation').removeClass('hide');
     } else {
         var currentScrollPos = Math.min(Math.max(window.pageYOffset || document.documentElement.scrollTop, 0), $(document).height() - $(window).height() -100);
@@ -110,9 +86,9 @@ function hideShowNavbar(mediaQuerySm){
     }
 }
 
-$(document).ready(function(){
+function hideShowNavbar(){
     $(window).scroll(function(){
-        hideShowNavbar(mediaQuerySm)
+        hideShowNavbarInner()
     });
-    mediaQuerySm.addListener(hideShowNavbar);
-});
+    MQ.sm.addListener(hideShowNavbarInner);
+}

@@ -1,6 +1,6 @@
 @use  'base';
 
-#more {
+#about {
     @include media-breakpoint-up(md){
         h1 {
             padding-top: 1.5rem;

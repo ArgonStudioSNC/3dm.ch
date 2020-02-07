@@ -24,7 +24,8 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body>
+<body style="display: none;">
     @yield('content')
+    @yield ('scripts', '')
 </body>
 </html>

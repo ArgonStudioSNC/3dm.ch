@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', 'WWWController@splashscreen')->name('www.splashscreen');
-Route::get('/portfolio', 'WWWController@portfolio')->name('www.portfolio');
-Route::get('/more', 'WWWController@more')->name('www.more');
+Route::get('/', 'WWWController@portfolio')->name('www.portfolio');
+Route::get('/about', 'WWWController@about')->name('www.about');
 
 Auth::routes(['register' => false]);
 

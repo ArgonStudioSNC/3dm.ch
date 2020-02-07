@@ -1,4 +1,4 @@
-<nav id='navigation' class="appear-on-load">
+<nav id='navigation'>
     <div class='custom-navbar d-flex flex-row align-items-center' role='navigation'>
         <a class="navbar-logo smooth-scrolling" href="{{ $route }}">
             <img src="{{ asset('/media/branding/3dm-logo-menu.svg') }}" alt='[Logo du menu de navigation]'>

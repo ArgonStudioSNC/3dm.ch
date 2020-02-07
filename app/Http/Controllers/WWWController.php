@@ -7,16 +7,6 @@ use Illuminate\Http\Request;
 class WWWController extends Controller
 {
     /**
-     * Show the website splashscreen.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function splashscreen()
-    {
-        return view('splashscreen');
-    }
-
-    /**
      * Show the website portfolio page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -31,8 +21,8 @@ class WWWController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function more()
+    public function about()
     {
-        return view('more');
+        return view('about');
     }
 }
