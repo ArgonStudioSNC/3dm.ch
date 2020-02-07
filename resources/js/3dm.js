@@ -18,8 +18,11 @@ function splashscreen(){
         }, 2500);
 
         if (MQ.sm.matches) {
-            $(document).one("scroll click",function(){
-                closeSplashscreen();
+            $("#navigation").css('display', 'none');
+            $(window).ready(function() {
+                $(this).one("wheel click",function(){
+                    closeSplashscreen();
+                });
             });
         }
     }
@@ -30,7 +33,6 @@ function closeSplashscreen(){
     var isBgImageLoaded = bgImage.localeCompare('none');
     if (MQ.sm.matches) {
         if(isBgImageLoaded != 0) {
-            $("#navigation").css('display', 'none');
             $("#portfolio").removeClass("d-none");
             $(window).trigger('resize').trigger('scroll');
             $("#splashscreen").fadeOut("slow");
