@@ -17,7 +17,7 @@ function splashscreen(){
             closeSplashscreen();
         }, 2500);
 
-        if (!MQ.sm) {
+        if (MQ.sm.matches) {
             $(document).one("scroll click",function(){
                 closeSplashscreen();
             });
