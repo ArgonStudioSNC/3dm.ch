@@ -41,7 +41,6 @@ function closeSplashscreen(){
             });
         } else {
             window.setTimeout(function(){
-                console.log('timeout');
                 closeSplashscreen();
             }, 500);
         }
