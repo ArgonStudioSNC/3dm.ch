@@ -1,5 +1,9 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/all.js": "/js/all.js"
+    "/js/manifest.js": "/js/manifest.js",
+    "/js/rendersurfer.js": "/js/rendersurfer.js",
+    "/js/vendor.js": "/js/vendor.js",
+    "/js/website.js": "/js/website.js",
+    "/css/website.css": "/css/website.css",
+    "/css/rendersurfer.css": "/css/rendersurfer.css",
+    "/js/website.vanilla.js": "/js/website.vanilla.js"
 }

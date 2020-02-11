@@ -11,12 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .babel([
-    'resources/js/3dm.js',
-    'resources/js/jquery.parallax.min.js'
-], 'public/js/all.js')
+ mix.sass('resources/sass/website.scss', 'public/css')
+    .js('resources/js/website.js', 'public/js')
+    .babel([
+         'resources/js/vanilla/website.js',
+         'resources/js/vanilla/jquery.parallax.min.js'
+     ], 'public/js/website.vanilla.js')
     .options({
-       processCssUrls: false
-   });
+          processCssUrls: false
+      });
+
+ mix.sass('resources/sass/rendersurfer.scss', 'public/css')
+    .js('resources/js/rendersurfer.js', 'public/js').extract(['vue']);
+
+ if (mix.inProduction()) {
+     mix.version();
+ }

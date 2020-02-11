@@ -14,6 +14,6 @@
 Route::get('/', 'WWWController@portfolio')->name('www.portfolio');
 Route::get('/about', 'WWWController@about')->name('www.about');
 
-Auth::routes(['register' => false]);
-
-Route::get('/rendersurfer', 'RenderSurferController@index')->name('rendersurfer.index');
+Route::get('/rendersurfer', function() {
+    return view('rendersurfer');
+})->name('rendersurfer.index');

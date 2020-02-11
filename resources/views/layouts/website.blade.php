@@ -10,12 +10,13 @@
     <title>@yield('page-title')3DM - Visualisations architecturales</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/all.js') }}" defer></script>
+    <script src="{{ mix('js/manifest.js') }}"></script>
+    <script src="{{ mix('js/website.js') }}"></script>
+    <script src="{{ mix('js/website.vanilla.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/bf8f37f6e5.js" crossorigin="anonymous" defer></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ mix('css/website.css') }}" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
