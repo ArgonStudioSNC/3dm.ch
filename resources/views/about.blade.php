@@ -64,12 +64,13 @@
                             <p>Bunq SA</p>
                             <p>Chappuis Architectes SA</p>
                             <p>CFF SA</p>
+                            <p>Deillon Delley Architectes SA</p>
                             <p>Deschenaux Follonier</p>
                             <p>Dietziker Architekten GmbH</p>
                             <p>Dupasquier Rebetez Architectes</p>
                             <p>Esposito + Javet</p>
                             <p>Epure Architecture et Urbanisme SA</p>
-                            <p>GDW architectes sa</p>
+                            <p>GDW architectes SA</p>
                         </div>
                         <div class="col-lg-6">
                             <p>GXM Architekten GmbH</p>
