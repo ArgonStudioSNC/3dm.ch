@@ -22,7 +22,7 @@ const mix = require('laravel-mix');
       });
 
  mix.sass('resources/sass/rendersurfer.scss', 'public/css')
-    .js('resources/js/rendersurfer.js', 'public/js').extract(['vue']);
+    .js('resources/js/rendersurfer.js', 'public/js').extract(['vue']).sourceMaps();
 
  if (mix.inProduction()) {
      mix.version();
