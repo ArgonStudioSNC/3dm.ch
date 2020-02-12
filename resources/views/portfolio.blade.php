@@ -18,22 +18,24 @@
         <img src="{{ asset('/media/branding/3dm-down-arrow.svg') }}" alt='[Down arrow]'>
     </div>
 </div>
-<script><!-- load background image first -->
-    var newImg = new Image;
-    var styleElem = document.head.appendChild(document.createElement("style"));
-    newImg.onload = function() {
-        styleElem.innerHTML = "#home-fullscreen:after {background-image:url("+newImg.src+");}";
-    }
 
-    function loadBackground(x){
-        if(x.matches){
-            newImg.src = "{{ URL::asset('/media/renders/render-communaux-ambilly-construction-thonex-exterieur-ittenbrechbuhlsa-2018@2560.jpg') }}";
-        }
-    }
+<script>
+<!-- load background image first -->
+var newImg = new Image;
+var styleElem = document.head.appendChild(document.createElement("style"));
+newImg.onload = function() {
+    styleElem.innerHTML = "#home-fullscreen:after {background-image:url("+newImg.src+");}";
+}
 
-    var x = window.matchMedia("(min-width: 576px)");
-    loadBackground(x);
-    x.addListener(loadBackground);
+function loadBackground(x){
+    if(x.matches){
+        newImg.src = "{{ URL::asset('/media/renders/render-communaux-ambilly-construction-thonex-exterieur-ittenbrechbuhlsa-2018@2560.jpg') }}";
+    }
+}
+
+var x = window.matchMedia("(min-width: 576px)");
+loadBackground(x);
+x.addListener(loadBackground);
 </script>
 
 <div id='portfolio' class="d-none bg-white">
@@ -52,6 +54,24 @@
             <h2>Itten Brechbühl SA</h2> {{--Compléter le bureau--}}
         </div>
     </div>
+
+    <script>
+    function updateFlex(elem){
+        elem.parentElement.style.flex = elem.naturalWidth / elem.naturalHeight;
+    }
+
+    function setParallaxRatio(elem){
+        if (elem.naturalWidth != 1){
+            elem.removeAttribute('onLoad');
+            $(elem.closest('.parallax-window')).parallax({
+                aspectRatio: elem.naturalWidth / elem.naturalHeight,
+                mirrorSelector: "#parallax-mirror-container",
+                zIndex: "5",
+                overScrollFix: true
+            })
+        }
+    }
+    </script>
 
     {{--ÉLÉMENT STATIQUE MULTI-COLONNES--}}
     <!-- BORDERED : ECOLE DE NEIRIVUE --> {{--Compléter le nom du projet--}}
@@ -469,20 +489,5 @@
         </div>
     </div>
 </div>
-
-@endsection
-
-@section('scripts')
-
-<script type="text/javascript"> <!-- prevent scroll restauration -->
-if (history.scrollRestoration) {
-    window.history.scrollRestoration = 'manual';
-} else {
-    $(window).on('beforeunload', function(){
-        $('body').hide();
-        $(window).scrollTop(0);
-    });
-}
-</script>
 
 @endsection
