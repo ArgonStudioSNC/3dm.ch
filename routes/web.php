@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'WWWController@portfolio')->name('www.portfolio');
-Route::get('/about', 'WWWController@about')->name('www.about');
+Auth::routes();
 
-Route::get('/rendersurfer', function() {
-    return view('rendersurfer');
-})->name('rendersurfer.index');
+Route::namespace('Web')->group(function () {
+    Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
+    Route::get('/about', 'SiteController@about')->name('www.about');
+    Route::get('/rendersurfer', 'RendersurferController@getApp')->name('rendersurfer.get');
+});

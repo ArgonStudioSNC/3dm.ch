@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class WWWController extends Controller
+class SiteController extends Controller
 {
     /**
      * Show the website portfolio page.
