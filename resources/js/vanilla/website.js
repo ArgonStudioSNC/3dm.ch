@@ -50,25 +50,6 @@ function closeSplashscreen(){
     }
 }
 
-// RESPONSIVE FLEX
-function updateFlex(elem){
-    elem.parentElement.style.flex = elem.naturalWidth / elem.naturalHeight;
-}
-
-// PARALLAX INIT
-function setParallaxRatio(elem){
-    if (elem.naturalWidth != 1){
-        elem.removeAttribute('onLoad');
-        $(elem.closest('.parallax-window')).parallax({
-            aspectRatio: elem.naturalWidth / elem.naturalHeight,
-            mirrorSelector: "#parallax-mirror-container",
-            zIndex: "5",
-            overScrollFix: true,
-            afterSetup: window.setTimeout(function(){$(window).trigger('resize')}, 500)
-        })
-    }
-}
-
 // HIDE NAVBAR ON SCROLL DOWN @MOBILE
 var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
