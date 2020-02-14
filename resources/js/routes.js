@@ -26,22 +26,22 @@ export default new VueRouter({
         {
             path: '/',
             name: 'home',
-            component: Vue.component( 'Home', require( './pages/Home.vue' ) )
+            component: Vue.component( 'Home', require( './pages/Home.vue' ) ).default
         },
         {
             path: '/renders',
             name: 'renders',
-            component: Vue.component( 'Renders', require( './pages/Renders.vue' ) )
+            component: Vue.component( 'Renders', require( './pages/Renders.vue' ) ).default
         },
         {
             path: '/new',
             name: 'newrender',
-            component: Vue.component( 'NewRender', require( './pages/NewRender.vue' ) )
+            component: Vue.component( 'NewRender', require( './pages/NewRender.vue' ) ).default
         },
         {
             path: '/:id',
             name: 'render',
-            component: Vue.component( 'Render', require( './pages/Render.vue' ) )
+            component: Vue.component( 'Render', require( './pages/Render.vue' ) ).default
         }
     ]
 });

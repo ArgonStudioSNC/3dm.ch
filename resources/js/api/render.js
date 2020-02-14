@@ -1,10 +1,12 @@
+import axios from 'axios';
+
 /*
-    Imports the Roast API URL from the config.
+    Imports the RENDERSURFER API URL from the config.
 */
-import { RENDERSURFER_CONFIG } from '../config.js’;
+import { RENDERSURFER_CONFIG } from '../config.js';
 
 const client = axios.create({
-    baseURL: ROAST_CONFIG.API_URL,
+    baseURL: RENDERSURFER_CONFIG.API_URL,
 });
 
 export default {

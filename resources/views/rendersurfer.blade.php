@@ -11,6 +11,8 @@
     You are logged in!
 </div>
 
-<router-view></router-view>
+<div id="app">
+    <router-view></router-view>
+</div>
 
 @endsection
