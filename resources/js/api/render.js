@@ -1,0 +1,36 @@
+/*
+    Imports the Roast API URL from the config.
+*/
+import { RENDERSURFER_CONFIG } from '../config.js’;
+
+const client = axios.create({
+    baseURL: ROAST_CONFIG.API_URL,
+});
+
+export default {
+    /*
+        GET     /api/v1/renders
+    */
+    all: function(){
+        return client.get(`renders`);
+    },
+
+    /*
+        GET     /api/v1/renders/{id}
+    */
+    find: function(id){
+        return client.get(`renders/${id}`);
+    },
+
+    /*
+        POST    /api/v1/renders
+    */
+    create: function(name, filename){
+        return client.post(`renders`,
+            {
+                name: name,
+                filename: filename
+            }
+        );
+    }
+}
