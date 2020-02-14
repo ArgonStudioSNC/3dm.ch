@@ -29,7 +29,7 @@ export const renders = {
         loadRenders( { commit } ){
             commit( 'setRendersLoadStatus', 1 );
 
-            RenderAPI.getRenders()
+            RenderAPI.all()
             .then( function( response ){
                 commit( 'setRenders', response.data );
                 commit( 'setRendersLoadStatus', 2 );
@@ -46,7 +46,7 @@ export const renders = {
         loadRender( { commit }, data ){
             commit( 'setRenderLoadStatus', 1 );
 
-            RenderAPI.getRender( data.id )
+            RenderAPI.show( data.id )
             .then( function( response ){
                 commit( 'setRender', response.data );
                 commit( 'setRenderLoadStatus', 2 );

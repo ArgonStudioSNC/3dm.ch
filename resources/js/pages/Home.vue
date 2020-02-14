@@ -3,13 +3,40 @@
 </style>
 
 <template>
-  <div>
-      test
-  </div>
+    <div id="home">
+        <span v-show="rendersLoadStatus == 1">Loading</span>
+        <span v-show="rendersLoadStatus == 2">Renders loaded successfully!</span>
+        <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span>
+
+        <ul>
+            <li v-for="render in renders">{{ render.name }}</li>
+        </ul>
+    </div>
 </template>
 
 <script>
-  export default {
+export default {
+    created(){
+        this.$store.dispatch( 'loadRenders' );
+    },
 
-  }
+    /*
+    Defines the computed properties on the component.
+    */
+    computed: {
+        /*
+        Gets the renders load status
+        */
+        rendersLoadStatus(){
+            return this.$store.getters.getRendersLoadStatus;
+        },
+
+        /*
+        Gets the renders
+        */
+        renders(){
+            return this.$store.getters.getRenders;
+        }
+    }
+}
 </script>
