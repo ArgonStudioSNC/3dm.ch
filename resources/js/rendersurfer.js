@@ -18,5 +18,8 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue';
+import router from './routes.js'
 
-new Vue().$mount('#app');
+new Vue({
+    router
+}).$mount('#app')

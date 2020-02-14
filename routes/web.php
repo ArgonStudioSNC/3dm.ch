@@ -16,5 +16,6 @@ Auth::routes();
 Route::namespace('Web')->group(function () {
     Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
     Route::get('/about', 'SiteController@about')->name('www.about');
+
     Route::get('/rendersurfer', 'RendersurferController@getApp')->name('rendersurfer.get');
 });
