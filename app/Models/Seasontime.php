@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Composition extends Model
+class Seasontime extends Model
 {
     /**
      * Indicates if the model should be timestamped.

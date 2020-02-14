@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Office extends Model
+class Composition extends Model
 {
     /**
      * Indicates if the model should be timestamped.

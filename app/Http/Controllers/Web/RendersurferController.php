@@ -22,7 +22,7 @@ class RendersurferController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getApp()
+    public function index()
     {
         return view('rendersurfer');
     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Light extends Model
+class Style extends Model
 {
     /**
      * Indicates if the model should be timestamped.
