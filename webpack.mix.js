@@ -21,8 +21,30 @@ const mix = require('laravel-mix');
           processCssUrls: false
       });
 
- mix.sass('resources/sass/rendersurfer.scss', 'public/css')
-    .js('resources/js/rendersurfer.js', 'public/js').extract(['vue']).sourceMaps();
+ mix.js('resources/js/rendersurfer.js', 'public/js')
+     .webpackConfig({
+      module: {
+          rules: [
+              {
+                  test: /\.jsx?$/,
+                  exclude: /node_modules(?!\/foundation-sites)|bower_components/,
+                  use: [
+                      {
+                          loader: 'babel-loader',
+                          options: Config.babel()
+                      }
+                  ]
+              }
+          ]
+      },
+      resolve: {
+         alias: {
+           '@': path.resolve('resources/sass')
+         }
+       }
+    })
+    .extract(['vue']).sourceMaps()
+    .sass('resources/sass/rendersurfer.scss', 'public/css')
 
  if (mix.inProduction()) {
      mix.version();

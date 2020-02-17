@@ -6482,3 +6482,16 @@ html.is-reveal-open body {
     display: block !important;
   }
 }
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 100%;
+  min-height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #333333;
+  background-color: white;
+}

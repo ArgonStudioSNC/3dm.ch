@@ -4,5 +4,22 @@
 @import 'meyers-reset';
 @import 'mixins';
 
+@import 'abstracts/variables';
+
 // Foundation sites
 @import 'node_modules/foundation-sites/assets/foundation.scss';
+
+body {
+	position: relative;
+	box-sizing: border-box;
+	min-width: 100%;
+	min-height: 100%;
+
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-weight: 300;
+	color: $light-black;
+
+	background-color: $body-bg;
+}
