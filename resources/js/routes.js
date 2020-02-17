@@ -25,23 +25,9 @@ export default new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'home',
-            component: Vue.component( 'Home', require( './pages/Home.vue' ) ).default
-        },
-        {
-            path: '/renders',
-            name: 'renders',
-            component: Vue.component( 'Renders', require( './pages/Renders.vue' ) ).default
-        },
-        {
-            path: '/new',
-            name: 'newrender',
-            component: Vue.component( 'NewRender', require( './pages/NewRender.vue' ) ).default
-        },
-        {
-            path: '/:id',
-            name: 'render',
-            component: Vue.component( 'Render', require( './pages/Render.vue' ) ).default
+            name: 'layout',
+            component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ).default,
+            children: []
         }
     ]
 });
