@@ -27,7 +27,28 @@ export default new VueRouter({
             path: '/',
             name: 'layout',
             component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ).default,
-            children: []
+            children: [
+                {
+                    path: 'home',
+                    name: 'home',
+                    component: Vue.component( 'Home', require( './pages/Home.vue' ) ).default
+                },
+                {
+                    path: 'renders',
+                    name: 'renders.index',
+                    component: Vue.component( 'Renders', require( './pages/RendersIndex.vue' ) ).default
+                },
+                {
+                    path: 'renders/create',
+                    name: 'renders.create',
+                    component: Vue.component( 'NewRender', require( './pages/RendersCreate.vue' ) ).default
+                },
+                {
+                    path: 'renders/:id',
+                    name: 'renders.show',
+                    component: Vue.component( 'Render', require( './pages/RendersShow.vue' ) ).default
+                }
+            ]
         }
     ]
 });
