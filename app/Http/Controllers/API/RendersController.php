@@ -56,11 +56,11 @@ class RendersController extends Controller
     | Method:         POST
     | Description:    Adds a new render to the application
     */
-    public function store(){
+    public function store(Request $request){
         $render = new Render();
 
-        $render->name     = Request::get('name');
-        $render->filename  = Request::get('filename');
+        $render->name     = $request->get('name');
+        $render->filename  = $request->get('filename');
 
         $render->save();
 

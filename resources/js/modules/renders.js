@@ -16,7 +16,9 @@ export const renders = {
         rendersLoadStatus: 0,
 
         render: {},
-        renderLoadStatus: 0
+        renderLoadStatus: 0,
+
+        renderAddStatus: 0
     },
 
     /*
@@ -55,7 +57,22 @@ export const renders = {
                 commit( 'setRender', {} );
                 commit( 'setRenderLoadStatus', 3 );
             });
+        },
 
+        /*
+        Adds a render
+        */
+        addRender( { commit, state, dispatch }, data ){
+            commit( 'setRenderAddedStatus', 1 );
+
+            RenderAPI.create( data.name, data.filename )
+            .then( function( response ){
+                commit( 'setRenderAddedStatus', 2 );
+                dispatch( 'loadRenders' );
+            })
+            .catch( function(){
+                commit( 'setRenderAddedStatus', 3 );
+            });
         }
     },
 
@@ -89,6 +106,13 @@ export const renders = {
         */
         setRender( state, render ){
             state.render = render;
+        },
+
+        /*
+        Set the render add status
+        */
+        setRenderAddedStatus( state, status ){
+            state.renderAddStatus = status;
         }
     },
 
@@ -122,6 +146,13 @@ export const renders = {
         */
         getRender( state ){
             return state.render;
+        },
+
+        /*
+        Gets the render add status
+        */
+        getRenderAddStatus( state ){
+            return state.renderAddStatus;
         }
     }
 }
