@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Render;
+use App\Http\Requests\StoreRenderRequest;
 
 class RendersController extends Controller
 {
@@ -56,7 +57,7 @@ class RendersController extends Controller
     | Method:         POST
     | Description:    Adds a new render to the application
     */
-    public function store(Request $request){
+    public function store( StoreRenderRequest $request ){
         $render = new Render();
 
         $render->name     = $request->get('name');
