@@ -11,11 +11,20 @@
         <ul>
             <li v-for="render in renders">{{ render.name }}</li>
         </ul>
+
+        <filterComponent filter-name="seasontimes"></filterComponent>
+        <filterComponent filter-name="daytimes"></filterComponent>
     </div>
 </template>
 
 <script>
+import FilterComponent from '../components/Filter.vue';
+
 export default {
+    components: {
+      FilterComponent,
+    },
+
     created(){
         this.$store.dispatch( 'loadRenders' );
     },

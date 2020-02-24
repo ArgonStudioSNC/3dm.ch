@@ -17,9 +17,12 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import Vue from 'vue';
+import { sync } from 'vuex-router-sync'
+import Vue from 'vue'
 import router from './routes.js'
 import store from './store.js'
+
+const unsync = sync(store, router)
 
 new Vue({
     router,
