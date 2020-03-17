@@ -10301,7 +10301,7 @@ h2, h3 {
   }
   #home-fullscreen video {
     position: fixed;
-    width: 100%;
+    width: calc(100% + 1px);
     height: auto;
     top: 50%;
     left: 50%;
@@ -10311,7 +10311,7 @@ h2, h3 {
 @media (min-width: 576px) and (max-aspect-ratio: 4/3) {
   #home-fullscreen video {
     width: auto !important;
-    height: 100% !important;
+    height: calc(100% + 1px) !important;
   }
 }
 @media (min-width: 576px) {
