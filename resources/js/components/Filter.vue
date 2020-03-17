@@ -4,15 +4,12 @@
 </style>
 
 <template>
-    <div>
-        <ul>
-            <li v-for="filter in filters">{{ filter.name }}</li>
-        </ul>
-        
-        <ul>
-            <li v-for="active in actives">{{ active }}</li>
-        </ul>
-    </div>
+        <li>
+            <a>{{ this.filterName }}</a>
+            <ul class="menu">
+                <li v-for="filter in filters">{{ filter.name }}</li>
+            </ul>
+        </li>
 </template>
 
 <script>

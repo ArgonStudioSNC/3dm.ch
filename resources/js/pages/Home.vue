@@ -12,9 +12,12 @@
             <li v-for="render in renders">{{ render.name }}</li>
         </ul>
 
-        <filterComponent filter-name="seasontimes"></filterComponent>
-        <filterComponent filter-name="daytimes"></filterComponent>
+        <ul class="dropdown menu" data-dropdown-menu>
+            <filterComponent filter-name="seasontimes"></filterComponent>
+            <filterComponent filter-name="daytimes"></filterComponent>
+        </ul>
     </div>
+
 </template>
 
 <script>
