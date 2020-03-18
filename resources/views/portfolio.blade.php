@@ -14,7 +14,7 @@
 
 <!-- COVER FULLSCREEN @Tablette and @Desktop -->
 <div id='home-fullscreen' class="d-none d-sm-flex justify-content-center">
-    <video autoplay muted loop id="home-fullscreen-video">
+    <video playsinline autoplay muted loop id="home-fullscreen-video">
         Your browser does not support the video tag.
     </video>
     <div class='down-arrow d-flex justify-content-center'>
