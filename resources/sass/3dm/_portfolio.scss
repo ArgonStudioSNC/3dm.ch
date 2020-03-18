@@ -102,14 +102,14 @@
 
 		video {
 			position: fixed;
-			width: calc(100% + 1px);
+			width: 100vw;
 			height: auto;
 			top: 50%; left: 50%;
 			@include transform(translate(-50%,-50%));
 
 			@media (max-aspect-ratio: 4/3) {
 				width: auto!important;
-				height: calc(100% + 1px)!important;
+				height: 100vh!important;
 			}
 		}
 
