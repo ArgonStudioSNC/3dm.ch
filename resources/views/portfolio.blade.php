@@ -14,9 +14,16 @@
 
 <!-- COVER FULLSCREEN @Tablette and @Desktop -->
 <div id='home-fullscreen' class="d-none d-sm-flex justify-content-center">
+    @php
+    $browser = new WhichBrowser\Parser(getallheaders());
+    @endphp
+    @if ($browser->isType('desktop'))
     <video playsinline autoplay muted loop id="home-fullscreen-video">
+        <source src="{{ asset('/media/video-dorfkern-ipsach@2k.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    @endif
+
     <div class='down-arrow d-flex justify-content-center'>
         <img src="{{ asset('/media/branding/3dm-down-arrow.svg') }}" alt='[Down arrow]'>
     </div>
@@ -25,41 +32,21 @@
 <script>
 var x = window.matchMedia("(min-width: 576px)");
 
-{{--
 <!-- load large background image first -->
 var newImg = new Image;
 var styleElem = document.head.appendChild(document.createElement("style"));
 newImg.onload = function() {
     styleElem.innerHTML = "#home-fullscreen:after {background-image:url("+newImg.src+");}";
+    $('#home-fullscreen').addClass('ready');
 }
 
 function loadBackground(x){
     if(x.matches){
-        newImg.src = "{{ URL::asset('/media/renders/render-communaux-ambilly-construction-thonex-exterieur-ittenbrechbuhlsa-2018@2560.jpg') }}";
+        newImg.src = "{{ URL::asset('/media/renders/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@2560.jpg') }}";
     }
 }
 loadBackground(x);
 x.addListener(loadBackground);
---}}
-
-<!-- load background video -->
-var videoElement = document.getElementById('home-fullscreen-video');
-var mp4Source = document.createElement('source');
-
-function setBackgroundVid(x){
-    if(x.matches){
-        videoElement.addEventListener("canplay", function() {
-            $('#home-fullscreen').addClass('ready');
-        }, true);
-        mp4Source.setAttribute('src', "{{ asset('/media/video-dorfkern-ipsach@2k.mp4') }}");
-        mp4Source.setAttribute('type', 'video/mp4');
-        videoElement.appendChild(mp4Source);
-
-        if (!(typeof(document.createElement('video').canPlayType) != 'undefined')) $('#home-fullscreen').addClass('ready');
-    }
-}
-setBackgroundVid(x);
-x.addListener(setBackgroundVid);
 </script>
 
 <div id='portfolio' class="d-none bg-white">
