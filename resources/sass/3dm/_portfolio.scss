@@ -94,7 +94,7 @@
 
 @include media-breakpoint-up(sm) {
 	#home-fullscreen {
-		z-index: 0;
+		z-index: -100;
 		overflow: hidden;
 		position: relative;
 		width: 100%;
@@ -102,7 +102,7 @@
 
 		video {
 			position: fixed;
-			width: 100vw;
+			width: 100%;
 			height: auto;
 			top: 50%; left: 50%;
 			@include transform(translate(-50%,-50%));

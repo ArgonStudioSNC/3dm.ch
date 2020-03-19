@@ -10294,7 +10294,7 @@ h2, h3 {
 
 @media (min-width: 576px) {
   #home-fullscreen {
-    z-index: 0;
+    z-index: -100;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -10302,7 +10302,7 @@ h2, h3 {
   }
   #home-fullscreen video {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: auto;
     top: 50%;
     left: 50%;
