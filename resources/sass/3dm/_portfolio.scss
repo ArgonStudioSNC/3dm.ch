@@ -94,7 +94,7 @@
 
 @include media-breakpoint-up(sm) {
 	#home-fullscreen {
-		z-index: -100;
+		z-index: 0;
 		overflow: hidden;
 		position: relative;
 		width: 100%;
@@ -109,7 +109,7 @@
 
 			@media (max-aspect-ratio: 4/3) {
 				width: auto!important;
-				height: 100vh!important;
+				height: 100%!important;
 			}
 		}
 
