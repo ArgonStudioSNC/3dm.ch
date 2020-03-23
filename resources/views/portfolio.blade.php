@@ -3,7 +3,7 @@
 @section('content')
 
 <div id='splashscreen'>
-    <div class="my-flex-logo d-flex justify-content-center align-items-center">
+    <div class="my-flex-logo d-flex justify-content-center align-items-center d-none">
         <img src="{{ asset('/media/branding/3dm-logo-grand.svg') }}" alt="[Logo de 3DM]">
     </div>
 </div>
@@ -14,26 +14,37 @@
 
 <!-- COVER FULLSCREEN @Tablette and @Desktop -->
 <div id='home-fullscreen' class="d-none d-sm-flex justify-content-center">
+    @php
+    $browser = new WhichBrowser\Parser(getallheaders());
+    @endphp
+    @if ($browser->isType('desktop'))
+    <video playsinline autoplay muted loop id="home-fullscreen-video">
+        <source src="{{ asset('/media/video-dorfkern-ipsach@2k.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    @endif
+
     <div class='down-arrow d-flex justify-content-center'>
         <img src="{{ asset('/media/branding/3dm-down-arrow.svg') }}" alt='[Down arrow]'>
     </div>
 </div>
 
 <script>
-<!-- load background image first -->
+var x = window.matchMedia("(min-width: 576px)");
+
+<!-- load large background image first -->
 var newImg = new Image;
 var styleElem = document.head.appendChild(document.createElement("style"));
 newImg.onload = function() {
     styleElem.innerHTML = "#home-fullscreen:after {background-image:url("+newImg.src+");}";
+    $('#home-fullscreen').addClass('ready');
 }
 
 function loadBackground(x){
     if(x.matches){
-        newImg.src = "{{ URL::asset('/media/renders/render-communaux-ambilly-construction-thonex-exterieur-ittenbrechbuhlsa-2018@2560.jpg') }}";
+        newImg.src = "{{ URL::asset('/media/renders/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@2560.jpg') }}";
     }
 }
-
-var x = window.matchMedia("(min-width: 576px)");
 loadBackground(x);
 x.addListener(loadBackground);
 </script>
@@ -45,13 +56,13 @@ x.addListener(loadBackground);
         <div class="d-flex">
             <picture>
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/media/renders/render-communaux-ambilly-construction-thonex-exterieur-ittenbrechbuhlsa-2018@640.jpg') }}" alt='Rendu extérieur du communaux d Ambilly de Thônex, projet architectural réalisé par Itten Brechbühl SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/media/renders/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@640.jpg') }}" alt='Rendu du projet Dorfkern de Ipsach, projet architectural réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend' style="background-color: #ECDDE0;">
-            <h1>Communaux d’Ambilly</h1> {{--Compléter le titre--}}
-            <h2 style="font-style:italic;">Thônex, CH</h2> {{--Compléter le lieu--}}
-            <h2>Itten Brechbühl SA</h2> {{--Compléter le bureau--}}
+            <h1>Dorfkern Ipsach</h1> {{--Compléter le titre--}}
+            <h2 style="font-style:italic;">Ipsach, CH</h2> {{--Compléter le lieu--}}
+            <h2>ARGE Wahliruefli und Rollimarchini</h2> {{--Compléter le bureau--}}
         </div>
     </div>
 

@@ -28,11 +28,8 @@ function splashscreen() {
 }
 
 function closeSplashscreen() {
-  var bgImage = window.getComputedStyle(document.querySelector('#home-fullscreen'), ':after').getPropertyValue('background-image');
-  var isBgImageLoaded = bgImage.localeCompare('none');
-
   if (MQ.sm.matches) {
-    if (isBgImageLoaded != 0) {
+    if ($('#home-fullscreen').hasClass('ready')) {
       $("#portfolio").removeClass("d-none");
       $(window).trigger('resize').trigger('scroll');
       $("#splashscreen").fadeOut("slow");
