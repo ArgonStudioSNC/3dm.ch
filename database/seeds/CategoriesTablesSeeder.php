@@ -13,67 +13,100 @@ class CategoriesTablesSeeder extends Seeder
      {
          DB::table('types')->delete();
          DB::table('types')->insert([
-             ['name' => 'Intérieur',],
-             ['name' => 'Extérieur',],
+             ['name' => 'Intérieur',
+              'tag' => 'interieur',],
+             ['name' => 'Extérieur',
+              'tag' => 'exterieur',],
          ]);
 
          DB::table('styles')->delete();
          DB::table('styles')->insert([
-             ['name' => 'Réaliste',],
-             ['name' => 'Graphique',],
-             ['name' => 'Peinture',],
-             ['name' => 'Illustration',],
-             ['name' => 'Maquette',],
+             ['name' => 'Réaliste',
+              'tag' => 'realiste',],
+             ['name' => 'Graphique',
+              'tag' => 'graphique',],
+             ['name' => 'Peinture',
+              'tag' => 'peinture',],
+             ['name' => 'Illustration',
+              'tag' => 'illustration',],
+             ['name' => 'Maquette',
+              'tag' => 'maquette',],
          ]);
 
          DB::table('seasontimes')->delete();
          DB::table('seasontimes')->insert([
-             ['name' => 'Printemps',],
-             ['name' => 'Été',],
-             ['name' => 'Automne',],
-             ['name' => 'Hiver',],
+             ['name' => 'Printemps',
+              'tag' => 'printemps',],
+             ['name' => 'Été',
+              'tag' => 'ete',],
+             ['name' => 'Automne',
+              'tag' => 'automne',],
+             ['name' => 'Hiver',
+              'tag' => 'hiver',],
          ]);
 
          DB::table('weathers')->delete();
          DB::table('weathers')->insert([
-             ['name' => 'Dégagé',],
-             ['name' => 'Nuageux',],
-             ['name' => 'Pluvieux',],
+             ['name' => 'Dégagé',
+              'tag' => 'degage',],
+             ['name' => 'Nuageux',
+              'tag' => 'nuageux',],
+             ['name' => 'Pluvieux',
+              'tag' => 'pluvieux',],
          ]);
 
          DB::table('daytimes')->delete();
          DB::table('daytimes')->insert([
-             ['name' => 'Matin',],
-             ['name' => 'Milieu journée',],
-             ['name' => 'Soir',],
-             ['name' => 'Nuit',],
+             ['name' => 'Matin',
+              'tag' => 'matin',],
+             ['name' => 'Milieu journée',
+              'tag' => 'millieu-journee',],
+             ['name' => 'Soir',
+              'tag' => 'soir',],
+             ['name' => 'Nuit',
+              'tag' => 'nuit',],
          ]);
 
          DB::table('lights')->delete();
          DB::table('lights')->insert([
-             ['name' => 'Diffuse',],
-             ['name' => 'Direct',],
-             ['name' => 'Spot',],
-             ['name' => 'Artificielle',],
+             ['name' => 'Diffuse',
+              'tag' => 'diffuse',],
+             ['name' => 'Direct',
+              'tag' => 'direct',],
+             ['name' => 'Spot',
+              'tag' => 'spot',],
+             ['name' => 'Artificielle',
+              'tag' => 'artificielle',],
          ]);
 
          DB::table('compositions')->delete();
          DB::table('compositions')->insert([
-             ['name' => 'Central',],
-             ['name' => 'Frontal',],
-             ['name' => 'Drone',],
-             ['name' => 'Vertical',],
+             ['name' => 'Central',
+              'tag' => 'central',],
+             ['name' => 'Frontal',
+              'tag' => 'frontal',],
+             ['name' => 'Drone',
+              'tag' => 'drone',],
+             ['name' => 'Vertical',
+              'tag' => 'vertical',],
          ]);
 
          DB::table('assignements')->delete();
          DB::table('assignements')->insert([
-             ['name' => 'Logement',],
-             ['name' => 'Public',],
-             ['name' => 'Commercial',],
-             ['name' => 'EMS',],
-             ['name' => 'École',],
-             ['name' => 'Culture',],
-             ['name' => 'Urbanisme',],
+             ['name' => 'Logement',
+              'tag' => 'logement',],
+             ['name' => 'Public',
+              'tag' => 'public',],
+             ['name' => 'Commercial',
+              'tag' => 'commercial',],
+             ['name' => 'EMS',
+              'tag' => 'ems',],
+             ['name' => 'École',
+              'tag' => 'ecole',],
+             ['name' => 'Culture',
+              'tag' => 'culture',],
+             ['name' => 'Urbanisme',
+              'tag' => 'urbanisme',],
          ]);
 
         //
