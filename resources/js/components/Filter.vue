@@ -9,15 +9,16 @@
 
 <template>
         <li>
-            <a>{{ this.filterName }}
-                <a v-if="actives.length > 0" v-on:click="cleanFilters()"></a>
+            <a :class="{ 'filter-active': activeFilters.length > 0 }">
+                {{ __('filter-categories.'.concat(this.categorie)) }}
+                <a v-if="activeFilters.length > 0" v-on:click="resetFilters()"></a>
             </a>
 
             <ul class="menu">
-                <li  v-for="filter in filters":class="{
+                <li  v-for="filter in filters" :class="{
                     'filter-selected': filterIsSelected(filter)
                 }">
-                    <a v-on:click="click(filter)">{{ filter.name }}</a>
+                    <a v-on:click="selectFilter(filter)">{{ filter.name }}</a>
                 </li>
             </ul>
         </li>
@@ -25,39 +26,36 @@
 
 <script>
 export default {
-    props: ['filterName'],
+    props: ['categorie'],
 
     created(){
-        this.$store.dispatch( 'loadFilters' , this.filterName);
+        this.$store.dispatch( 'loadFilters' , this.categorie);
     },
 
     methods: {
-
-        click(filter) {
-            if (this.filterIsSelected(filter)){
-                var activeFilters = this.actives;
-                var filtered = activeFilters.filter(function(value, index, arr){ return value != filter.tag;});
-                if (filtered.length == 0){
-                    this.cleanFilters();
-                } else {
-                    this.$router.push({ query: Object.assign({}, this.$route.query, { [this.filterName]: filtered.join('|') }) });
-                }
-
+        selectFilter(filter) {
+            var activeFiltersArray = this.activeFilters.slice();
+            if (!this.filterIsSelected(filter)){
+                activeFiltersArray.push(filter.tag);
+                this.$router.push({ query: Object.assign({}, this.$route.query, { [this.categorie]: activeFiltersArray.join('|') }) });
             } else {
-                var activeFilters = this.actives;
-                activeFilters.push(filter.tag);
-                this.$router.push({ query: Object.assign({}, this.$route.query, { [this.filterName]: activeFilters.join('|') }) });
+                var filteredFiltersArray = activeFiltersArray.filter(function(value, index, arr){ return value != filter.tag;});
+                if (filteredFiltersArray.length == 0){
+                    this.resetFilters();
+                } else {
+                    this.$router.push({ query: Object.assign({}, this.$route.query, { [this.categorie]: filteredFiltersArray.join('|') }) });
+                }
             }
         },
 
-        cleanFilters(){
-            var myQuery = Object.assign({}, this.$route.query);
-            delete myQuery[this.filterName];
-            this.$router.push({ query: myQuery});
+        resetFilters(){
+            var urlQuery = Object.assign({}, this.$route.query);
+            delete urlQuery[this.categorie];
+            this.$router.push({ query: urlQuery});
         },
 
         filterIsSelected(filter){
-            return this.actives.includes(filter.tag);
+            return this.activeFilters.includes(filter.tag);
         },
     },
 
@@ -65,17 +63,14 @@ export default {
     Defines the computed properties on the component.
     */
     computed: {
-        /*
-        Gets the renders load status
-        */
         filters(){
-            return this.$store.getters.getFilters(this.filterName);
+            return this.$store.getters.getFilters(this.categorie);
         },
 
-        actives(){
-            var activeFilters = this.$store.state.route.query[this.filterName];
-            if (activeFilters){
-                return activeFilters.split('|');
+        activeFilters(){
+            var filters = this.$store.state.route.query[this.categorie];
+            if (filters){
+                return filters.split('|');
             }
             return [];
         },

@@ -23,6 +23,8 @@ import Vue from 'vue'
 import router from './routes.js'
 import store from './store.js'
 
+Vue.mixin(require('./mixins/translator'))
+
 const unsync = sync(store, router)
 
 new Vue({

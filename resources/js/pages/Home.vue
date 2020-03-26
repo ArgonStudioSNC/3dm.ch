@@ -13,8 +13,8 @@
         </ul>
 
         <ul class="dropdown menu" data-dropdown-menu>
-            <filterComponent filter-name="seasontimes"></filterComponent>
-            <filterComponent filter-name="daytimes"></filterComponent>
+            <filterComponent categorie="seasontimes"></filterComponent>
+            <filterComponent categorie="daytimes"></filterComponent>
         </ul>
     </div>
 
