@@ -47,7 +47,15 @@ class FiltersController extends Controller
         $assignements = Assignement::all();
         $countries = Country::all();
         return response()->json( [
-            'seasontimes' => $seasontimes
+            'offices' => $offices,
+            'types' => $types,
+            'styles' => $styles,
+            'seasontimes' => $seasontimes,
+            'weathers' => $weathers,
+            'daytimes' => $daytimes,
+            'compositions' => $compositions,
+            'assignements' => $assignements,
+            'countries' => $countries,
         ]);
     }
 

@@ -41,9 +41,9 @@ table {
 }
 
 /**
- * Foundation for Sites by ZURB
- * Version 6.6.1
- * foundation.zurb.com
+ * Foundation for Sites
+ * Version 6.6.2
+ * https://get.foundation
  * Licensed under MIT Open Source
  */
 @media print, screen and (min-width: 40em) {
@@ -3433,8 +3433,9 @@ a.button:hover, a.button:focus {
 .button-group {
   margin-bottom: 1rem;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: stretch;
+  flex-grow: 1;
 }
 .button-group::before, .button-group::after {
   display: table;
@@ -3444,6 +3445,9 @@ a.button:hover, a.button:focus {
 }
 .button-group::after {
   clear: both;
+}
+.button-group::before, .button-group::after {
+  display: none;
 }
 .button-group .button {
   margin: 0;
@@ -3466,6 +3470,7 @@ a.button:hover, a.button:focus {
 }
 .button-group.expanded .button {
   flex: 1 1 0px;
+  margin-right: 0;
 }
 .button-group.primary .button, .button-group.primary .button.disabled, .button-group.primary .button[disabled], .button-group.primary .button.disabled:hover, .button-group.primary .button[disabled]:hover, .button-group.primary .button.disabled:focus, .button-group.primary .button[disabled]:focus {
   background-color: #1779ba;
@@ -3615,6 +3620,7 @@ a.button:hover, a.button:focus {
 }
 .button-group.stacked.expanded .button, .button-group.stacked-for-small.expanded .button, .button-group.stacked-for-medium.expanded .button {
   flex: 1 1 0px;
+  margin-right: 0;
 }
 @media print, screen and (min-width: 40em) {
   .button-group.stacked-for-small .button {

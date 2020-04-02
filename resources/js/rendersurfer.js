@@ -23,11 +23,15 @@ import Vue from 'vue'
 import router from './routes.js'
 import store from './store.js'
 
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect)
+
 Vue.mixin(require('./mixins/translator'))
 
 const unsync = sync(store, router)
 
 new Vue({
     router,
-    store
+    store,
+    vSelect
 }).$mount('#app')

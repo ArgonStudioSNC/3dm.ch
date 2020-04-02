@@ -12,17 +12,7 @@ export const filters = {
     Defines the state being monitored for the module.
     */
     state: {
-        offices: [],
-        types: [],
-        styles: [],
-        seasontimes: [],
-        weathers: [],
-        daytimes: [],
-        lights: [],
-        compositions: [],
-        assignements: [],
-        countries: []
-        
+        filters: [],
     },
 
     /*
@@ -32,22 +22,15 @@ export const filters = {
         /*
         Loads the filters from the API
         */
-        loadFilters( { commit }, name ){
-            FilterAPI.find(name)
+        loadFilters( { commit } ){
+            FilterAPI.all()
             .then( function( response ){
-                commit( 'setFilters', {
-                    name: name,
-                    filters: response.data
-                });
+                commit( 'setFilters', response.data);
             })
             .catch( function(){
-                commit( 'setFilters', {
-                    name: name,
-                    filters: []
-                });
+                commit( 'setFilters', [] );
             });
-        }
-
+        },
     },
 
     /*
@@ -57,9 +40,9 @@ export const filters = {
         /*
         Sets the filters
         */
-        setFilters( state, payload){
-            state[payload.name] = payload.filters;
-        }
+        setFilters( state, filters){
+            state.filters = filters;
+        },
     },
 
     /*
@@ -70,7 +53,7 @@ export const filters = {
         Returns the filters.
         */
         getFilters( state ){
-            return name => state[name];
-        }
-    }
+            return state.filters;
+        },
+    },
 }
