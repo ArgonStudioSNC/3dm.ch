@@ -20,7 +20,7 @@ export const FiltersMixin = {
 
                 activeFilters[cat] = tagArray;
             }
-            
+
             return activeFilters;
         },
     },
@@ -40,6 +40,9 @@ export const FiltersMixin = {
             };
 
             return tagArray.some(function(tag) {
+                if (category === 'countries'){
+                    return render[dict[category]] === tag.code;
+                }
                 return render[dict[category]] === tag.id;
             });
         }

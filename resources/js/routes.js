@@ -47,7 +47,7 @@ export default new VueRouter({
                     path: 'renders/:id',
                     name: 'renders.show',
                     component: Vue.component( 'Render', require( './pages/RendersShow.vue' ) ).default
-                }
+                },
             ]
         }
     ]

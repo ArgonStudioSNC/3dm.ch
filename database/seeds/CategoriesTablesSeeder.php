@@ -11,102 +11,176 @@ class CategoriesTablesSeeder extends Seeder
      */
      public function run()
      {
+         DB::table('offices')->delete();
+         DB::table('offices')->insert([
+             ['id' => 1,
+              'name' => 'MIR',
+              'tag' => 'mir',],
+             ['id' => 2,
+              'name' => 'Filippo Bolognese',
+              'tag' => 'filippo-bolognese',],
+             ['id' => 3,
+              'name' => 'maaars',
+              'tag' => 'maaars',],
+             ['id' => 4,
+              'name' => 'Guachinarte',
+              'tag' => 'guachinarte',],
+             ['id' => 5,
+              'name' => 'Bildbauer',
+              'tag' => 'bildbauer',],
+             ['id' => 6,
+              'name' => 'ONIRISM',
+              'tag' => 'onirism',],
+             ['id' => 7,
+              'name' => 'Nightnurse',
+              'tag' => 'nightnurse',],
+             ['id' => 8,
+              'name' => 'Brunecky',
+              'tag' => 'brunecky',],
+             ['id' => 9,
+              'name' => 'Loomn',
+              'tag' => 'loomn',],
+             ['id' => 10,
+              'name' => 'Bloomimages',
+              'tag' => 'bloomimages',],
+         ]);
+
          DB::table('types')->delete();
          DB::table('types')->insert([
-             ['name' => 'Intérieur',
+             ['id' => 1,
+              'name' => 'Intérieur',
               'tag' => 'interieur',],
-             ['name' => 'Extérieur',
+             ['id' => 2,
+              'name' => 'Extérieur',
               'tag' => 'exterieur',],
          ]);
 
          DB::table('styles')->delete();
          DB::table('styles')->insert([
-             ['name' => 'Réaliste',
+             ['id' => 1,
+              'name' => 'Réaliste',
               'tag' => 'realiste',],
-             ['name' => 'Graphique',
+             ['id' => 2,
+              'name' => 'Graphique',
               'tag' => 'graphique',],
-             ['name' => 'Peinture',
+             ['id' => 3,
+              'name' => 'Peinture',
               'tag' => 'peinture',],
-             ['name' => 'Illustration',
+             ['id' => 4,
+              'name' => 'Illustration',
               'tag' => 'illustration',],
-             ['name' => 'Maquette',
+             ['id' => 5,
+              'name' => 'Maquette',
               'tag' => 'maquette',],
          ]);
 
          DB::table('seasontimes')->delete();
          DB::table('seasontimes')->insert([
-             ['name' => 'Printemps',
+             ['id' => 1,
+              'name' => 'Printemps',
               'tag' => 'printemps',],
-             ['name' => 'Été',
+             ['id' => 2,
+              'name' => 'Été',
               'tag' => 'ete',],
-             ['name' => 'Automne',
+             ['id' => 3,
+              'name' => 'Automne',
               'tag' => 'automne',],
-             ['name' => 'Hiver',
+             ['id' => 4,
+              'name' => 'Hiver',
               'tag' => 'hiver',],
          ]);
 
          DB::table('weathers')->delete();
          DB::table('weathers')->insert([
-             ['name' => 'Dégagé',
+             ['id' => 1,
+              'name' => 'Dégagé',
               'tag' => 'degage',],
-             ['name' => 'Nuageux',
+             ['id' => 2,
+              'name' => 'Nuageux',
               'tag' => 'nuageux',],
-             ['name' => 'Pluvieux',
+             ['id' => 3,
+              'name' => 'Pluvieux',
               'tag' => 'pluvieux',],
          ]);
 
          DB::table('daytimes')->delete();
          DB::table('daytimes')->insert([
-             ['name' => 'Matin',
+             ['id' => 1,
+              'name' => 'Matin',
               'tag' => 'matin',],
-             ['name' => 'Milieu journée',
+             ['id' => 2,
+              'name' => 'Milieu journée',
               'tag' => 'millieu-journee',],
-             ['name' => 'Soir',
+             ['id' => 3,
+              'name' => 'Soir',
               'tag' => 'soir',],
-             ['name' => 'Nuit',
+             ['id' => 4,
+              'name' => 'Nuit',
               'tag' => 'nuit',],
          ]);
 
          DB::table('lights')->delete();
          DB::table('lights')->insert([
-             ['name' => 'Diffuse',
+             ['id' => 1,
+              'name' => 'Diffuse',
               'tag' => 'diffuse',],
-             ['name' => 'Direct',
+             ['id' => 2,
+              'name' => 'Direct',
               'tag' => 'direct',],
-             ['name' => 'Spot',
+             ['id' => 3,
+              'name' => 'Spot',
               'tag' => 'spot',],
-             ['name' => 'Artificielle',
+             ['id' => 4,
+              'name' => 'Artificielle',
               'tag' => 'artificielle',],
          ]);
 
          DB::table('compositions')->delete();
          DB::table('compositions')->insert([
-             ['name' => 'Central',
+             ['id' => 1,
+              'name' => 'Central',
               'tag' => 'central',],
-             ['name' => 'Frontal',
+             ['id' => 2,
+              'name' => 'Frontal',
               'tag' => 'frontal',],
-             ['name' => 'Drone',
+             ['id' => 3,
+              'name' => 'Drone',
               'tag' => 'drone',],
-             ['name' => 'Vertical',
+             ['id' => 4,
+              'name' => 'Vertical',
               'tag' => 'vertical',],
          ]);
 
          DB::table('assignements')->delete();
          DB::table('assignements')->insert([
-             ['name' => 'Logement',
+             ['id' => 1,
+              'name' => 'Logement',
               'tag' => 'logement',],
-             ['name' => 'Public',
+             ['id' => 2,
+              'name' => 'Public',
               'tag' => 'public',],
-             ['name' => 'Commercial',
+             ['id' => 3,
+              'name' => 'Commercial',
               'tag' => 'commercial',],
-             ['name' => 'EMS',
+             ['id' => 4,
+              'name' => 'EMS',
               'tag' => 'ems',],
-             ['name' => 'École',
+             ['id' => 5,
+              'name' => 'École',
               'tag' => 'ecole',],
-             ['name' => 'Culture',
+             ['id' => 6,
+              'name' => 'Culture',
               'tag' => 'culture',],
-             ['name' => 'Urbanisme',
+             ['id' => 7,
+              'name' => 'Urbanisme',
               'tag' => 'urbanisme',],
+         ]);
+
+         DB::table('countries')->delete();
+         DB::table('countries')->insert([
+             ['code' => 'ch',
+              'name' => 'Suisse',
+              'tag' => 'suisse',],
          ]);
 
         //

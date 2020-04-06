@@ -8,6 +8,8 @@ class Render extends Model
 {
     protected $table = 'renders';
 
+    protected $fillable = ['name'];
+
     /**
      * Retourne le bureau qui a réalisé le rendu.
      */

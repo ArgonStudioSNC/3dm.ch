@@ -18,4 +18,6 @@ Route::namespace('Web')->group(function () {
     Route::get('/about', 'SiteController@about')->name('www.about');
 
     Route::get('/rendersurfer', 'RendersurferController@index')->name('rendersurfer.index');
+    Route::get('/admin', 'AdminController@index')->name('admin.index');
+    Route::post('/admin/uploadFile', 'AdminController@uploadFile')->name('admin.uploadFile');;
 });
