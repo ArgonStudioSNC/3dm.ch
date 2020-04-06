@@ -25,6 +25,7 @@ Vue.use( Vuex )
 */
 import { renders } from './modules/renders.js'
 import { filters } from './modules/filters.js'
+import { pagination } from './modules/pagination.js'
 
 /*
   Exports our data store.
@@ -32,6 +33,7 @@ import { filters } from './modules/filters.js'
 export default new Vuex.Store({
     modules: {
         renders,
-        filters
+        filters,
+        pagination
     }
 });

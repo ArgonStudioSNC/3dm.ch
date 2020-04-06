@@ -11,6 +11,8 @@
         <ul>
             <li v-for="render in renders">{{ render.name }}</li>
         </ul>
+
+        <a class="button" v-on:click="showMore()">Show more</a>
     </div>
 
 </template>
@@ -40,7 +42,7 @@ export default {
         Gets the renders
         */
         renders(){
-            return this.paginate( this.applyFilters(this.$store.getters.getRenders, this.activeFilters), 10);
+            return this.paginate( this.applyFilters(this.$store.getters.getRenders, this.activeFilters), this.$store.getters.getMaxRenders);
         },
     },
 
@@ -64,6 +66,10 @@ export default {
                                 return result;
                             }, {});
             return sliced;
+        },
+
+        showMore(){
+            this.$store.dispatch( 'showMore', 50 );
         },
     },
 
