@@ -8,9 +8,10 @@
         <span v-show="rendersLoadStatus == 1">Loading</span>
         <span v-show="rendersLoadStatus == 2">Renders loaded successfully!</span>
         <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span>
-        <ul>
-            <li v-for="render in renders">{{ render.name }}</li>
-        </ul>
+
+        <div>
+            <renderCardComponent v-for="(render, key) in renders" :key="render.id" v-bind:render="render"></renderCardComponent>
+        </div>
 
         <a class="button" v-on:click="showMore()">Show more</a>
     </div>
@@ -18,9 +19,14 @@
 </template>
 
 <script>
+import RenderCardComponent from './Card.vue';
 import { FiltersMixin } from '../../mixins/filters';
 
 export default {
+    components: {
+      RenderCardComponent,
+    },
+
     mixins: [FiltersMixin],
 
     created(){

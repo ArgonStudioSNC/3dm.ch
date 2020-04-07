@@ -5,16 +5,16 @@
 
 <template>
     <ul>
-        <categoryComponent v-for="(category, key) in filterCategories" v-bind:key="key" v-bind:category="category"></categoryComponent>
+        <filterCategoryComponent v-for="(options, category) in filters" :key="category" v-bind:filter="{category, options}"></filterCategoryComponent>
     </ul>
 </template>
 
 <script>
-import CategoryComponent from './Category.vue';
+import FilterCategoryComponent from './Category.vue';
 
 export default {
     components: {
-      CategoryComponent,
+      FilterCategoryComponent,
     },
 
     created(){
@@ -28,8 +28,8 @@ export default {
         /*
         Gets the filters
         */
-        filterCategories(){
-            return Object.keys(this.$store.getters.getFilters);
+        filters(){
+            return this.$store.getters.getFilters;
         }
     }
 }

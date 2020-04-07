@@ -25,6 +25,13 @@ export default {
     },
 
     /*
+        GET     /api/v1/renders/p/{filename}
+    */
+    picture: function(filename){
+        return client.get(`renders/p/${filename}`, { responseType: 'blob', });
+    },
+
+    /*
         POST    /api/v1/renders
     */
     create: function(name, filename){

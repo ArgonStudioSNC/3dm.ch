@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 /*
@@ -39,6 +40,27 @@ Route::namespace('API')->prefix('v1')->group(function(){
     | Description:    Gets an individual render
     */
     Route::get('/renders/{id}', 'RendersController@show');
+
+    /*
+    |-------------------------------------------------------------------------------
+    | Get An Render Image
+    |-------------------------------------------------------------------------------
+    | URL:            /api/v1/renders/p/{filename}
+    | Method:         GET
+    | Description:    Gets a render image
+    */
+    Route::middleware('auth:api')->get('/renders/p/{filename}', function ($filename)
+    {
+        $disk = Storage::disk('rendersurfer');
+        if($disk->exists($filename)){
+            $file = $disk->get($filename);
+            $meta = $disk->mimeType($filename);
+            $response = Response::make($file, 200);
+            $response->header("Content-Type", $meta);
+            return $response;
+        }
+        abort(404);
+    });
 
     /*
     |-------------------------------------------------------------------------------

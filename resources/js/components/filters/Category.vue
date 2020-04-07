@@ -8,7 +8,7 @@
     <li>
         <v-select
           multiple
-          :options="filtersFromCategory"
+          :options="filter.options"
           label="name"
           :value="activeFiltersFromCategory"
           :reduce="name => name.tag"
@@ -21,7 +21,12 @@
 import { FiltersMixin } from '../../mixins/filters';
 
 export default {
-    props: ['category'],
+    props: {
+        filter: {
+            type: Object,
+            required: true,
+        },
+    },
 
     mixins: [FiltersMixin],
 
@@ -29,13 +34,14 @@ export default {
         updateFilters(filtersArray) {
             if (filtersArray.length == 0) this.resetFilters();
             else {
-                this.$router.push({ query: Object.assign({}, this.$route.query, { [this.category]: filtersArray.join('|') }) });
+                this.$router.push({ query: Object.assign({}, this.$route.query, { [this.filter.category]: filtersArray.join('|') }) });
             }
+            this.$store.dispatch( 'resetMaxRenders' );
         },
 
         resetFilters(){
             var urlQuery = Object.assign({}, this.$route.query);
-            delete urlQuery[this.category];
+            delete urlQuery[this.filter.category];
             this.$router.push({ query: urlQuery});
         },
     },
@@ -44,12 +50,8 @@ export default {
     Defines the computed properties on the component.
     */
     computed: {
-        filtersFromCategory() {
-            return this.filters[this.category]
-        },
-
         activeFiltersFromCategory(){
-            return this.activeFilters[this.category];
+            return this.activeFilters[this.filter.category];
         },
 
     },

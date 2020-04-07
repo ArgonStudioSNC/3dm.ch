@@ -18,7 +18,14 @@ export const pagination = {
     */
     actions: {
         /*
-        Loads the filters from the API
+        Resets the number of renders shown
+        */
+        resetMaxRenders( { commit } ){
+            commit( 'setMaxRenders', 25);
+        },
+
+        /*
+        Increase the number of renders shown
         */
         showMore( { commit, state}, val ){
             commit( 'setMaxRenders', state.maxRenders + val);
@@ -30,7 +37,7 @@ export const pagination = {
     */
     mutations: {
         /*
-        Sets the filters
+        Sets the maximum number of renders shown
         */
         setMaxRenders( state, val){
             state.maxRenders = val;
@@ -42,7 +49,7 @@ export const pagination = {
     */
     getters: {
         /*
-        Returns the filters.
+        Returns the maximum number of renders shown.
         */
         getMaxRenders( state ){
             return state.maxRenders;
