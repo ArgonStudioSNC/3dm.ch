@@ -45,16 +45,17 @@ Route::namespace('API')->prefix('v1')->group(function(){
     |-------------------------------------------------------------------------------
     | Get An Render Image
     |-------------------------------------------------------------------------------
-    | URL:            /api/v1/renders/p/{filename}
+    | URL:            /api/v1/renders/p/{size}/{filename}
     | Method:         GET
-    | Description:    Gets a render image
+    | Description:    Gets a render image at the specified size
     */
-    Route::middleware('auth:api')->get('/renders/p/{filename}', function ($filename)
+    Route::middleware('auth:api')->get('/renders/p/{size}/{filename}', function ($size, $filename)
     {
+        $filepath = $size.'/'.$filename;
         $disk = Storage::disk('rendersurfer');
-        if($disk->exists($filename)){
-            $file = $disk->get($filename);
-            $meta = $disk->mimeType($filename);
+        if($disk->exists($filepath)){
+            $file = $disk->get($filepath);
+            $meta = $disk->mimeType($filepath);
             $response = Response::make($file, 200);
             $response->header("Content-Type", $meta);
             return $response;

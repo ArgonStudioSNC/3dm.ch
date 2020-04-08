@@ -27,8 +27,8 @@ export default {
     /*
         GET     /api/v1/renders/p/{filename}
     */
-    picture: function(filename){
-        return client.get(`renders/p/${filename}`, { responseType: 'blob', });
+    picture: function(filename, size = 'original'){
+        return client.get(`renders/p/${size}/${filename}`, { responseType: 'blob', });
     },
 
     /*
