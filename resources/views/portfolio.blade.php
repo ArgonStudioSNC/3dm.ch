@@ -439,19 +439,19 @@ x.addListener(loadBackground);
             <div class="parallax-window d-none d-sm-block" data-pos-y="bottom" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/media/renders/render-centre-scolaire-champsec-sion-bartbuchhoferarchitektenag-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
-                        <img onLoad="setParallaxRatio(this)" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le texte alternatif--}}
+                        <source srcset="{{ asset('/media/renders/render-centre-scolaire-champsec-sion-bbharchitectes-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <img onLoad="setParallaxRatio(this)" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par BBH Architectes'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/media/renders/render-centre-scolaire-champsec-sion-bartbuchhoferarchitektenag-2018@640.jpg') }}" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/media/renders/render-centre-scolaire-champsec-sion-bbharchitectes-2018@640.jpg') }}" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #DAB394;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Centre scolaire de Champsec</h1> {{--Compléter le titre--}}
                 <h2 style="font-style:italic;">Sion, CH</h2> {{--Compléter le lieu--}}
-                <h2>Bart & Buchhofer Architekten AG</h2> {{--Compléter le bureau--}}
+                <h2>BBH Architectes</h2> {{--Compléter le bureau--}}
             </div>
         </div>
     </div>
