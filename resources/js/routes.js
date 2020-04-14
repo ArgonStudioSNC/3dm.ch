@@ -29,14 +29,9 @@ export default new VueRouter({
             component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ).default,
             children: [
                 {
-                    path: 'home',
-                    name: 'home',
-                    component: Vue.component( 'Home', require( './pages/Home.vue' ) ).default
-                },
-                {
-                    path: 'renders',
-                    name: 'renders.index',
-                    component: Vue.component( 'Renders', require( './pages/RendersIndex.vue' ) ).default
+                    path: 'search',
+                    name: 'renders.search',
+                    component: Vue.component( 'Renders', require( './pages/RendersSearch.vue' ) ).default
                 },
                 {
                     path: 'renders/create',

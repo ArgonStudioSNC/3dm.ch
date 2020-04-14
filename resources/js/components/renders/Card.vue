@@ -6,7 +6,7 @@
 <template>
     <div>
         {{ render.name }}
-        <img style="width:50px;" :src="base64Data || 'https://f0.pngfuel.com/png/349/251/iphone-5s-ios-progress-bar-icon-load-the-map-loading-png-clip-art.png'" />
+        <!--<img style="width:50px;" :src="base64Data || 'https://f0.pngfuel.com/png/349/251/iphone-5s-ios-progress-bar-icon-load-the-map-loading-png-clip-art.png'" />-->
     </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
             this.base64Data = reader.result;
         };
 
-        RenderAPI.picture('1541178083000.jpg')
+        RenderAPI.picture('1541178083000.jpg', 'small')
         .then( response => {
             reader.readAsDataURL(response.data);
         });

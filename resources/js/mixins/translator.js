@@ -22,6 +22,8 @@ module.exports = {
                     : key
             }
 
+            console.log(replace);
+
             _.forEach(replace, (value, key) => {
                 translation = translation.replace(':' + key, value)
             })

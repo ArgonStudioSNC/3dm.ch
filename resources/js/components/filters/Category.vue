@@ -5,16 +5,16 @@
 </style>
 
 <template>
-    <li>
-        <v-select
-          multiple
-          :options="filter.options"
-          label="name"
-          :value="activeFiltersFromCategory"
-          :reduce="name => name.tag"
-          @input="updateFilters"
-        />
-    </li>
+    <v-select
+      multiple
+      :options="filter.options"
+      label="name"
+      :value="activeFiltersFromCategory"
+      :reduce="name => name.tag"
+      @input="updateFilters"
+
+      :placeholder="__('filter-categories', filter.category)"
+    />
 </template>
 
 <script>
