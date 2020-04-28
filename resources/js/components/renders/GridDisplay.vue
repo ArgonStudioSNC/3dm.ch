@@ -1,6 +1,29 @@
 <style lang="scss">
 @import '~@/abstracts/_variables.scss';
 
+.masonry-wrapper {
+  padding: 1.5em;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.masonry {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(1, minmax(100px,1fr));
+  grid-auto-rows: 0;
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    grid-template-columns: repeat(2, minmax(100px,1fr));
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    grid-template-columns: repeat(3, minmax(100px,1fr));
+  }
+}
+
 </style>
 
 <template>
@@ -9,8 +32,10 @@
         <span v-show="rendersLoadStatus == 2">Renders loaded successfully!</span>
         <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span>
 
-        <div>
-            <renderCardComponent v-for="(render, key) in renders" :key="render.id" v-bind:render="render"></renderCardComponent>
+        <div class="masonry-wrapper">
+            <div class="masonry">
+                <renderCardComponent v-for="(render, key) in renders" :key="render.id" v-bind:render="render"></renderCardComponent>
+            </div>
         </div>
 
         <a class="button" v-on:click="showMore()">Show more</a>
@@ -21,16 +46,25 @@
 <script>
 import RenderCardComponent from './Card.vue';
 import { FiltersMixin } from '../../mixins/filters';
+import { MasonryMixin } from '../../mixins/masonry';
 
 export default {
     components: {
       RenderCardComponent,
     },
 
-    mixins: [FiltersMixin],
+    mixins: [FiltersMixin, MasonryMixin],
 
     created(){
         this.$store.dispatch( 'loadRenders' );
+    },
+
+    mounted(){
+        /* Resize all the grid items on the load and resize events */
+        var masonryEvents = ['load', 'resize'];
+        masonryEvents.forEach( event => {
+            window.addEventListener(event, this.resizeAllMasonryItems);
+        } );
     },
 
     /*

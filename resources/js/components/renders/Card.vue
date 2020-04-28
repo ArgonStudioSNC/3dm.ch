@@ -4,14 +4,16 @@
 </style>
 
 <template>
-    <div>
-        {{ render.name }}
-        <!--<img style="width:50px;" :src="base64Data || 'https://f0.pngfuel.com/png/349/251/iphone-5s-ios-progress-bar-icon-load-the-map-loading-png-clip-art.png'" />-->
+    <div ref="card" class="masonry-brick">
+        <div class="masonry-content">
+            <img @load="onLoad" :src="base64Data || 'https://f0.pngfuel.com/png/349/251/iphone-5s-ios-progress-bar-icon-load-the-map-loading-png-clip-art.png'" />
+        </div>
     </div>
 </template>
 
 <script>
 import RenderAPI from '../../api/render.js';
+import { MasonryMixin } from '../../mixins/masonry';
 
 export default {
     props: {
@@ -20,6 +22,8 @@ export default {
             required: true,
         },
     },
+
+    mixins: [MasonryMixin],
 
     data () {
         return {
@@ -34,10 +38,16 @@ export default {
             this.base64Data = reader.result;
         };
 
-        RenderAPI.picture('1541178083000.jpg', 'small')
+        RenderAPI.picture(this.render.filename, 'small')
         .then( response => {
             reader.readAsDataURL(response.data);
         });
+    },
+
+    methods: {
+        onLoad() {
+            this.resizeMasonryItem(this.$refs.card);
+        }
     },
 }
 </script>

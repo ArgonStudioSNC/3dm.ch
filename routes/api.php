@@ -51,16 +51,13 @@ Route::namespace('API')->prefix('v1')->group(function(){
     */
     Route::middleware('auth:api')->get('/renders/p/{size}/{filename}', function ($size, $filename)
     {
-        $filepath = $size.'/'.$filename;
-        $disk = Storage::disk('rendersurfer');
-        if($disk->exists($filepath)){
-            $file = $disk->get($filepath);
-            $meta = $disk->mimeType($filepath);
-            $response = Response::make($file, 200);
-            $response->header("Content-Type", $meta);
-            return $response;
+        $filepath = $size.DIRECTORY_SEPARATOR.$filename;
+
+        if (!Storage::disk('rendersurfer')->exists($filepath))
+        {
+            abort('404');
         }
-        abort(404);
+        return response()->file(storage_path('app'.DIRECTORY_SEPARATOR.'rendersurfer'.DIRECTORY_SEPARATOR.($filepath)));
     });
 
     /*
