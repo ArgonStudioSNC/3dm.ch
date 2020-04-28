@@ -53,6 +53,7 @@ class FiltersController extends Controller
             'seasontimes' => $seasontimes,
             'weathers' => $weathers,
             'daytimes' => $daytimes,
+            'lights' => $lights,
             'compositions' => $compositions,
             'assignements' => $assignements,
             'countries' => $countries,

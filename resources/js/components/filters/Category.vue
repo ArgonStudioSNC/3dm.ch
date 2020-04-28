@@ -37,7 +37,7 @@
         <multiselect
             :options="filter.options"
             :value="activeFiltersFromCategory"
-            @input="updateFilters"
+            @input="updateFiltersForCategory($event, filter)"
             track-by="id"
             label="name"
             :multiple="true"
@@ -71,22 +71,6 @@ export default {
     },
 
     mixins: [FiltersMixin],
-
-    methods: {
-        updateFilters(filtersArray) {
-            if (filtersArray.length == 0) this.resetFilters();
-            else {
-                this.$router.push({ query: Object.assign({}, this.$route.query, { [this.filter.category]: filtersArray.map(filter => filter.tag).join('|') }) });
-            }
-            this.$store.dispatch( 'resetMaxRenders' );
-        },
-
-        resetFilters(){
-            var urlQuery = Object.assign({}, this.$route.query);
-            delete urlQuery[this.filter.category];
-            this.$router.push({ query: urlQuery});
-        },
-    },
 
     /*
     Defines the computed properties on the component.

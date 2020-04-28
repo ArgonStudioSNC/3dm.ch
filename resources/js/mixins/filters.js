@@ -41,6 +41,25 @@ export const FiltersMixin = {
                 }
                 return render[dict[category]] === tag.id;
             });
-        }
+        },
+
+        updateFiltersForCategory(filtersArray, filter) {
+            if (filtersArray.length == 0) this.resetFilter(filter);
+            else {
+                this.$router.push({ query: Object.assign({}, this.$route.query, { [filter.category]: filtersArray.map(f => f.tag).join('|') }) });
+            }
+            this.$store.dispatch( 'resetMaxRenders' );
+        },
+
+        resetFilter(filter) {
+            var urlQuery = Object.assign({}, this.$route.query);
+            delete urlQuery[filter.category];
+            this.$router.push({ query: urlQuery});
+        },
+
+        resetAllFilters() {
+            this.$router.push({ query: {} });
+            this.$store.dispatch( 'resetMaxRenders' );
+        },
     }
 }
