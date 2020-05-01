@@ -1,44 +1,64 @@
 <style lang="scss">
 @import '~@/abstracts/_variables.scss';
+@import '~@/abstracts/_settings.scss';
 
-.masonry-wrapper {
-  padding: 1.5em;
-  max-width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-.masonry {
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(1, minmax(100px,1fr));
-  grid-auto-rows: 0;
-}
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
-  .masonry {
-    grid-template-columns: repeat(2, minmax(100px,1fr));
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .masonry {
-    grid-template-columns: repeat(3, minmax(100px,1fr));
-  }
+.render-grid {
+
+    .masonry-wrapper {
+        padding-top: 4em;
+        padding-bottom: 4em;
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .masonry {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(1, minmax(100px,1fr));
+        grid-auto-rows: 0;
+
+        @include breakpoint(medium) {
+            grid-template-columns: repeat(2, minmax(100px,1fr));
+        }
+        @include breakpoint(large) {
+            grid-template-columns: repeat(3, minmax(100px,1fr));
+        }
+        @include breakpoint(xlarge) {
+            grid-template-columns: repeat(4, minmax(100px,1fr));
+        }
+        @include breakpoint(xxlarge) {
+            grid-template-columns: repeat(5, minmax(100px,1fr));
+        }
+    }
+
+    .show-more {
+        min-width: 260px;
+        background-color: $theme-blue;
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        line-height: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
 }
 
 </style>
 
 <template>
-    <div>
-        <span v-show="rendersLoadStatus == 1">Loading</span>
+    <div class="render-grid">
+        <!-- <span v-show="rendersLoadStatus == 1">Loading</span>
         <span v-show="rendersLoadStatus == 2">Renders loaded successfully!</span>
-        <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span>
+        <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span> -->
 
         <div class="masonry-wrapper">
             <div class="masonry">
                 <renderCardComponent v-for="(render, key) in renders" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
-
-        <a class="button" v-on:click="showMore()">Show more</a>
+        <div class="grid-x align-center">
+            <button class="center show-more button" v-on:click="showMore()">{{ __('filters.show-more') }}</button>
+        </div>
     </div>
 
 </template>

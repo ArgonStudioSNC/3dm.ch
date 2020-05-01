@@ -14,16 +14,14 @@
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}" defer></script>
     <script src="{{ mix('js/rendersurfer.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/bf8f37f6e5.js" crossorigin="anonymous" defer></script>
 
     <!-- Styles -->
     <link href="{{ mix('css/rendersurfer.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <nav>
-        <a  href="{{ url('/rendersurfer') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-        <ul>
+    <nav class="user-nav">
+        <ul class="menu simple align-right">
             @guest
                 <li>
                     <a href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -34,16 +32,17 @@
                     </li>
                 @endif
             @else
+                <li class="menu-text">
+                    <i class="fas fa-user"></i>&nbsp;
+                    {{ Auth::user()->name }}
+                </li>
                 <li>
-                    <a href="#" role="button" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-
                     <div>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        <i class="fas fa-sign-out-alt"></i>
+                        {{ __('auth.Logout') }}
                         </a>
 
                         <form id='logout-form' action="{{ route('logout') }}" method="POST">

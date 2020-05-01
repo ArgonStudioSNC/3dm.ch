@@ -21,11 +21,18 @@ Vue.use( VueRouter )
     for the app.
 */
 export default new VueRouter({
+    mode: 'history',
     base: '/rendersurfer',
     routes: [
         {
+            path: '*',
+            name: 'catch-all',
+            redirect: '/',
+        },
+        {
             path: '/',
             name: 'layout',
+            redirect: 'search',
             component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ).default,
             children: [
                 {
@@ -41,9 +48,9 @@ export default new VueRouter({
                 {
                     path: 'renders/:id',
                     name: 'renders.show',
-                    component: Vue.component( 'Render', require( './pages/RendersShow.vue' ) ).default
+                    //component: Vue.component( 'Render', require( './pages/RendersShow.vue' ) ).default
                 },
             ]
-        }
+        },
     ]
 });

@@ -21,4 +21,7 @@ return [
     'compositions' => 'Composition',
     'assignements' => 'Affectation',
     'countries' => 'Pays',
+
+    'reset' => 'Réinitialiser les filtres',
+    'show-more' => 'Plus de résultats',
 ];

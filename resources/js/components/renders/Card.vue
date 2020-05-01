@@ -1,5 +1,10 @@
 <style lang="scss">
 @import '~@/abstracts/_variables.scss';
+@import '~@/abstracts/_settings.scss';
+
+img {
+    width: 100%;
+}
 
 </style>
 

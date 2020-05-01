@@ -39,7 +39,10 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            /* Disabled the rate limit for local app
+            * 'throttle:60,1',
+            */
+            'throttle:2000,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];

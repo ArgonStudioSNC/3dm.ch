@@ -17,7 +17,7 @@ Route::namespace('Web')->group(function () {
     Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
     Route::get('/about', 'SiteController@about')->name('www.about');
 
-    Route::get('/rendersurfer', 'RendersurferController@index')->name('rendersurfer.index');
+    Route::get('/rendersurfer/{vueroute?}', 'RendersurferController@index')->where('vueroute', '[\/\w\.-]*')->name('rendersurfer.index');
     Route::get('/admin', 'AdminController@index')->name('admin.index');
     Route::post('/admin/uploadFile', 'AdminController@uploadFile')->name('admin.uploadFile');
 });

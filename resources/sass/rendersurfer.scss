@@ -19,8 +19,22 @@ body {
 	font-family: $font-family-sans-serif;
 	font-size: $font-size-base;
 	line-height: $line-height-base;
-	font-weight: 300;
+	font-weight: $font-weight-base;
 	color: $light-black;
 
 	background-color: $body-bg;
+
+	padding-right: 0.625rem;
+	padding-left: 0.625rem;
+	@include breakpoint(xxlarge) {
+		padding-right: $body-padding-base;
+		padding-left: $body-padding-base;
+	}
+}
+
+.user-nav {
+	color: $light-black;
+	a, a:hover {
+		color: $theme-blue;
+	}
 }

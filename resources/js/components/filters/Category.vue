@@ -4,15 +4,18 @@
     @import '~@/abstracts/_settings.scss';
 
     .multiselect {
-        font-size: 17px;
+        font-size: inherit;
+        line-height: inherit;
+        min-height: 2.125em;
     }
 
     .multiselect__tags {
+        min-height: 2.125em;
         color: white;
         background-color: $theme-blue;
         border-radius: 0;
         border: none;
-        font-size: 17px;
+        padding: 0.4em 0 0.4em 1.7em;
     }
 
     .multiselect__content-wrapper {
@@ -44,11 +47,12 @@
             :show-labels="false"
             :close-on-select="false"
             :searchable="false"
+            :option-height="20"
             placeholder=""
             >
 
             <span slot="selection" slot-scope="{ values }">
-                <span>{{ __('filter-categories.' + filter.category) }}</span>
+                <span>{{ __('filters.' + filter.category) }}</span>
                 <span v-if="values.length">: {{ values.length }} filtres actifs</span>
             </span>
             <span class="multiselect__myselect" slot="caret" slot-scope="{ toggle }" @mousedown.prevent.stop="toggle"></span>

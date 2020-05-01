@@ -1,4 +1,6 @@
-<style>
+<style lang="scss">
+@import '~@/abstracts/_variables.scss';
+@import '~@/abstracts/_settings.scss';
 
 </style>
 
