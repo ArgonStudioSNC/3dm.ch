@@ -3,13 +3,18 @@
 @import '~@/abstracts/_settings.scss';
 
 #app-layout {
-    padding-top: 1.5em;
+    margin-top: 1.5em;
 }
 
 .logo {
-    position: absolute;
+    padding-bottom: 1.5em;
+    position: block;
     max-width: 200px;
     height: auto;
+
+    @include breakpoint(xxlarge) {
+        position: absolute;
+    }
 }
 
 </style>
