@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Rendersurfer'),
-
+    'name' => env('APP_NAME', '3DM - Visualisations architecturales'),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Environment

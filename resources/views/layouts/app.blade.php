@@ -24,11 +24,11 @@
         <ul class="menu simple align-right">
             @guest
                 <li>
-                    <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <!--<a href="{{ route('login') }}">{{ __('auth.Login') }}</a>-->
                 </li>
                 @if (Route::has('register'))
                     <li>
-                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a href="{{ route('register') }}">{{ __('auth.Register') }}</a>
                     </li>
                 @endif
             @else

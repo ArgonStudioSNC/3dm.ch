@@ -3,10 +3,15 @@
 @import '~@/abstracts/_settings.scss';
 
     .filter-bar {
+
         .grid-container {
-            max-width: 1200px;
+            max-width: 100%;
             margin-right: 0;
             padding: 0;
+
+            @include breakpoint(xxlarge) {
+                max-width: 1000px;
+            }
         }
 
         .filter-reset-button {
@@ -15,14 +20,14 @@
             position: relative;
             width: 100%;
             text-align: left;
-            font-size: 14px;
+            font-size: 13px;
             line-height: inherit;
-            min-height: 2.125em;
+            min-height: 1.75em;
             background-color: $light-brown;
             color: $theme-blue;
 
             span {
-                padding: 0.4em 0 0.4em 1.7em;
+                padding: 0.3em 0 0.3em 1.7em;
                 display: block;
 
                 &:hover {

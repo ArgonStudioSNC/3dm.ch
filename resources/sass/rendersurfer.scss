@@ -38,3 +38,18 @@ body {
 		color: $theme-blue;
 	}
 }
+
+.my-login-card {
+	max-width: 500px;
+	.card {
+		font-size: 10px;
+		border-color: $primary-color;
+		.card-divider {
+			color: $white;
+			background-color: $primary-color;
+		}
+		.button {
+			margin: 0;
+		}
+	}
+}

@@ -4,18 +4,19 @@
     @import '~@/abstracts/_settings.scss';
 
     .multiselect {
-        font-size: inherit;
+        font-size: 13px;
         line-height: inherit;
-        min-height: 2.125em;
+        min-height: 1.75em;
     }
 
     .multiselect__tags {
-        min-height: 2.125em;
+        font-size: 13px;
+        min-height: 1.75em;
         color: white;
         background-color: $theme-blue;
         border-radius: 0;
         border: none;
-        padding: 0.4em 0 0.4em 1.7em;
+        padding: 0.3em 0 0.3em 1.7em;
     }
 
     .multiselect__content-wrapper {

@@ -25,12 +25,7 @@ export default new VueRouter({
     base: '/rendersurfer',
     routes: [
         {
-            path: '*',
-            name: 'catch-all',
-            redirect: '/',
-        },
-        {
-            path: '/',
+            path: '',
             name: 'layout',
             redirect: 'search',
             component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ).default,
