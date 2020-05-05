@@ -1,5 +1,4 @@
 <style lang="scss">
-@import '~@/abstracts/_variables.scss';
 @import '~@/abstracts/_settings.scss';
 
     .filter-bar {
@@ -10,7 +9,7 @@
             padding: 0;
 
             @include breakpoint(xxlarge) {
-                max-width: 1000px;
+                max-width: 1040px;
             }
         }
 
@@ -20,14 +19,15 @@
             position: relative;
             width: 100%;
             text-align: left;
-            font-size: 13px;
+            font-size: 14px;
             line-height: inherit;
             min-height: 1.75em;
-            background-color: $light-brown;
-            color: $theme-blue;
+            background-color: $secondary-color;
+            color: $black;
+            font-weight: inherit;
 
             span {
-                padding: 0.3em 0 0.3em 1.7em;
+                padding: 0.3em 0 0.3em 1.2em;
                 display: block;
 
                 &:hover {

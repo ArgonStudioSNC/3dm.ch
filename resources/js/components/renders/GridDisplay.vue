@@ -1,5 +1,4 @@
 <style lang="scss">
-@import '~@/abstracts/_variables.scss';
 @import '~@/abstracts/_settings.scss';
 
 .render-grid {
@@ -34,7 +33,7 @@
 
     .show-more {
         min-width: 260px;
-        background-color: $theme-blue;
+        background-color: $primary-color;
         padding-top: 0.4em;
         padding-bottom: 0.4em;
         line-height: inherit;

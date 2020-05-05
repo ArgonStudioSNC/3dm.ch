@@ -33,8 +33,10 @@
                 @endif
             @else
                 <li class="menu-text">
-                    <i class="fas fa-user"></i>&nbsp;
-                    {{ Auth::user()->name }}
+                    <div>
+                        <i class="fas fa-user"></i>&nbsp;
+                        {{ Auth::user()->name }}
+                    </div>
                 </li>
                 <li>
                     <div>
