@@ -2,15 +2,17 @@
 @import '~@/abstracts/_settings.scss';
 
 .render-grid {
-
+    margin-top: 4em;
+    .match-result span{
+        font-weight: $global-weight-bold;
+    }
     .masonry-wrapper {
-        padding-top: 4em;
-        padding-bottom: 4em;
+        margin-top: 0.8em;
+        margin-bottom: 3em;
         max-width: 100%;
         margin-right: auto;
         margin-left: auto;
     }
-
     .masonry {
         display: grid;
         grid-gap: 1em;
@@ -30,7 +32,6 @@
             grid-template-columns: repeat(5, minmax(100px,1fr));
         }
     }
-
     .show-more {
         min-width: 260px;
         background-color: $primary-color;
@@ -46,13 +47,16 @@
 
 <template>
     <div class="render-grid" v-show="rendersLoadStatus == 2">
+        <div class="match-result grid-x align-right">
+            <span>{{ filtredRendersLength }}</span>&nbsp;{{ trans_choice("search.render_match_result", filtredRendersLength) }}
+        </div>
         <div class="masonry-wrapper">
             <div class="masonry">
                 <renderCardComponent v-for="(render, key) in paginatedFiltredRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= Object.keys(filtredRenders).length">
+            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= filtredRendersLength">
                 {{ __('filters.show-more') }}
             </button>
         </div>
@@ -111,6 +115,10 @@ export default {
                 }
             }
             return resultRenders;
+        },
+
+        filtredRendersLength() {
+            return Object.keys(this.filtredRenders).length;
         },
 
         paginatedFiltredRenders() {
