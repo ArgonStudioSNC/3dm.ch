@@ -1,41 +1,53 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
 
-.loader-bars {
-    display: inline-block;
-    position: relative;
-    width: 60px;
-    height: 60px;
-    opacity: 0.6;
-}
-.loader-bars div {
-    display: inline-block;
-    position: absolute;
-    left: 6px;
-    width: 12px;
-    background: $primary-color;
-    animation: loader-bars 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-}
-.loader-bars div:nth-child(1) {
-    left: 6px;
-    animation-delay: -0.24s;
-}
-.loader-bars div:nth-child(2) {
-    left: 24px;
-    animation-delay: -0.12s;
-}
-.loader-bars div:nth-child(3) {
-    left: 42px;
-    animation-delay: 0;
-}
-@keyframes loader-bars {
-    0% {
-        top: 6px;
-        height: 48px;
+.render-card-container {
+    img {
+        &:hover {
+            filter: brightness(50%);
+        }
     }
-    50%, 100% {
-        top: 18px;
-        height: 24px;
+}
+
+.loading-container {
+    .loading-bars {
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        opacity: 0.6;
+
+        div {
+            display: inline-block;
+            position: absolute;
+            left: 6px;
+            width: 12px;
+            background: $primary-color;
+            animation: loading-bars 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+        }
+        div:nth-child(1) {
+            left: 6px;
+            animation-delay: -0.24s;
+        }
+        div:nth-child(2) {
+            left: 24px;
+            animation-delay: -0.12s;
+        }
+        div:nth-child(3) {
+            left: 42px;
+            animation-delay: 0;
+        }
+
+        @keyframes loading-bars {
+            0% {
+                top: 6px;
+                height: 48px;
+            }
+            50%, 100% {
+                top: 18px;
+                height: 24px;
+            }
+        }
     }
 }
 
@@ -45,11 +57,13 @@
     <div ref="brick" class="masonry-brick">
         <div class="masonry-content">
             <template v-if="base64Data">
-                <img style="width:100%;" @load="resizeMasonryItem($refs.brick)" :src="base64Data" />
+                <div class="render-card-container">
+                    <img style="width:100%;" @load="resizeMasonryItem($refs.brick)" :src="base64Data" />
+                </div>
             </template>
             <template v-else>
-                <div class="grid-x align-center-middle">
-                    <div class="call loader-bars"><div></div><div></div><div></div></div>
+                <div class="grid-x align-center-middle loading-container">
+                    <div class="call loading-bars"><div></div><div></div><div></div></div>
                 </div>
             </template>
         </div>
