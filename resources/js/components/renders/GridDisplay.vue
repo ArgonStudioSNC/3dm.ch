@@ -45,18 +45,16 @@
 </style>
 
 <template>
-    <div class="render-grid">
-        <!-- <span v-show="rendersLoadStatus == 1">Loading</span>
-        <span v-show="rendersLoadStatus == 2">Renders loaded successfully!</span>
-        <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span> -->
-
+    <div class="render-grid" v-show="rendersLoadStatus == 2">
         <div class="masonry-wrapper">
             <div class="masonry">
-                <renderCardComponent v-for="(render, key) in renders" :key="render.id" v-bind:render="render"></renderCardComponent>
+                <renderCardComponent v-for="(render, key) in paginatedFiltredRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()">{{ __('filters.show-more') }}</button>
+            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= Object.keys(filtredRenders).length">
+                {{ __('filters.show-more') }}
+            </button>
         </div>
     </div>
 
@@ -79,6 +77,7 @@ export default {
     },
 
     mounted(){
+        this.resizeAllMasonryItems;
         /* Resize all the grid items on the load and resize events */
         var masonryEvents = ['load', 'resize'];
         masonryEvents.forEach( event => {
@@ -97,21 +96,16 @@ export default {
             return this.$store.getters.getRendersLoadStatus;
         },
 
-        /*
-        Gets the renders
-        */
-        renders(){
-            return this.paginate( this.applyFilters(this.$store.getters.getRenders, this.activeFilters), this.$store.getters.getMaxRenders);
+        maxRenders() {
+            return this.$store.getters.getMaxRenders;
         },
-    },
 
-    methods: {
-        applyFilters(renders, activeFilters) {
-            var resultRenders = Object.assign({}, renders);
+        filtredRenders(){
+            var resultRenders = Object.assign({}, this.$store.getters.getRenders);
 
-            for (var cat in activeFilters){
+            for (var cat in this.activeFilters){
                 for (var renderKey in resultRenders) {
-                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, activeFilters[cat])) {
+                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, this.activeFilters[cat])) {
                         delete resultRenders[renderKey];
                     }
                 }
@@ -119,18 +113,19 @@ export default {
             return resultRenders;
         },
 
-        paginate(renders, max) {
-            const sliced = Object.keys(renders).slice(0, max).reduce((result, key) => {
-                                result[key] = renders[key];
+        paginatedFiltredRenders() {
+            const sliced = Object.keys(this.filtredRenders).slice(0, this.maxRenders).reduce((result, key) => {
+                                result[key] = this.filtredRenders[key];
                                 return result;
                             }, {});
             return sliced;
         },
+    },
 
+    methods: {
         showMore(){
             this.$store.dispatch( 'showMore', 50 );
         },
     },
-
 }
 </script>

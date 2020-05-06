@@ -1,16 +1,57 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
 
-img {
-    width: 100%;
+.loader-bars {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    opacity: 0.6;
+}
+.loader-bars div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 12px;
+    background: $primary-color;
+    animation: loader-bars 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.loader-bars div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s;
+}
+.loader-bars div:nth-child(2) {
+    left: 24px;
+    animation-delay: -0.12s;
+}
+.loader-bars div:nth-child(3) {
+    left: 42px;
+    animation-delay: 0;
+}
+@keyframes loader-bars {
+    0% {
+        top: 6px;
+        height: 48px;
+    }
+    50%, 100% {
+        top: 18px;
+        height: 24px;
+    }
 }
 
 </style>
 
 <template>
-    <div ref="card" class="masonry-brick">
+    <div ref="brick" class="masonry-brick">
         <div class="masonry-content">
-            <img @load="onLoad" :src="base64Data || 'https://f0.pngfuel.com/png/349/251/iphone-5s-ios-progress-bar-icon-load-the-map-loading-png-clip-art.png'" />
+            <template v-if="base64Data">
+                <img style="width:100%;" @load="resizeMasonryItem($refs.brick)" :src="base64Data" />
+            </template>
+            <template v-else>
+                <div class="grid-x align-center-middle">
+                    <div class="call loader-bars"><div></div><div></div><div></div></div>
+                </div>
+            </template>
         </div>
     </div>
 </template>
@@ -48,10 +89,8 @@ export default {
         });
     },
 
-    methods: {
-        onLoad() {
-            this.resizeMasonryItem(this.$refs.card);
-        }
+    mounted() {
+        this.resizeMasonryItem(this.$refs.brick)
     },
 }
 </script>

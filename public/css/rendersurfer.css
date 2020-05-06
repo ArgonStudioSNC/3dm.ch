@@ -4205,7 +4205,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .card-divider {
   display: flex;
   flex: 0 1 auto;
-  padding: 4rem;
+  padding: 1rem;
   background: #F2EFEB;
 }
 .card-divider > :last-child {
@@ -4214,7 +4214,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .card-section {
   flex: 1 0 auto;
-  padding: 4rem;
+  padding: 1rem;
 }
 .card-section > :last-child {
   margin-bottom: 0;
@@ -4505,10 +4505,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   flex: 0 1 auto;
 }
 .media-object-section:first-child {
-  padding-right: 4rem;
+  padding-right: 1rem;
 }
 .media-object-section:last-child:not(:nth-child(2)) {
-  padding-left: 4rem;
+  padding-left: 1rem;
 }
 .media-object-section > :last-child {
   margin-bottom: 0;
@@ -4516,7 +4516,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 @media print, screen and (max-width: 39.99875em) {
   .stack-for-small .media-object-section {
     padding: 0;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
     flex-basis: 100%;
     max-width: 100%;
   }
@@ -5886,7 +5886,7 @@ html.is-reveal-open body {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   display: none;
-  padding: 4rem;
+  padding: 1rem;
   border: 1px solid #cacaca;
   border-radius: 0;
   background-color: #fefefe;
@@ -6513,6 +6513,7 @@ body {
 
 .my-login-card {
   max-width: 500px;
+  margin-top: 1em;
 }
 .my-login-card .card {
   font-size: 10px;

@@ -9,7 +9,7 @@
             padding: 0;
 
             @include breakpoint(xxlarge) {
-                max-width: 1040px;
+                max-width: 1024px;
             }
         }
 
@@ -64,10 +64,6 @@ export default {
     },
 
     mixins: [FiltersMixin],
-
-    created(){
-        this.$store.dispatch( 'loadFilters' );
-    },
 
     /*
     Defines the computed properties on the component.
