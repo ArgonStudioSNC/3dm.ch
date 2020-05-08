@@ -1,5 +1,12 @@
 export const FiltersMixin = {
     computed: {
+        /*
+        Gets the filters
+        */
+        filters(){
+            return this.$store.getters.getFilters;
+        },
+
         activeFilters(){
             var filters = Object.assign({}, this.$store.getters.getFilters);
             var queryFilters = Object.assign({}, this.$store.state.route.query);

@@ -65,18 +65,6 @@ export default {
 
     mixins: [FiltersMixin],
 
-    /*
-    Defines the computed properties on the component.
-    */
-    computed: {
-        /*
-        Gets the filters
-        */
-        filters(){
-            return this.$store.getters.getFilters;
-        }
-    },
-
     methods: {
         resetMaxRenders() {
             this.$store.dispatch( 'resetMaxRenders' );

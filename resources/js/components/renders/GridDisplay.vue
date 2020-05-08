@@ -48,15 +48,15 @@
 <template>
     <div class="render-grid" v-show="rendersLoadStatus == 2">
         <div class="match-result grid-x align-right">
-            <span>{{ filtredRendersLength }}</span>&nbsp;{{ trans_choice("search.render_match_result", filtredRendersLength) }}
+            <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render_match_result", filteredRendersLength) }}
         </div>
         <div class="masonry-wrapper">
             <div class="masonry">
-                <renderCardComponent v-for="(render, key) in paginatedFiltredRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
+                <renderCardComponent v-for="(render, key) in paginatedFilteredRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= filtredRendersLength">
+            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= filteredRendersLength">
                 {{ __('filters.show-more') }}
             </button>
         </div>
@@ -104,7 +104,7 @@ export default {
             return this.$store.getters.getMaxRenders;
         },
 
-        filtredRenders(){
+        filteredRenders(){
             var resultRenders = Object.assign({}, this.$store.getters.getRenders);
 
             for (var cat in this.activeFilters){
@@ -117,13 +117,13 @@ export default {
             return resultRenders;
         },
 
-        filtredRendersLength() {
-            return Object.keys(this.filtredRenders).length;
+        filteredRendersLength() {
+            return Object.keys(this.filteredRenders).length;
         },
 
-        paginatedFiltredRenders() {
-            const sliced = Object.keys(this.filtredRenders).slice(0, this.maxRenders).reduce((result, key) => {
-                                result[key] = this.filtredRenders[key];
+        paginatedFilteredRenders() {
+            const sliced = Object.keys(this.filteredRenders).slice(0, this.maxRenders).reduce((result, key) => {
+                                result[key] = this.filteredRenders[key];
                                 return result;
                             }, {});
             return sliced;
