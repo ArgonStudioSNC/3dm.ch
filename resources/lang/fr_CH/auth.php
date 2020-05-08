@@ -8,5 +8,5 @@ return [
     'Password' => 'Mot de passe',
     'Remember Me' => 'Se souvenir de moi',
     'Forgot Your Password?' => 'Oublié votre mot de passe ?',
-    
+
 ];

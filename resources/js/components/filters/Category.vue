@@ -1,38 +1,52 @@
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss">
-    @import '~@/abstracts/_variables.scss';
     @import '~@/abstracts/_settings.scss';
 
     .multiselect {
-        font-size: 13px;
+        color: inherit;
+        font-size: 14px;
         line-height: inherit;
         min-height: 1.75em;
     }
-
-    .multiselect__tags {
-        font-size: 13px;
-        min-height: 1.75em;
-        color: white;
-        background-color: $theme-blue;
-        border-radius: 0;
-        border: none;
-        padding: 0.3em 0 0.3em 1.7em;
-    }
-
-    .multiselect__content-wrapper {
-        border-radius: 0;
-        border: none;
-    }
-
-    .multiselect__content {
-        background-color: $light-brown;
-    }
-
     .multiselect__myselect {
         position: absolute;
         width: 100%;
         height: 100%;
         cursor: pointer;
+    }
+    .multiselect__tags {
+        font-size: 14px;
+        min-height: 1.75em;
+        color: white;
+        background-color: $primary-color;
+        border-radius: 0;
+        border: none;
+        padding: 0.3em 0 0.3em 1.2em;
+    }
+    .multiselect__content-wrapper {
+        border-radius: 0;
+        border-color: $secondary-color;
+    }
+    .multiselect__content {
+        background-color: $white;
+    }
+    .multiselect__option {
+        min-height: 1.75em;
+        padding: 0.3em 0 0.3em 1.2em;
+        line-height: inherit;
+        &.multiselect__option--highlight {
+            background: $secondary-color;
+            color: inherit;
+        }
+        &.multiselect__option--selected {
+            background: inherit;
+            color: inherit;
+            font-weight: $global-weight-bold;
+            &.multiselect__option--highlight {
+                background: $secondary-color;
+                color: inherit;
+            }
+        }
     }
 </style>
 

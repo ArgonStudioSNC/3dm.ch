@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/rendersurfer.css') }}" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body style="display: none;">
     <nav class="user-nav">
         <ul class="menu simple align-right">
             @guest
@@ -33,8 +33,10 @@
                 @endif
             @else
                 <li class="menu-text">
-                    <i class="fas fa-user"></i>&nbsp;
-                    {{ Auth::user()->name }}
+                    <div>
+                        <i class="fas fa-user"></i>&nbsp;
+                        {{ Auth::user()->name }}
+                    </div>
                 </li>
                 <li>
                     <div>

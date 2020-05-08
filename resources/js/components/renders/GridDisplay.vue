@@ -1,17 +1,18 @@
 <style lang="scss">
-@import '~@/abstracts/_variables.scss';
 @import '~@/abstracts/_settings.scss';
 
 .render-grid {
-
+    margin-top: 4em;
+    .match-result span{
+        font-weight: $global-weight-bold;
+    }
     .masonry-wrapper {
-        padding-top: 4em;
-        padding-bottom: 4em;
+        margin-top: 0.8em;
+        margin-bottom: 3em;
         max-width: 100%;
         margin-right: auto;
         margin-left: auto;
     }
-
     .masonry {
         display: grid;
         grid-gap: 1em;
@@ -31,10 +32,9 @@
             grid-template-columns: repeat(5, minmax(100px,1fr));
         }
     }
-
     .show-more {
         min-width: 260px;
-        background-color: $theme-blue;
+        background-color: $primary-color;
         padding-top: 0.4em;
         padding-bottom: 0.4em;
         line-height: inherit;
@@ -46,18 +46,19 @@
 </style>
 
 <template>
-    <div class="render-grid">
-        <!-- <span v-show="rendersLoadStatus == 1">Loading</span>
-        <span v-show="rendersLoadStatus == 2">Renders loaded successfully!</span>
-        <span v-show="rendersLoadStatus == 3">Renders loaded unsuccessfully!</span> -->
-
+    <div class="render-grid" v-show="rendersLoadStatus == 2">
+        <div class="match-result grid-x align-right">
+            <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render_match_result", filteredRendersLength) }}
+        </div>
         <div class="masonry-wrapper">
             <div class="masonry">
-                <renderCardComponent v-for="(render, key) in renders" :key="render.id" v-bind:render="render"></renderCardComponent>
+                <renderCardComponent v-for="(render, key) in paginatedFilteredRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()">{{ __('filters.show-more') }}</button>
+            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= filteredRendersLength">
+                {{ __('filters.show-more') }}
+            </button>
         </div>
     </div>
 
@@ -80,6 +81,7 @@ export default {
     },
 
     mounted(){
+        this.resizeAllMasonryItems;
         /* Resize all the grid items on the load and resize events */
         var masonryEvents = ['load', 'resize'];
         masonryEvents.forEach( event => {
@@ -98,21 +100,16 @@ export default {
             return this.$store.getters.getRendersLoadStatus;
         },
 
-        /*
-        Gets the renders
-        */
-        renders(){
-            return this.paginate( this.applyFilters(this.$store.getters.getRenders, this.activeFilters), this.$store.getters.getMaxRenders);
+        maxRenders() {
+            return this.$store.getters.getMaxRenders;
         },
-    },
 
-    methods: {
-        applyFilters(renders, activeFilters) {
-            var resultRenders = Object.assign({}, renders);
+        filteredRenders(){
+            var resultRenders = Object.assign({}, this.$store.getters.getRenders);
 
-            for (var cat in activeFilters){
+            for (var cat in this.activeFilters){
                 for (var renderKey in resultRenders) {
-                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, activeFilters[cat])) {
+                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, this.activeFilters[cat])) {
                         delete resultRenders[renderKey];
                     }
                 }
@@ -120,18 +117,23 @@ export default {
             return resultRenders;
         },
 
-        paginate(renders, max) {
-            const sliced = Object.keys(renders).slice(0, max).reduce((result, key) => {
-                                result[key] = renders[key];
+        filteredRendersLength() {
+            return Object.keys(this.filteredRenders).length;
+        },
+
+        paginatedFilteredRenders() {
+            const sliced = Object.keys(this.filteredRenders).slice(0, this.maxRenders).reduce((result, key) => {
+                                result[key] = this.filteredRenders[key];
                                 return result;
                             }, {});
             return sliced;
         },
+    },
 
+    methods: {
         showMore(){
             this.$store.dispatch( 'showMore', 50 );
         },
     },
-
 }
 </script>

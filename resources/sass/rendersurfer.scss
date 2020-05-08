@@ -1,46 +1,37 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700&display=swap');
 
 @import 'meyers-reset';
 @import 'mixins';
 
-@import 'abstracts/variables';
 @import 'abstracts/settings';
 
 // Foundation sites
 @import 'node_modules/foundation-sites/assets/foundation.scss';
 
 body {
-	position: relative;
-	box-sizing: border-box;
-	min-width: 100%;
-	min-height: 100%;
-
-	font-family: $font-family-sans-serif;
-	font-size: $font-size-base;
-	line-height: $line-height-base;
-	font-weight: $font-weight-base;
-	color: $light-black;
-
-	background-color: $body-bg;
-
 	padding-right: 0.625rem;
 	padding-left: 0.625rem;
 	@include breakpoint(xxlarge) {
-		padding-right: $body-padding-base;
-		padding-left: $body-padding-base;
+		padding-right: 4rem;
+		padding-left: 4rem;
 	}
 }
 
 .user-nav {
-	color: $light-black;
+	color: inherit;
 	a, a:hover {
-		color: $theme-blue;
+		color: $primary-color;
+	}
+	.menu .menu-text {
+	    font-weight: $global-weight-bold;
+		line-height: inherit;
 	}
 }
 
 .my-login-card {
 	max-width: 500px;
+	margin-top: 1em;
 	.card {
 		font-size: 10px;
 		border-color: $primary-color;

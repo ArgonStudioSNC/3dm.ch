@@ -27,6 +27,38 @@ module.exports = {
             })
 
             return translation
+        },
+
+        trans_choice(key, plur, replace) {
+            let translation, translationNotFound = true
+
+            try {
+                translation = key.split('.').reduce((t, i) => t[i] || null, window._translations[window._locale].php)
+
+                if (translation) {
+                    translationNotFound = false
+                }
+            } catch (e) {
+                translation = key
+            }
+
+            if (plur < -1 || plur > 1 ) {
+                translation = translation.split('|')[1];
+            } else {
+                translation = translation.split('|')[0];
+            }
+
+            if (translationNotFound) {
+                translation = window._translations[window._locale]['json'][key]
+                    ? window._translations[window._locale]['json'][key]
+                    : key
+            }
+
+            _.forEach(replace, (value, key) => {
+                translation = translation.replace(':' + key, value)
+            })
+
+            return translation
         }
     },
 }

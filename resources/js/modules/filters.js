@@ -13,6 +13,7 @@ export const filters = {
     */
     state: {
         filters: [],
+        filtersLoadStatus: 0,
     },
 
     /*
@@ -23,12 +24,15 @@ export const filters = {
         Loads the filters from the API
         */
         loadFilters( { commit } ){
+            commit( 'setFiltersLoadStatus', 1 );
             FilterAPI.all()
             .then( function( response ){
                 commit( 'setFilters', response.data);
+                commit( 'setFiltersLoadStatus', 2 );
             })
             .catch( function(){
                 commit( 'setFilters', [] );
+                commit( 'setFiltersLoadStatus', 3 );
             });
         },
     },
@@ -37,6 +41,13 @@ export const filters = {
     Defines the mutations used
     */
     mutations: {
+        /*
+        Sets the filters load status
+        */
+        setFiltersLoadStatus( state, status ){
+            state.filtersLoadStatus = status;
+        },
+
         /*
         Sets the filters
         */
@@ -49,6 +60,13 @@ export const filters = {
     Defines the getters used by the module
     */
     getters: {
+        /*
+        Returns the filters load status.
+        */
+        getFiltersLoadStatus( state ){
+            return state.filtersLoadStatus;
+        },
+
         /*
         Returns the filters.
         */
