@@ -130,14 +130,14 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
 
     /*
     |-------------------------------------------------------------------------------
-    | Get All Weathers
+    | Get All Weather
     |-------------------------------------------------------------------------------
-    | URL:            /api/v1/filters/weathers
-    | Controller:     API\FiltersController@weathers
+    | URL:            /api/v1/filters/weather
+    | Controller:     API\FiltersController@weather
     | Method:         GET
-    | Description:    Gets all of the weathers in the application
+    | Description:    Gets all of the weather in the application
     */
-    Route::get('/weathers', 'FiltersController@weathers');
+    Route::get('/weather', 'FiltersController@weather');
 
     /*
     |-------------------------------------------------------------------------------
