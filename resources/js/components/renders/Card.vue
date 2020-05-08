@@ -180,7 +180,7 @@ export default {
             return this.getProperty('seasontimes', 'seasontime_id');
         },
         getWeather() {
-            return this.getProperty('weathers', 'weather_id');
+            return this.getProperty('weather', 'weather_id');
         },
         getDaytime() {
             return this.getProperty('daytimes', 'daytime_id');

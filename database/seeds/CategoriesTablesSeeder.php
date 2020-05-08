@@ -90,8 +90,8 @@ class CategoriesTablesSeeder extends Seeder
               'tag' => 'hiver',],
          ]);
 
-         DB::table('weathers')->delete();
-         DB::table('weathers')->insert([
+         DB::table('weather')->delete();
+         DB::table('weather')->insert([
              ['id' => 1,
               'name' => 'Dégagé',
               'tag' => 'degage',],

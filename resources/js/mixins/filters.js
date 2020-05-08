@@ -39,7 +39,7 @@ export const FiltersMixin = {
                 types : 'type_id',
                 styles : 'style_id',
                 seasontimes : 'seasontime_id',
-                weathers : 'weather_id',
+                weather : 'weather_id',
                 daytimes : 'daytime_id',
                 compositions : 'composition_id',
                 assignements : 'assignement_id',
