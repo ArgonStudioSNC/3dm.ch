@@ -40,7 +40,7 @@ class FiltersController extends Controller
         $types = Type::all();
         $styles = Style::all();
         $seasontimes = Seasontime::all();
-        $weathers = Weather::all();
+        $weather = Weather::all();
         $daytimes = Daytime::all();
         $lights = Light::all();
         $compositions = Composition::all();
@@ -51,7 +51,7 @@ class FiltersController extends Controller
             'types' => $types,
             'styles' => $styles,
             'seasontimes' => $seasontimes,
-            'weathers' => $weathers,
+            'weather' => $weather,
             'daytimes' => $daytimes,
             'lights' => $lights,
             'compositions' => $compositions,
@@ -118,16 +118,16 @@ class FiltersController extends Controller
 
     /*
     |-------------------------------------------------------------------------------
-    | Get All Weathers
+    | Get All Weather
     |-------------------------------------------------------------------------------
-    | URL:            /api/v1/weathers
+    | URL:            /api/v1/weather
     | Method:         GET
-    | Description:    Gets all of the weathers in the application
+    | Description:    Gets all of the weather in the application
     */
-    public function weathers(){
-        $weathers = Weather::all();
+    public function weather(){
+        $weather = Weather::all();
 
-        return response()->json( $weathers );
+        return response()->json( $weather );
     }
 
     /*

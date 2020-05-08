@@ -15,7 +15,7 @@ return [
     'types' => 'Type',
     'styles' => 'Style',
     'seasontimes' => 'Saison',
-    'weathers' => 'Temps',
+    'weather' => 'Temps',
     'daytimes' => 'Moment de la journée',
     'lights' => 'Lumière',
     'compositions' => 'Composition',
