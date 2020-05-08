@@ -13,15 +13,19 @@ export const FiltersMixin = {
             var activeFilters = {};
 
             for (var cat in queryFilters) {
-                queryFilters[cat] = queryFilters[cat].split('|');
+                if(filters[cat]){
+                    queryFilters[cat] = queryFilters[cat].split('|');
 
-                var tagArray = [];
-                queryFilters[cat].forEach((tag, i) => {
-                    var filter = filters[cat] ? filters[cat].find(element => element.tag === tag) : null;
-                    if (filter) tagArray.push(filter);
-                });
+                    var tagArray = [];
+                    queryFilters[cat].forEach((tag, i) => {
+                        var filter = filters[cat].find(element => element.tag === tag);
+                        if (filter) tagArray.push(filter);
+                    });
 
-                activeFilters[cat] = tagArray;
+                    if (tagArray.length) {
+                        activeFilters[cat] = tagArray;
+                    }
+                }
             }
 
             return activeFilters;
