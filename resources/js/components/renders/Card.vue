@@ -11,21 +11,8 @@
         z-index: 10;
         position: absolute;
         opacity: 0;
+        bottom: 0px;
         @include transition(opacity 0.3s);
-
-        .render-card-header {
-            font-weight: 400;
-        }
-
-        .render-card-tag {
-            margin-bottom: 4px;
-            margin-right: 3px;
-            padding: 0 6px;
-            background-color: $primary-color;
-            border-radius: 1em;
-            border: 1px solid $primary-color;
-
-        }
     }
     img {
         @include transition(filter 0.3s);
@@ -33,7 +20,6 @@
 
     &.active {
         .render-card-legend {
-            position: absolute;
             opacity: 1!important;
         }
         img {
@@ -92,21 +78,9 @@
             <template v-if="base64Data">
                 <div class="render-card" @mouseover="hover = true" @mouseleave="hover = false" :class="{ active: hover }">
                     <div class="render-card-legend">
-                        <div class="render-card-header">
-                            <h5>{{ render.name }}</h5>
-                        </div>
-                        <div class="grid-x">
-                            <div class="render-card-tag cell shrink" v-if="getYear()">{{ getYear() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getOffice()">{{ getOffice() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getType()">{{ getType() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getStyle()">{{ getStyle() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getSeasontime()">{{ getSeasontime() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getWeather()">{{ getWeather() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getDaytime()">{{ getDaytime() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getLight()">{{ getLight() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getComposition()">{{ getComposition() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getAssignement()">{{ getAssignement() }}</div>
-                            <div class="render-card-tag cell shrink" v-if="getCountry()">{{ getCountry() }}</div>
+                        <div style="font-weight: 400; font-size: 18px;">{{ render.name }}</div>
+                        <div>
+                            <span v-if="getOffice()">{{ getOffice() }}</span><span v-if="getYear()">, &nbsp;{{ getYear() }}</span>
                         </div>
                     </div>
                     <img style="width:100%;" @load="resizeMasonryItem($refs.brick)" :src="base64Data" />
