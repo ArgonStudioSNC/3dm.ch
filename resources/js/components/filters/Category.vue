@@ -95,7 +95,7 @@ export default {
     Defines the computed properties on the component.
     */
     computed: {
-        activeFiltersFromCategory(){
+        activeFiltersFromCategory: function(){
             return this.activeFilters[this.filter.category];
         },
 

@@ -28,77 +28,32 @@
     }
 }
 
-.loading-container {
-    .loading-bars {
-        display: inline-block;
-        position: relative;
-        width: 60px;
-        height: 60px;
-        opacity: 0.6;
-
-        div {
-            display: inline-block;
-            position: absolute;
-            left: 6px;
-            width: 12px;
-            background: $primary-color;
-            animation: loading-bars 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-        }
-        div:nth-child(1) {
-            left: 6px;
-            animation-delay: -0.24s;
-        }
-        div:nth-child(2) {
-            left: 24px;
-            animation-delay: -0.12s;
-        }
-        div:nth-child(3) {
-            left: 42px;
-            animation-delay: 0;
-        }
-
-        @keyframes loading-bars {
-            0% {
-                top: 6px;
-                height: 48px;
-            }
-            50%, 100% {
-                top: 18px;
-                height: 24px;
-            }
-        }
-    }
-}
-
 </style>
 
 <template>
     <div ref="brick" class="masonry-brick">
         <div class="masonry-content">
             <template v-if="base64Data">
-                <div class="render-card" @mouseover="hover = true" @mouseleave="hover = false" :class="{ active: hover }">
+                <div class="render-card"  @mouseover="hover = true" @mouseleave="hover = false" :class="{ active: hover }" data-open="render-modal" v-on:click="$store.dispatch( 'loadRender', render )">
                     <div class="render-card-legend">
                         <div style="font-weight: 400; font-size: 18px;">{{ render.name }}</div>
                         <div>
-                            <span v-if="getOffice()">{{ getOffice() }}</span><span v-if="getYear()">, &nbsp;{{ getYear() }}</span>
+                            <span v-if="getOffice(render)">{{ getOffice(render) }}</span><span v-if="render.year">, &nbsp;{{ render.year }}</span>
                         </div>
                     </div>
                     <img style="width:100%;" @load="resizeMasonryItem($refs.brick)" :src="base64Data" />
                 </div>
             </template>
-            <template v-else>
-                <div class="grid-x align-center-middle loading-container">
-                    <div class="call loading-bars"><div></div><div></div><div></div></div>
-                </div>
-            </template>
+            <loaderComponent v-else></loaderComponent>
         </div>
     </div>
 </template>
 
 <script>
+import LoaderComponent from '../global/Loader';
 import RenderAPI from '../../api/render.js';
 import { MasonryMixin } from '../../mixins/masonry';
-import { FiltersMixin } from '../../mixins/filters';
+import { RendersMixin } from '../../mixins/renders';
 
 export default {
     props: {
@@ -108,7 +63,11 @@ export default {
         },
     },
 
-    mixins: [FiltersMixin, MasonryMixin],
+    components: {
+        LoaderComponent,
+    },
+
+    mixins: [MasonryMixin, RendersMixin],
 
     data () {
         return {
@@ -131,46 +90,6 @@ export default {
 
     mounted() {
         this.resizeMasonryItem(this.$refs.brick)
-    },
-
-    methods: {
-        getProperty(filter_key, render_key){
-            var result = this.filters[filter_key].find(elem => elem.id === this.render[render_key]);
-            return result ? result.name : null;
-        },
-        getYear() {
-            return this.render.year;
-        },
-        getOffice() {
-            return this.getProperty('offices', 'office_id');
-        },
-        getType() {
-            return this.getProperty('types', 'type_id');
-        },
-        getStyle() {
-            return this.getProperty('styles', 'style_id');
-        },
-        getSeasontime() {
-            return this.getProperty('seasontimes', 'seasontime_id');
-        },
-        getWeather() {
-            return this.getProperty('weather', 'weather_id');
-        },
-        getDaytime() {
-            return this.getProperty('daytimes', 'daytime_id');
-        },
-        getLight() {
-            return this.getProperty('lights', 'light_id');
-        },
-        getComposition() {
-            return this.getProperty('compositions', 'composition_id');
-        },
-        getAssignement() {
-            return this.getProperty('assignements', 'assignement_id');
-        },
-        getCountry() {
-            return this.getProperty('countries', 'country_code');
-        },
     },
 }
 </script>

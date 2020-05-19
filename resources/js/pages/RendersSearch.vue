@@ -13,6 +13,7 @@
         <template v-else-if="filtersLoadStatus == 3">
             Impossible de charger les filtres
         </template>
+        <renderModalComponent modal-id="render-modal"></renderModalComponent>
     </div>
 
 </template>
@@ -20,11 +21,13 @@
 <script>
 import FilterBarComponent from '../components/filters/FilterBar.vue';
 import RenderGridComponent from '../components/renders/GridDisplay.vue';
+import RenderModalComponent from '../components/renders/Modal.vue';
 
 export default {
     components: {
       FilterBarComponent,
       RenderGridComponent,
+      RenderModalComponent,
     },
 
     created(){
@@ -38,7 +41,7 @@ export default {
         /*
         Gets the renders load status
         */
-        filtersLoadStatus(){
+        filtersLoadStatus: function(){
             return this.$store.getters.getFiltersLoadStatus;
         },
     },

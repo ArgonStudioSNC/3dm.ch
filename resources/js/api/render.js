@@ -20,7 +20,7 @@ export default {
     /*
         GET     /api/v1/renders/{id}
     */
-    find: function(id){
+    show: function(id){
         return client.get(`renders/${id}`);
     },
 
