@@ -3,6 +3,11 @@
 @import '~@/mixins';
 
 .reveal {
+    padding: 1rem 0;
+    @include breakpoint(medium) {
+        padding: $global-padding;
+    }
+
     .reveal-container {
         margin-left: auto;
         margin-right: auto;
@@ -17,7 +22,10 @@
             max-height: 100%;
         }
         &>.cell {
-            margin-bottom: 2em;
+            margin-bottom: 1em;
+            @include breakpoint(medium) {
+                margin-bottom: 2em;
+            }
         }
     }
     button {
@@ -48,13 +56,13 @@
 </style>
 
 <template>
-    <div class="full reveal" :id="modalId" ref="reveal" data-reveal>
+    <div class="full reveal" ref="reveal" data-reveal>
         <div class="reveal-container">
             <div class="grid-y text-center reveal-content">
                 <div class="cell reveal-navigation" style="position: relative;">
-                    <div class="grid-x align-center" v-show="renderIndex != null">
+                    <div class="grid-x align-center">
                         <button class="cell shrink" :class="{'disabled': !previousRender}" v-on:click="previous"><i class="fas fa-chevron-left"></i></button>
-                        <div class="cell" style="width: 6em;">{{ renderIndex + 1 }}/{{ filteredRendersLength }}</div>
+                        <div class="cell" style="width: 6em;"><span v-show="renderIndex >= 0">{{ renderIndex + 1 }}/{{ filteredRendersLength }}</span></div>
                         <button class="cell shrink" :class="{'disabled': !nextRender}" v-on:click="next"><i class="fas fa-chevron-right"></i></button>
                     </div>
 
@@ -89,10 +97,6 @@ import { RendersMixin } from '../../mixins/renders';
 import RenderAPI from '../../api/render.js';
 
 export default {
-    props: {
-        modalId : String,
-    },
-
     components: {
         LoaderComponent,
     },
@@ -102,43 +106,39 @@ export default {
     data () {
         return {
             base64Data : null,
-            renderIndex : null,
         }
     },
 
     computed: mapState(['renders']),
 
     created() {
-        var reader = new FileReader();
-        reader.onload = r => {
-            this.base64Data = reader.result;
+        this.reader = new FileReader();
+        this.reader.onload = r => {
+            this.base64Data = this.reader.result;
         };
 
         this.unwatch = this.$store.watch(
             (state, getters) => getters.getRender,
             (newValue, oldValue) => {
                 this.base64Data = null;
-
-                if(newValue) {
-                    this.renderIndex = Object.values(this.filteredRenders).map(function(r) {return r.id; }).indexOf(newValue.id);
-
-                    const promise = RenderAPI.picture(newValue.filename);
-                    this.lastPromise = promise;
-
-                    promise.then( response => {
-                        if(promise == this.lastPromise) {
-                            reader.readAsDataURL(response.data);
-                        }
-                    });
-                }
+                this.update(newValue);
             },
         );
+
+        this.update(this.getRender);
     },
 
     mounted() {
+        var searchQuery = null;
+
+        $(this.$refs.reveal).on('open.zf.reveal', x => {
+            searchQuery = this.$route.name == 'search' ? this.$route.query : null;
+        });
+
         $(this.$refs.reveal).on('closed.zf.reveal', x => {
             this.base64Data = null;
-            this.renderIndex = null;
+            var queryString = Object.keys(searchQuery).map(key => key + '=' + searchQuery[key]).join('&');
+            history.replaceState(this.state, '', '/rendersurfer/search' + (queryString?'?':'') + queryString);
         });
     },
 
@@ -148,15 +148,19 @@ export default {
 
     methods : {
         previous() {
-            if (!this.previousRender) return;
-            this.base64Data = null;
-            this.$store.dispatch( 'loadRender', this.previousRender);
+            var r = this.previousRender;
+            if (r) {
+                this.base64Data = null;
+                this.$store.dispatch( 'loadRender', r.id);
+            }
         },
 
         next() {
-            if (!this.nextRender) return;
-            this.base64Data = null;
-            this.$store.dispatch( 'loadRender', this.nextRender);
+            var r = this.nextRender;
+            if (r) {
+                this.base64Data = null;
+                this.$store.dispatch( 'loadRender', r.id);
+            }
         },
 
         async download(filename) {
@@ -180,6 +184,21 @@ export default {
                 return a;
             });
         },
+
+        update(value) {
+            if(!_.isEmpty(value)) {
+                history.replaceState(this.state, value.name, '/rendersurfer/render/' + value.id);
+
+                const promise = RenderAPI.picture(value.filename);
+                this.lastPromise = promise;
+
+                promise.then( response => {
+                    if(promise == this.lastPromise) {
+                        this.reader.readAsDataURL(response.data);
+                    }
+                });
+            }
+        },
     },
 
     computed : {
@@ -190,11 +209,11 @@ export default {
         },
 
         nextRender() {
-            if (this.renderIndex >= this.filteredRendersLength -1) return null;
+            if (this.renderIndex < 0 || this.renderIndex >= this.filteredRendersLength -1) return null;
             return Object.values(this.filteredRenders)[this.renderIndex + 1];
         },
 
-        legendText(){
+        legendText() {
             if (this.getRenderLoadStatus != 2) return null;
             var name = this.getRender.name, office = this.getOffice(this.getRender), year = this.getRender.year;
             var s = name;
@@ -205,7 +224,12 @@ export default {
             }
             if (year) return s += "\u00A0/\u00A0" + year;
             return s;
-        }
+        },
+
+        renderIndex() {
+            if (!this.getRender || this.filteredRendersLength == 0) return -1;
+            return Object.values(this.filteredRenders).map(function(r) {return r.id; }).indexOf(this.getRender.id);
+        },
     },
 }
 </script>

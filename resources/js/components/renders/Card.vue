@@ -34,7 +34,7 @@
     <div ref="brick" class="masonry-brick">
         <div class="masonry-content">
             <template v-if="base64Data">
-                <div class="render-card"  @mouseover="hover = true" @mouseleave="hover = false" :class="{ active: hover }" data-open="render-modal" v-on:click="$store.dispatch( 'loadRender', render )">
+                <div class="render-card"  @mouseover="hover = true" @mouseleave="hover = false" :class="{ active: hover }" data-open="render-modal" v-on:click="$store.dispatch( 'loadRender', render.id )">
                     <div class="render-card-legend">
                         <div style="font-weight: 400; font-size: 18px;">{{ render.name }}</div>
                         <div>

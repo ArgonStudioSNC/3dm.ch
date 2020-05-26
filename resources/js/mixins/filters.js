@@ -4,11 +4,16 @@ export const FiltersMixin = {
         Gets the filters
         */
         filters: function(){
+            if(this.$store.getters.getFiltersLoadStatus !== 2) return null;
             return this.$store.getters.getFilters;
         },
 
+        getFiltersLoadStatus: function() {
+            return this.$store.getters.getFiltersLoadStatus;
+        },
+
         activeFilters: function(){
-            var filters = Object.assign({}, this.$store.getters.getFilters);
+            var filters = Object.assign({}, this.filters);
             var queryFilters = Object.assign({}, this.$store.state.route.query);
             var activeFilters = {};
 
@@ -32,6 +37,8 @@ export const FiltersMixin = {
         },
 
         filteredRenders: function(){
+            if(this.$store.getters.getRendersLoadStatus != 2) return {};
+
             var resultRenders = Object.assign({}, this.$store.getters.getRenders);
 
             for (var cat in this.activeFilters){

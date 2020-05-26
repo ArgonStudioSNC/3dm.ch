@@ -13,7 +13,7 @@
         <template v-else-if="filtersLoadStatus == 3">
             Impossible de charger les filtres
         </template>
-        <renderModalComponent modal-id="render-modal"></renderModalComponent>
+        <renderModalComponent ref='modal' id='render-modal'></renderModalComponent>
     </div>
 
 </template>
@@ -32,6 +32,26 @@ export default {
 
     created(){
         this.$store.dispatch( 'loadFilters' );
+
+        const params = this.$route.params;
+
+        if(params.hasOwnProperty('render_id')) {
+            this.$store.dispatch( 'loadRender', params.render_id );
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+                setTimeout(() => {
+                    $(this.$refs.modal.$el).foundation('open');
+                }, 200);
+            });
+        }
+    },
+
+    mounted() {
+        const params = this.$route.params;
+
+        if (this.$route.name != 'search') {
+            this.$router.replace({name: 'search'});
+        }
     },
 
     /*

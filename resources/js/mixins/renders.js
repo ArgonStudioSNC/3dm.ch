@@ -43,6 +43,7 @@ export const RendersMixin = {
 
     computed: {
         getRender: function() {
+            if(this.$store.getters.getRenderLoadStatus !== 2) return null;
             return this.$store.getters.getRender;
         },
 
