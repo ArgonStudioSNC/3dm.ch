@@ -31,6 +31,7 @@
 
 <script>
 import FooterComponent from '../components/global/Footer.vue';
+import AuthAPI from '../api/auth.js';
 
 export default {
     components: {
@@ -40,8 +41,12 @@ export default {
     data () {
         return {
             image_src: '/media/branding/3dm-logo-normal.svg',
-            base64Data : null,
         }
     },
+
+    created () {
+        this.$store.dispatch( 'loadPermissions' );
+        this.$store.dispatch( 'loadRoles' );
+    }
 }
 </script>

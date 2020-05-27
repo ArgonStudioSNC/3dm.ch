@@ -25,6 +25,7 @@ import { sync } from 'vuex-router-sync'
 import router from './routes.js'
 import store from './store.js'
 
+Vue.mixin(require('./mixins/permissions'))
 Vue.mixin(require('./mixins/translator'))
 
 const unsync = sync(store, router)

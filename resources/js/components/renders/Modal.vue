@@ -82,6 +82,7 @@
                     <div v-show="getRenderLoadStatus == 2">
                         {{ legendText }}
                         <button data-tooltip data-click-open="false" :title="__('search.download-picture')" v-on:click="download(getRender.filename)"><i class="fas fa-file-download"></i></button>
+                        <button v-if="can('edit renders')">EDIT</button>
                     </div>
                 </div>
             </div>
