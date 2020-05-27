@@ -10,7 +10,7 @@ export const MasonryMixin = {
         *
         * @param item Object A brick/tile/cell inside the masonry
         */
-        resizeMasonryItem(item){
+        resizeMasonryItem: function(item){
             /* Get the grid object, its row-gap, and the size of its implicit rows */
             var grid = document.getElementsByClassName('masonry')[0];
             if( grid ) {
@@ -41,7 +41,7 @@ export const MasonryMixin = {
         *
         * @uses resizeMasonryItem
         */
-        resizeAllMasonryItems(){
+        resizeAllMasonryItems: function(){
             // Get all item class objects in one list
             var allItems = document.querySelectorAll('.masonry-brick');
 

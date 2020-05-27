@@ -19,10 +19,17 @@ Vue.use( VueRouter )
 /*
     Makes a new VueRouter that we will use to run all of the routes
     for the app.
-*/
+    */
 export default new VueRouter({
     mode: 'history',
     base: '/rendersurfer',
+    scrollBehavior (to, from, savedPosition) {
+        if (savedPosition) {
+          return savedPosition
+        } else {
+          return { x: 0, y: 0 }
+        }
+    },
     routes: [
         {
             path: '',
@@ -32,18 +39,18 @@ export default new VueRouter({
             children: [
                 {
                     path: 'search',
-                    name: 'renders.search',
-                    component: Vue.component( 'Renders', require( './pages/RendersSearch.vue' ) ).default
+                    name: 'search',
+                    component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default
                 },
                 {
-                    path: 'renders/create',
-                    name: 'renders.create',
-                    component: Vue.component( 'NewRender', require( './pages/RendersCreate.vue' ) ).default
+                    path: 'render/create',
+                    name: 'render.create',
+                    component: Vue.component( 'RenderCreate', require( './pages/RenderCreate.vue' ) ).default
                 },
                 {
-                    path: 'renders/:id',
-                    name: 'renders.show',
-                    //component: Vue.component( 'Render', require( './pages/RendersShow.vue' ) ).default
+                    path: 'render/:render_id',
+                    name: 'render.show',
+                    component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default
                 },
             ]
         },

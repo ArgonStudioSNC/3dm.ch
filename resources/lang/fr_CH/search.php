@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'render_match_result' => 'rendu correspond à ta recherche|rendus correspondent à ta recherche',
-
+    'render-match-result' => 'rendu correspond à ta recherche|rendus correspondent à ta recherche',
+    'download-picture' => "Télécharger l'image",
 ];

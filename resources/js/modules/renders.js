@@ -45,10 +45,10 @@ export const renders = {
         /*
         Loads an individual render from the API
         */
-        loadRender( { commit }, data ){
+        loadRender( { commit }, renderId ){
             commit( 'setRenderLoadStatus', 1 );
 
-            RenderAPI.show( data.id )
+            RenderAPI.show( renderId )
             .then( function( response ){
                 commit( 'setRender', response.data );
                 commit( 'setRenderLoadStatus', 2 );

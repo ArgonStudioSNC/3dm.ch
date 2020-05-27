@@ -48,7 +48,7 @@ export default {
     },
 
     methods: {
-        submitNewRender(){
+        submitNewRender: function(){
             if( this.validateNewRender()) {
                 this.$store.dispatch( 'addRender', {
                     name: this.name,
@@ -57,7 +57,7 @@ export default {
             }
         },
 
-        validateNewRender(){
+        validateNewRender: function(){
             let validNewRenderForm = true;
 
             /*
