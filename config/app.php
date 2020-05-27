@@ -14,7 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', '3DM - Visualisations architecturales'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...

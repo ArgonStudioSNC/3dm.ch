@@ -3,12 +3,17 @@ export const FiltersMixin = {
         /*
         Gets the filters
         */
-        filters(){
+        filters: function(){
+            if(this.$store.getters.getFiltersLoadStatus !== 2) return null;
             return this.$store.getters.getFilters;
         },
 
-        activeFilters(){
-            var filters = Object.assign({}, this.$store.getters.getFilters);
+        getFiltersLoadStatus: function() {
+            return this.$store.getters.getFiltersLoadStatus;
+        },
+
+        activeFilters: function(){
+            var filters = Object.assign({}, this.filters);
             var queryFilters = Object.assign({}, this.$store.state.route.query);
             var activeFilters = {};
 
@@ -30,10 +35,29 @@ export const FiltersMixin = {
 
             return activeFilters;
         },
+
+        filteredRenders: function(){
+            if(this.$store.getters.getRendersLoadStatus != 2) return {};
+
+            var resultRenders = Object.assign({}, this.$store.getters.getRenders);
+
+            for (var cat in this.activeFilters){
+                for (var renderKey in resultRenders) {
+                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, this.activeFilters[cat])) {
+                        delete resultRenders[renderKey];
+                    }
+                }
+            }
+            return resultRenders;
+        },
+
+        filteredRendersLength: function() {
+            return Object.keys(this.filteredRenders).length;
+        },
     },
 
     methods: {
-        filterCategoryByTag(render, category, tagArray) {
+        filterCategoryByTag: function(render, category, tagArray) {
             const dict = {
                 offices : 'office_id',
                 types : 'type_id',
@@ -54,7 +78,7 @@ export const FiltersMixin = {
             });
         },
 
-        updateFiltersForCategory(filtersArray, filter) {
+        updateFiltersForCategory: function(filtersArray, filter) {
             if (filtersArray.length == 0) this.resetFilter(filter);
             else {
                 this.$router.push({ query: Object.assign({}, this.$route.query, { [filter.category]: filtersArray.map(f => f.tag).join('|') }) });
@@ -62,13 +86,13 @@ export const FiltersMixin = {
             this.$store.dispatch( 'resetMaxRenders' );
         },
 
-        resetFilter(filter) {
+        resetFilter: function(filter) {
             var urlQuery = Object.assign({}, this.$route.query);
             delete urlQuery[filter.category];
             this.$router.push({ query: urlQuery});
         },
 
-        resetAllFilters() {
+        resetAllFilters: function() {
             this.$router.push({ query: {} });
             this.$store.dispatch( 'resetMaxRenders' );
         },

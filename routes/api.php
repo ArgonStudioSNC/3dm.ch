@@ -14,6 +14,11 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::namespace('Auth')->prefix('v1')->group(function () {
+      Route::get('permissions', 'PermissionController');
+      Route::get('roles', 'RoleController');
+});
+
 Route::namespace('API')->prefix('v1')->group(function(){
     Route::get('/user', function( Request $request ){
         return $request->user();

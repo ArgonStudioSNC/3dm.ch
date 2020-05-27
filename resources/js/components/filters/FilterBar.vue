@@ -66,7 +66,7 @@ export default {
     mixins: [FiltersMixin],
 
     methods: {
-        resetMaxRenders() {
+        resetMaxRenders: function() {
             this.$store.dispatch( 'resetMaxRenders' );
         }
 

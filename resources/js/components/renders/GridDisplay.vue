@@ -48,7 +48,7 @@
 <template>
     <div class="render-grid" v-show="rendersLoadStatus == 2">
         <div class="match-result grid-x align-right">
-            <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render_match_result", filteredRendersLength) }}
+            <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render-match-result", filteredRendersLength) }}
         </div>
         <div class="masonry-wrapper">
             <div class="masonry">
@@ -96,32 +96,15 @@ export default {
         /*
         Gets the renders load status
         */
-        rendersLoadStatus(){
+        rendersLoadStatus: function(){
             return this.$store.getters.getRendersLoadStatus;
         },
 
-        maxRenders() {
+        maxRenders: function() {
             return this.$store.getters.getMaxRenders;
         },
 
-        filteredRenders(){
-            var resultRenders = Object.assign({}, this.$store.getters.getRenders);
-
-            for (var cat in this.activeFilters){
-                for (var renderKey in resultRenders) {
-                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, this.activeFilters[cat])) {
-                        delete resultRenders[renderKey];
-                    }
-                }
-            }
-            return resultRenders;
-        },
-
-        filteredRendersLength() {
-            return Object.keys(this.filteredRenders).length;
-        },
-
-        paginatedFilteredRenders() {
+        paginatedFilteredRenders: function() {
             const sliced = Object.keys(this.filteredRenders).slice(0, this.maxRenders).reduce((result, key) => {
                                 result[key] = this.filteredRenders[key];
                                 return result;
@@ -131,7 +114,7 @@ export default {
     },
 
     methods: {
-        showMore(){
+        showMore: function(){
             this.$store.dispatch( 'showMore', 50 );
         },
     },

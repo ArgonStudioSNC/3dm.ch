@@ -11,10 +11,6 @@ $(function(){
     $('body').css('display', 'block');
 });
 
-window.onbeforeunload = function () {
-        window.scrollTo(0,0);
-};
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -29,6 +25,7 @@ import { sync } from 'vuex-router-sync'
 import router from './routes.js'
 import store from './store.js'
 
+Vue.mixin(require('./mixins/permissions'))
 Vue.mixin(require('./mixins/translator'))
 
 const unsync = sync(store, router)
