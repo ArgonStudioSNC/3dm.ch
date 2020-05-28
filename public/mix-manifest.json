@@ -1,9 +1,13 @@
 {
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/rendersurfer.js": "/js/rendersurfer.js",
-    "/js/vendor.js": "/js/vendor.js",
-    "/js/website.js": "/js/website.js",
-    "/css/website.css": "/css/website.css",
-    "/css/rendersurfer.css": "/css/rendersurfer.css",
-    "/js/website.vanilla.js": "/js/website.vanilla.js"
+    "/js/manifest.js": "/js/manifest.js?id=d91051ea7d0c9bd1981e",
+    "/js/manifest.js.map": "/js/manifest.js.map?id=a07956f82042cc418451",
+    "/js/rendersurfer.js": "/js/rendersurfer.js?id=9ed6b961a3e3106258ab",
+    "/js/rendersurfer.js.map": "/js/rendersurfer.js.map?id=a34fdd2406d5ca7ce258",
+    "/js/vendor.js": "/js/vendor.js?id=f3e9ece083c5ee03fb96",
+    "/js/vendor.js.map": "/js/vendor.js.map?id=efe3d916028c39596639",
+    "/js/website.js": "/js/website.js?id=8b709580d389038bb48d",
+    "/css/website.css": "/css/website.css?id=13b3346ee29fae5022fe",
+    "/css/rendersurfer.css": "/css/rendersurfer.css?id=f6308ba4e258d709c494",
+    "/js/website.js.map": "/js/website.js.map?id=80f49a02d15e22a598c9",
+    "/js/website.vanilla.js": "/js/website.vanilla.js?id=6952000407ddd83c5422"
 }
