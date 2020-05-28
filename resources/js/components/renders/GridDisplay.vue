@@ -52,7 +52,7 @@
         </div>
         <div class="masonry-wrapper">
             <div class="masonry">
-                <renderCardComponent v-for="(render, key) in paginatedFilteredRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
+                <renderCardComponent v-for="(render, key) in compiledRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
         <div class="grid-x align-center">
@@ -68,6 +68,7 @@
 import RenderCardComponent from './Card.vue';
 import { FiltersMixin } from '../../mixins/filters';
 import { MasonryMixin } from '../../mixins/masonry';
+import _ from 'lodash';
 
 export default {
     components: {
@@ -96,27 +97,44 @@ export default {
         /*
         Gets the renders load status
         */
-        rendersLoadStatus: function(){
+        rendersLoadStatus(){
             return this.$store.getters.getRendersLoadStatus;
         },
 
-        maxRenders: function() {
+        maxRenders() {
             return this.$store.getters.getMaxRenders;
         },
 
-        paginatedFilteredRenders: function() {
-            const sliced = Object.keys(this.filteredRenders).slice(0, this.maxRenders).reduce((result, key) => {
-                                result[key] = this.filteredRenders[key];
+        compiledRenders() {
+            // is user filtering the renders
+            if (!_.isEmpty(this.activeFilters)) {
+                return this.paginate(this.filteredRenders, this.maxRenders);
+            } else {
+                return this.paginate(this.shuffledRenders, this.maxRenders);
+            }
+        },
+
+        shuffledRenders() {
+            return _.shuffle(this.filteredRenders);
+        }
+    },
+
+    methods: {
+        showMore() {
+            this.$store.dispatch( 'showMore', 50 );
+        },
+
+        paginate(r, p) {
+            const sliced = Object.keys(r).slice(0, p).reduce((result, key) => {
+                                result[key] = r[key];
                                 return result;
                             }, {});
             return sliced;
         },
-    },
 
-    methods: {
-        showMore: function(){
-            this.$store.dispatch( 'showMore', 50 );
-        },
+        orderByName(r) {
+
+        }
     },
 }
 </script>

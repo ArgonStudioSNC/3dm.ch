@@ -8,6 +8,16 @@
         padding: $global-padding;
     }
 
+    .overlay {
+        z-index: 5;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+    }
+
     .reveal-container {
         margin-left: auto;
         margin-right: auto;
@@ -18,10 +28,12 @@
         width: 100%;
         color: $white;
         img {
+            z-index: 10;
             max-width: 100%;
             max-height: 100%;
         }
         &>.cell {
+            position: relative;
             margin-bottom: 1em;
             @include breakpoint(medium) {
                 margin-bottom: 2em;
@@ -29,6 +41,7 @@
         }
     }
     button {
+        z-index: 10;
         padding: 0 8px;
         cursor: pointer;
         color: darken($white, 40%);
@@ -45,6 +58,10 @@
     .cell {
         min-height: 24px;;
     }
+    .z-rel-10 {
+        position: relative;
+        z-index: 10;
+    }
 }
 .centered {
     position: absolute;
@@ -57,32 +74,33 @@
 
 <template>
     <div class="full reveal" ref="reveal" data-reveal>
+        <div class="overlay" data-close></div>
         <div class="reveal-container">
             <div class="grid-y text-center reveal-content">
-                <div class="cell reveal-navigation" style="position: relative;">
+                <div class="cell reveal-navigation">
                     <div class="grid-x align-center">
-                        <button class="cell shrink" :class="{'disabled': !previousRender}" v-on:click="previous"><i class="fas fa-chevron-left"></i></button>
-                        <div class="cell" style="width: 6em;"><span v-show="renderIndex >= 0">{{ renderIndex + 1 }}/{{ filteredRendersLength }}</span></div>
-                        <button class="cell shrink" :class="{'disabled': !nextRender}" v-on:click="next"><i class="fas fa-chevron-right"></i></button>
+                        <button class="cell shrink z-rel-10" :class="{'disabled': !previousRender}" v-on:click="previous"><i class="fas fa-chevron-left"></i></button>
+                        <div class="cell z-rel-10" style="width: 6em;"><span v-show="renderIndex >= 0">{{ renderIndex + 1 }}/{{ filteredRendersLength }}</span></div>
+                        <button class="cell shrink z-rel-10" :class="{'disabled': !nextRender}" v-on:click="next"><i class="fas fa-chevron-right"></i></button>
                     </div>
 
-                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                    <button class="close-button z-10" data-close aria-label="Close modal" type="button">
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
 
-                <div class="cell auto" style="position:relative;">
+                <div class="cell auto">
                     <template v-if="base64Data">
-                        <img class="centered" v-on:click="next" :src="base64Data" />
+                        <img class="centered z-10" v-on:click="next" :src="base64Data" />
                     </template>
-                    <loaderComponent class="centered" color="#fefefe" v-else></loaderComponent>
+                    <loaderComponent class="centered z-10" color="#fefefe" v-else></loaderComponent>
                 </div>
 
-                <div class="cell">
+                <div class="cell" v-show="getRenderLoadStatus == 2">
                     <div v-show="getRenderLoadStatus == 2">
-                        {{ legendText }}
-                        <button data-tooltip data-click-open="false" :title="__('search.download-picture')" v-on:click="download(getRender.filename)"><i class="fas fa-file-download"></i></button>
-                        <button v-if="can('edit renders')">EDIT</button>
+                        <span class="z-rel-10">{{ legendText }}</span>
+                        <button class="z-rel-10" data-tooltip data-click-open="false" :title="__('search.download-picture')" v-on:click="download(getRender.filename)"><i class="fas fa-file-download"></i></button>
+                        <button class="z-rel-10" v-if="can('edit renders')">EDIT</button>
                     </div>
                 </div>
             </div>

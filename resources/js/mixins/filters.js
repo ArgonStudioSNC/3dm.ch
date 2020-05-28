@@ -48,6 +48,9 @@ export const FiltersMixin = {
                     }
                 }
             }
+            // order filters by name
+            resultRenders = _.orderBy(resultRenders, ['name'],['asc']);
+
             return resultRenders;
         },
 
