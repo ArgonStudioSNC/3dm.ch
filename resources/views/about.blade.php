@@ -53,9 +53,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>Ad'A architecture Sàrl</p>
+                            <p>AETC Sàrl</p>
                             <p>Atba architecture + énergie SA</p>
                             <p>Atelier 78 Sàrl</p>
                             <p>Ateliers du passage</p>
+                            <p>Baeriswyl Architekten AG</p>
                             <p>Bart & Buchhofer Architekten AG</p>
                             <p>BBA Archipole SA</p>
                             <p>BBH Architectes Sàrl</p>
@@ -67,12 +69,16 @@
                             <p>Deillon Delley Architectes SA</p>
                             <p>Deschenaux Follonier</p>
                             <p>Dietziker Architekten GmbH</p>
+                            <p>DT-TECH architecture SA</p>
                             <p>Dupasquier Rebetez Architectes</p>
+                            <p>DVarchitectes & associés sa</p>
                             <p>Esposito + Javet</p>
                             <p>Epure Architecture et Urbanisme SA</p>
-                            <p>GDW architectes SA</p>
+
                         </div>
                         <div class="col-lg-6">
+                                                        <p>Farra zoumboulakis & associés SA</p>
+                            <p>GDW architectes SA</p>
                             <p>GXM Architekten GmbH</p>
                             <p>IPAS architectes SA</p>
                             <p>Itten + Brechbühl SA</p>
@@ -88,7 +94,9 @@
                             <p>Previmm Sàrl</p>
                             <p>R2A architectes</p>
                             <p>RBRC architectes Sàrl</p>
+                            <p>RBCH architectes Sàrl</p>
                             <p>Rollimarchini Architekten AG</p>
+                            <p>Unicum ag</p>
                             <p>Wahlirüefli Architekten und Raumplaner AG</p>
                             <p>WEL Consulting Sàrl</p>
                         </div>
@@ -105,44 +113,35 @@
                     <h1>Team</h1>
                 </div>
                 <div class="col-md-9 col-xl-8">
-                    <div class="row">
-                        <div class="col">
-                            <h3>Nathan Boder</h3>
-                            <p style="padding-bottom: 0.25rem;">Fondateur & directeur<br>Architecte HES</p>
-                            <p>
-                                1990 Né à Bienne<br>
-                                2013 Bachelor of Arts in Architecture HES, Fribourg<br>
-                                2014 Service civil au sein du service d'urbanisme et d'architecture, Fribourg<br>
-                                2015 Architecte chez Kistler Vogt Architectes<br>
-                                > 2015 Directeur chez 3DM<br>
-                                > 2018 Chargé de cours en expression informatique, filière architecture, EIA Fribourg<br>
-                                > 2019 Co-directeur chez Argon Studio<br>
-                                > 2019 Membre de la CPS Jura bernois - Seeland
-                            </p>
-                        </div>
-                    </div>
                     <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col">
-                            <h3>Michela Parrini</h3>
-                            <p>Collaboratrice en visualisations architecturales<br>Architetto Università degli Studi di Firenze</p>
+                            <h3>Nathan Boder</h3>
+                            <p>Fondateur & directeur<br>Architecte HES<br>
+                            <a href="mailto:nathan.boder@3dm.ch" target="_top">nathan.boder@3dm.ch</a></p>
                         </div>
                         <div class="col">
-                            <h3>Lucien Bösiger</h3>
-                            <p>Collaborateur en visualisations architecturales<br>Designer ES en communication visuelle</p>
+                            <h3>Michela Parrini</h3>
+                            <p>Collaboratrice en visualisations architecturales<br>Architetto Università degli Studi di Firenze<br>
+                            <a href="mailto:michela.parrini@3dm.ch" target="_top">michela.parrini@3dm.ch</a></p>
                         </div>
                         <div class="col">
                             <h3>Aline Dauwalder</h3>
-                            <p>Stagiaire en visualisations architecturales<br>Architecte HES</p>
+                            <p>Collaboratrice en visualisations architecturales<br>Architecte HES<br>
+                            <a href="mailto:aline.dauwalder@3dm.ch" target="_top">aline.dauwalder@3dm.ch</a></p>
                         </div>
                         <div class="col">
                             <h3>Loïc Charrière</h3>
-                            <p>Développement informatique<br>Ingénieur Informaticien HES</p>
+                            <p>Développement informatique<br>Ingénieur Informaticien HES<br>
+                            <a href="mailto:loic@argonstudio.ch" target="_top">loic@argonstudio.ch</a></p>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col">
                             <h3>Entreprises partenaires</h3>
                             <p><a href="https://www.argonstudio.ch" target="_blank">Argon Studio | Réalité augmentée et virtuelle</a></p>
                         </div>
                     </div>
+
                     <img class="img-fluid" src="{{ asset('/media/3dm-bureau.gif') }}" alt="[Image de l'équipe 3DM]">
                 </div>
             </div>
@@ -171,10 +170,10 @@
                         </div>
                         <div class="col">
                             <h3>Contact</h3>
-                                <p>
-                                    <a href="mailto:contact@3dm.ch" target="_top">contact@3dm.ch</a><br>
-                                    <a href="tel:+41323232503">+41 (0)32 323 25 03</a>
-                                </p>
+                            <p>
+                                <a href="mailto:contact@3dm.ch" target="_top">contact@3dm.ch</a><br>
+                                <a href="tel:+41323232503">+41 (0)32 323 25 03</a>
+                            </p>
                         </div>
                         <div class="col">
                             <h3>Revue de presse</h3>
