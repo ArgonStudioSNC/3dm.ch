@@ -14,6 +14,7 @@
 Auth::routes(['register' => false, 'password.request' => false, 'password.reset' => false]);
 
 Route::namespace('Web')->group(function () {
+
     Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
     Route::get('/about', 'SiteController@about')->name('www.about');
 
