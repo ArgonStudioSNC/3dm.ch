@@ -1,0 +1,47 @@
+@use  'base';
+
+html, body {
+    height: 100%;
+}
+
+#not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: base.$light-brown;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    @include media-breakpoint-up(xl){
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+    a:hover {
+        color: base.$theme-blue;
+    }
+    .image-404 {
+        height: 300px;
+    }
+}
+
+.link-arrowed {
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    stroke: base.$theme-blue;
+
+    .arrow-icon {
+        position: relative;
+        top: -1px;
+        -webkit-transition: -webkit-transform 0.3s ease;
+        transition: -webkit-transform 0.3s ease;
+        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+        vertical-align: middle;
+    }
+    &:hover {
+        .arrow-icon {
+            transform: translate3d(5px, 0, 0);
+        }
+    }
+}

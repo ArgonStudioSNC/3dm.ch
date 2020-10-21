@@ -23,4 +23,5 @@ Route::namespace('Web')->domain('rendersurfer.' . env('APP_URL'))->group(functio
 Route::namespace('Web')->domain(env('APP_URL'))->group(function () {
     Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
     Route::get('/about', 'SiteController@about')->name('www.about');
+    Route::get('/about', 'SiteController@about')->name('www.about');
 });

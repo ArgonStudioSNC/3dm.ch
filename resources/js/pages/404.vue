@@ -18,9 +18,6 @@
     .image-404 {
         height: 300px;
     }
-    .back {
-        text-transform:uppercase;
-    }
 }
 
 .link-arrowed {
@@ -52,7 +49,7 @@
         <div class="cell"><h1>Cette page n’est malheureusement pas disponible.</h1></div>
         <div class="cell"><p>Le lien que vous avez suivi est peut-être rompu, ou la page a été supprimée.</p></div>
         <div class="cell">
-            <a class="back link-arrowed" href="/">revenir au Rendersurfer
+            <a class="link-arrowed" href="/">revenir au rendersurfer
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                   <g fill="none" stroke-width="1.4" stroke-linejoin="round" stroke-miterlimit="10">
                     <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
