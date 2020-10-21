@@ -1,6 +1,10 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
 
+#home {
+    min-height: 100vh;
+}
+
 </style>
 
 <template>

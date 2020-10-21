@@ -9,7 +9,12 @@
 // Foundation sites
 @import 'node_modules/foundation-sites/assets/foundation.scss';
 
+html {
+	height: 100%;
+}
+
 body {
+	min-height: 100%;
 	padding-right: 0.625rem;
 	padding-left: 0.625rem;
 	@include breakpoint(xxlarge) {

@@ -19,11 +19,15 @@ Route::namespace('Auth')->prefix('v1')->group(function () {
       Route::get('roles', 'RoleController');
 });
 
-Route::namespace('API')->prefix('v1')->group(function(){
+
+Route::namespace('API')->prefix('v1')->domain(env('APP_URL'))->group(function(){
     Route::get('/user', function( Request $request ){
         return $request->user();
     });
+});
 
+
+Route::namespace('API')->prefix('v1')->domain('rendersurfer.' . env('APP_URL'))->group(function(){
     /*
     |-------------------------------------------------------------------------------
     | Get All Renders

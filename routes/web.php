@@ -13,13 +13,14 @@
 
 Auth::routes(['register' => false, 'password.request' => false, 'password.reset' => false]);
 
-Route::namespace('Web')->group(function () {
-
-    Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
-    Route::get('/about', 'SiteController@about')->name('www.about');
+Route::namespace('Web')->domain('rendersurfer.' . env('APP_URL'))->group(function () {
+    Route::get('/{vueroute?}', 'RendersurferController@index')->where('vueroute', '[\/\w\.-]*')->name('rendersurfer.index');
 
     Route::get('/admin', 'AdminController@index')->name('admin.index');
     Route::post('/admin/uploadFile', 'AdminController@uploadFile')->name('admin.uploadFile');
+});
 
-    Route::get('/rendersurfer/{vueroute?}', 'RendersurferController@index')->where('vueroute', '[\/\w\.-]*')->name('rendersurfer.index');
+Route::namespace('Web')->domain(env('APP_URL'))->group(function () {
+    Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
+    Route::get('/about', 'SiteController@about')->name('www.about');
 });

@@ -10,6 +10,7 @@
 */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import DefaultLayout from './layouts/Default.vue'
 
 /*
     Extends Vue to use Vue Router
@@ -22,7 +23,7 @@ Vue.use( VueRouter )
     */
 export default new VueRouter({
     mode: 'history',
-    base: '/rendersurfer',
+    base: '/',
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition) {
           return savedPosition
@@ -33,9 +34,8 @@ export default new VueRouter({
     routes: [
         {
             path: '',
-            name: 'layout',
             redirect: 'search',
-            component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ).default,
+            component: DefaultLayout,
             children: [
                 {
                     path: 'search',
@@ -51,6 +51,17 @@ export default new VueRouter({
                     path: 'render/:render_id',
                     name: 'render.show',
                     component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default
+                },
+            ]
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            component: DefaultLayout,
+            children: [
+                {
+                    path: '',
+                    name: 'NotFound',
+                    component: Vue.component( 'NotFound', require( './pages/404.vue' ) ).default
                 },
             ]
         },

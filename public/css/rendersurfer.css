@@ -674,7 +674,7 @@ h5, .h5,
 h6, .h6 {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   color: inherit;
   text-rendering: optimizeLegibility;
 }
@@ -689,70 +689,46 @@ h6 small, .h6 small {
 }
 
 h1, .h1 {
-  font-size: 1.6rem;
-  line-height: 1.4;
+  font-size: 1.75rem;
+  line-height: 1.6;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 h2, .h2 {
-  font-size: 1.3333333333rem;
-  line-height: 1.4;
+  font-size: 1.125rem;
+  line-height: 1.6;
   margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-h3, .h3 {
-  font-size: 1.2666666667rem;
-  line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-h4, .h4 {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 h5, .h5 {
   font-size: 1.1333333333rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-h6, .h6 {
-  font-size: 1.0666666667rem;
-  line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 @media print, screen and (min-width: 40em) {
   h1, .h1 {
-    font-size: 3.2rem;
+    font-size: 1.75rem;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   h2, .h2 {
-    font-size: 2.6666666667rem;
-  }
-
-  h3, .h3 {
-    font-size: 2.0666666667rem;
-  }
-
-  h4, .h4 {
-    font-size: 1.6666666667rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   h5, .h5 {
     font-size: 1.3333333333rem;
-  }
-
-  h6, .h6 {
-    font-size: 1.0666666667rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 a {
@@ -6489,7 +6465,12 @@ html.is-reveal-open body {
   }
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   padding-right: 0.625rem;
   padding-left: 0.625rem;
 }
