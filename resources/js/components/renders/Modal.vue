@@ -101,7 +101,7 @@
                         <div v-show="getRenderLoadStatus == 2">
                             <span class="z-rel-10">{{ legendText }}</span>
                             <button class="z-rel-10 has-tip" data-tooltip data-click-open="false" :title="__('search.download-picture')" v-on:click="download(getRender.filename)"><i class="fas fa-file-download"></i></button>
-                            <button class="z-rel-10" data-close v-on:click="edit(getRender)" v-if="can('edit renders')">EDIT</button>
+                            <button class="z-rel-10" data-close v-on:click="edit(getRender)" v-if="can('edit renders')">{{ __('search.edit-render-link') }}</button>
                         </div>
                     </div>
                 </div>

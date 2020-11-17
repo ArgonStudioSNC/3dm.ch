@@ -1,8 +1,8 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
+@import '~@/mixins';
 
 .render-grid {
-    margin-top: 4em;
     .match-result span{
         font-weight: $global-weight-bold;
     }
@@ -41,15 +41,29 @@
         font-size: inherit;
         font-weight: inherit;
     }
+    button {
+        padding: 0 8px;
+        cursor: pointer;
+        color: lighten($black, 40%);
+        @include transition(color 0.1s);
+
+        &:hover {
+            color: $black;
+        }
+    }
 }
 
 </style>
 
 <template>
     <div class="render-grid" v-show="rendersLoadStatus == 2">
-        <button class="z-rel-10" data-close v-on:click="$router.push({ name: 'manager.renders.new' })" v-if="can('add renders')">ADD</button>
         <div class="match-result grid-x align-right">
-            <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render-match-result", filteredRendersLength) }}
+            <div class="cell shrink" v-if="can('add renders')">
+                <button data-close v-on:click="$router.push({ name: 'manager.renders.new' })">{{ __('search.add-render-link') }}</button>
+            </div>
+            <div class="cell shrink">
+                <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render-match-result", filteredRendersLength) }}
+            </div>
         </div>
         <div class="masonry-wrapper">
             <div class="masonry">

@@ -4,13 +4,9 @@
     .filter-bar {
 
         .grid-container {
-            max-width: 100%;
+            max-width: 1024px;
             margin-right: 0;
             padding: 0;
-
-            @include breakpoint(xxlarge) {
-                max-width: 1024px;
-            }
         }
 
         .filter-reset-button {

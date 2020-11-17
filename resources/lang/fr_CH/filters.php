@@ -24,4 +24,5 @@ return [
 
     'reset' => 'Réinitialiser les filtres',
     'show-more' => 'Plus de résultats',
+    'loading-error' => 'Impossible de charger les filtres',
 ];

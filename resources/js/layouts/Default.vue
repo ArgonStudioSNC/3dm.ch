@@ -1,8 +1,11 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
 
-#app-layout {
+#default-layout {
     margin-top: 1.5em;
+    .layout-header {
+        margin-bottom: 4em;
+    }
 }
 
 .logo {
@@ -10,17 +13,17 @@
     display: block;
     max-width: 200px;
     height: auto;
-
-    @include breakpoint(xxlarge) {
-        position: absolute;
-    }
 }
 
 </style>
 
 <template>
-    <div id="app-layout">
-        <a class="logo" href="/"><img :src="image_src"></a>
+    <div id="default-layout">
+        <div class="layout-header grid-container full">
+            <a class="logo" href="/">
+                <img :src="image_src">
+            </a>
+        </div>
         <router-view></router-view>
         <FooterComponent></FooterComponent>
     </div>

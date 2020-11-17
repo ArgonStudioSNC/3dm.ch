@@ -11,6 +11,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import DefaultLayout from './layouts/Default.vue'
+import RenderFiltersLayout from './layouts/WithRenderFilters.vue'
 
 /*
     Extends Vue to use Vue Router
@@ -57,7 +58,7 @@ export default new VueRouter({
         {
             path: '',
             redirect: 'search',
-            component: DefaultLayout,
+            component: RenderFiltersLayout,
             children: [
                 {
                     path: 'search',
