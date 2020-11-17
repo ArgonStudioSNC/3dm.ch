@@ -59,6 +59,8 @@ class RendersController extends Controller
     | Description:    Adds a new render to the application
     */
     public function store( StoreRenderRequest $request ){
+        $this->authorize('add renders');
+
         $render = new Models\Render();
         $render->name = $request['name'];
         if ( isset($request['year']) ) $render->year = $request['year'];
@@ -85,6 +87,8 @@ class RendersController extends Controller
     |   $id   -> ID of the render we are updating
     */
     public function update( UpdateRenderRequest $request, $id ){
+        $this->authorize('edit renders');
+
         $render = Models\Render::findOrFail($id);
         error_log('enter update');
         error_log($request['name']);
@@ -119,6 +123,8 @@ class RendersController extends Controller
     |   $id   -> ID of the render we are deleting
     */
     public function delete( $id ){
+        $this->authorize('delete renders');
+
         $render = Models\Render::findOrFail($id);
         $filename = $render->filename;
 
@@ -136,7 +142,7 @@ class RendersController extends Controller
     | Parameters:
     |   $request   -> The request containing the image to store
     */
-    public function storeImage( $request ) {
+    private function storeImage( $request ) {
         $file = $request->file('picture');
         $fileExt  = $file->getClientOriginalExtension();
 
@@ -161,7 +167,7 @@ class RendersController extends Controller
     | Parameters:
     |   $filename   -> The filename of the image to delete
     */
-    public function deleteImage( $filename ) {
+    private function deleteImage( $filename ) {
         Storage::disk('rendersurfer')->move( 'original' . '/' . $filename, 'deleted' . '/' .  $filename );
         Storage::disk('rendersurfer')->delete( 'small' . '/' .  $filename );
     }
@@ -175,7 +181,7 @@ class RendersController extends Controller
     |   $render         -> The render to updateCategories
     |   $categories     -> JSON with the categories ids for the render
     */
-    public function setCategories($render, $categories) {
+    private function setCategories($render, $categories) {
         if (isset($categories->office_id)) {
             $render->office_id =  $categories->office_id;
         }

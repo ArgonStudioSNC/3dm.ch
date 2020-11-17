@@ -13,7 +13,7 @@ class UpdateRenderRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->can('edit renders');
     }
 
     /**
