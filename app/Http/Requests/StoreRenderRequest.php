@@ -24,8 +24,10 @@ class StoreRenderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => 'required',
-            'filename' => 'required'
+            'name'          => 'required|max:64',
+            'year'          => 'nullable|digits:4|integer|min:1950|max:'.(date('Y')+1),
+            'picture'       => 'required|image|max:3072',
+            'categories'    => 'nullable',
         ];
     }
 
@@ -37,8 +39,19 @@ class StoreRenderRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'     => 'A name for the render is required.',
-            'filename.required'  => 'A filename is required to add this render.'
+            //
         ];
+    }
+
+    /**
+     * Prepare the data for validation.
+     *
+     * @return void
+     */
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'categories' => json_decode($this->categories),
+        ]);
     }
 }

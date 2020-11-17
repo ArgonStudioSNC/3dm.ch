@@ -73,34 +73,36 @@
 </style>
 
 <template>
-    <div class="full reveal" ref="reveal" data-reveal>
-        <div class="overlay" data-close></div>
-        <div class="reveal-container">
-            <div class="grid-y text-center reveal-content">
-                <div class="cell reveal-navigation">
-                    <div class="grid-x align-center">
-                        <button class="cell shrink z-rel-10" :class="{'disabled': !previousRender}" v-on:click="previous"><i class="fas fa-chevron-left"></i></button>
-                        <div class="cell z-rel-10" style="width: 6em;"><span v-show="renderIndex >= 0">{{ renderIndex + 1 }}/{{ filteredRendersLength }}</span></div>
-                        <button class="cell shrink z-rel-10" :class="{'disabled': !nextRender}" v-on:click="next"><i class="fas fa-chevron-right"></i></button>
+    <div class="render-modal">
+        <div id="render-modal" class="full reveal" data-reveal>
+            <div class="overlay" data-close></div>
+            <div class="reveal-container">
+                <div class="grid-y text-center reveal-content">
+                    <div class="cell reveal-navigation">
+                        <div class="grid-x align-center">
+                            <button class="cell shrink z-rel-10" :class="{'disabled': !previousRender}" v-on:click="previous"><i class="fas fa-chevron-left"></i></button>
+                            <div class="cell z-rel-10" style="width: 6em;"><span v-show="renderIndex >= 0">{{ renderIndex + 1 }}/{{ filteredRendersLength }}</span></div>
+                            <button class="cell shrink z-rel-10" :class="{'disabled': !nextRender}" v-on:click="next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+
+                        <button class="close-button z-10" data-close aria-label="Close modal" type="button">
+                            <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                        </button>
                     </div>
 
-                    <button class="close-button z-10" data-close aria-label="Close modal" type="button">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                </div>
+                    <div class="cell auto">
+                        <template v-if="renderImage">
+                            <img class="centered z-10" v-on:click="next" :src="renderImage" />
+                        </template>
+                        <loaderComponent class="centered z-10" color="#fefefe" v-else></loaderComponent>
+                    </div>
 
-                <div class="cell auto">
-                    <template v-if="base64Data">
-                        <img class="centered z-10" v-on:click="next" :src="base64Data" />
-                    </template>
-                    <loaderComponent class="centered z-10" color="#fefefe" v-else></loaderComponent>
-                </div>
-
-                <div class="cell" v-show="getRenderLoadStatus == 2">
-                    <div v-show="getRenderLoadStatus == 2">
-                        <span class="z-rel-10">{{ legendText }}</span>
-                        <button class="z-rel-10" data-tooltip data-click-open="false" :title="__('search.download-picture')" v-on:click="download(getRender.filename)"><i class="fas fa-file-download"></i></button>
-                        <button class="z-rel-10" v-if="can('edit renders')">EDIT</button>
+                    <div class="cell" v-show="getRenderLoadStatus == 2">
+                        <div v-show="getRenderLoadStatus == 2">
+                            <span class="z-rel-10">{{ legendText }}</span>
+                            <button class="z-rel-10 has-tip" data-tooltip data-click-open="false" :title="__('search.download-picture')" v-on:click="download(getRender.filename)"><i class="fas fa-file-download"></i></button>
+                            <button class="z-rel-10" data-close v-on:click="edit(getRender)" v-if="can('edit renders')">EDIT</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,56 +122,59 @@ export default {
         LoaderComponent,
     },
 
-    mixins: [FiltersMixin, RendersMixin],
+    mixins: [
+        FiltersMixin,
+        RendersMixin,
+    ],
 
     data () {
         return {
             base64Data : null,
+            searchQuery : null,
+            modalOpen : false,
         }
     },
 
     computed: mapState(['renders']),
 
-    created() {
+    mounted() {
+        this.reveal = new Foundation.Reveal($('#render-modal'));
+        this.tooltip = $('.has-tip').foundation();
+
         this.reader = new FileReader();
         this.reader.onload = r => {
             this.base64Data = this.reader.result;
         };
 
-        this.unwatch = this.$store.watch(
-            (state, getters) => getters.getRender,
-            (newValue, oldValue) => {
-                this.base64Data = null;
-                this.update(newValue);
-            },
-        );
-
-        this.update(this.getRender);
-    },
-
-    mounted() {
-        var searchQuery = null;
-
-        $(this.$refs.reveal).on('open.zf.reveal', x => {
-            searchQuery = this.$route.name == 'search' ? this.$route.query : null;
+        $('#render-modal').on('open.zf.reveal', x => {
+            this.searchQuery = this.$route.name == 'search' ? this.$route.query : null;
+            this.modalOpen = true;
         });
 
-        $(this.$refs.reveal).on('closed.zf.reveal', x => {
-            this.base64Data = null;
-            var queryString = Object.keys(searchQuery).map(key => key + '=' + searchQuery[key]).join('&');
-            history.replaceState(this.state, '', '/rendersurfer/search' + (queryString?'?':'') + queryString);
+        $('#render-modal').on('closed.zf.reveal', x => {
+            if (this.searchQuery) {
+                var queryString = Object.keys(this.searchQuery).map(key => key + '=' + this.searchQuery[key]).join('&');
+                history.replaceState(this.state, '', '/search' + (queryString?'?':'') + queryString);
+                this.searchQuery = null;
+            }
+            this.modalOpen = false;
         });
     },
 
     beforeDestroy() {
-        this.unwatch();
+        this.searchQuery = null;
+        this.reveal.close();
+        $('#render-modal').remove();
     },
 
     methods : {
+        openReveal() {
+            this.reveal.open();
+        },
+
         previous() {
             var r = this.previousRender;
             if (r) {
-                this.base64Data = null;
                 this.$store.dispatch( 'loadRender', r.id);
             }
         },
@@ -177,7 +182,6 @@ export default {
         next() {
             var r = this.nextRender;
             if (r) {
-                this.base64Data = null;
                 this.$store.dispatch( 'loadRender', r.id);
             }
         },
@@ -204,11 +208,20 @@ export default {
             });
         },
 
-        update(value) {
-            if(!_.isEmpty(value)) {
-                history.replaceState(this.state, value.name, '/rendersurfer/render/' + value.id);
+        edit(render){
+            this.$router.push({ name: 'manager.renders.edit', params: { render_id: render.id }});
+        },
+    },
 
-                const promise = RenderAPI.picture(value.filename);
+    computed : {
+        renderImage() {
+            if (!this.modalOpen || this.$store.getters.getRenderLoadStatus != 2) {
+                this.base64Data = null;
+            } else if (!this.base64Data) {
+                let render = this.$store.getters.getRender;
+                history.replaceState(this.state, render.name, '/renders/' + render.id);
+
+                const promise = RenderAPI.picture(render.filename);
                 this.lastPromise = promise;
 
                 promise.then( response => {
@@ -217,10 +230,8 @@ export default {
                     }
                 });
             }
+            return this.base64Data;
         },
-    },
-
-    computed : {
 
         previousRender() {
             if (this.renderIndex <= 0) return null;

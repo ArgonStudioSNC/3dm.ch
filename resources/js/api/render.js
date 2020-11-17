@@ -13,7 +13,7 @@ export default {
     /*
         GET     /api/v1/renders
     */
-    all: function(){
+    index: function(){
         return client.get(`renders`);
     },
 
@@ -34,12 +34,22 @@ export default {
     /*
         POST    /api/v1/renders
     */
-    create: function(name, filename){
-        return client.post(`renders`,
-            {
-                name: name,
-                filename: filename
-            }
-        );
+    store: function(data){
+        return client.post(`renders`, data);
+    },
+
+    /*
+        PUT    /api/v1/renders/{id}
+    */
+    update: function(id, data){
+        data.append("_method", "PUT");
+        return client.post(`renders/${id}`, data);
+    },
+
+    /*
+        DELETE    /api/v1/renders/{id}
+    */
+    delete: function(id){
+        return client.delete(`renders/${id}`);
     }
 }

@@ -13,7 +13,7 @@ export default {
     /*
         GET     /api/v1/filters
     */
-    all: function(){
+    index: function(){
         return client.get(`filters`);
     },
 

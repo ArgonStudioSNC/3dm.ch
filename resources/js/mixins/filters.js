@@ -68,6 +68,7 @@ export const FiltersMixin = {
                 seasontimes : 'seasontime_id',
                 weather : 'weather_id',
                 daytimes : 'daytime_id',
+                lights : 'light_id',
                 compositions : 'composition_id',
                 assignements : 'assignement_id',
                 countries : 'country_code',

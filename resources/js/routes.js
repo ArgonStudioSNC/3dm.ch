@@ -33,6 +33,28 @@ export default new VueRouter({
     },
     routes: [
         {
+            path: '/manager',
+            component: DefaultLayout,
+            children: [
+                {
+                    path: '',
+                    name: 'manager.index',
+                    redirect: 'manager.renders.new',
+                },
+                {
+                    path: 'renders/new',
+                    name: 'manager.renders.new',
+                    component: Vue.component( 'RenderEdit', require( './pages/RenderEdit.vue' ) ).default
+                },
+                {
+                    path: 'renders/:render_id/edit',
+                    name: 'manager.renders.edit',
+                    component: Vue.component( 'RenderEdit', require( './pages/RenderEdit.vue' ) ).default,
+                    props: true
+                },
+            ]
+        },
+        {
             path: '',
             redirect: 'search',
             component: DefaultLayout,
@@ -43,14 +65,10 @@ export default new VueRouter({
                     component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default
                 },
                 {
-                    path: 'render/create',
-                    name: 'render.create',
-                    component: Vue.component( 'RenderCreate', require( './pages/RenderCreate.vue' ) ).default
-                },
-                {
-                    path: 'render/:render_id',
-                    name: 'render.show',
-                    component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default
+                    path: 'renders/:render_id',
+                    name: 'renders.show',
+                    component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default,
+                    props: true
                 },
             ]
         },

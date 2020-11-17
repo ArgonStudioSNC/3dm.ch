@@ -47,6 +47,7 @@
 
 <template>
     <div class="render-grid" v-show="rendersLoadStatus == 2">
+        <button class="z-rel-10" data-close v-on:click="$router.push({ name: 'manager.renders.new' })" v-if="can('add renders')">ADD</button>
         <div class="match-result grid-x align-right">
             <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render-match-result", filteredRendersLength) }}
         </div>
@@ -131,10 +132,6 @@ export default {
                             }, {});
             return sliced;
         },
-
-        orderByName(r) {
-
-        }
     },
 }
 </script>

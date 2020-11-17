@@ -6,6 +6,7 @@
 */
 
 import RenderAPI from '../api/render.js';
+import router from '../routes.js';
 
 export const renders = {
     /*
@@ -18,7 +19,9 @@ export const renders = {
         render: {},
         renderLoadStatus: 0,
 
-        renderAddStatus: 0
+        renderAddStatus: 0,
+        renderUpdateStatus: 0,
+        renderDeleteStatus: 0
     },
 
     /*
@@ -31,7 +34,7 @@ export const renders = {
         loadRenders( { commit } ){
             commit( 'setRendersLoadStatus', 1 );
 
-            RenderAPI.all()
+            RenderAPI.index()
             .then( function( response ){
                 commit( 'setRenders', response.data );
                 commit( 'setRendersLoadStatus', 2 );
@@ -62,16 +65,57 @@ export const renders = {
         /*
         Adds a render
         */
-        addRender( { commit, state, dispatch }, data ){
-            commit( 'setRenderAddedStatus', 1 );
-
-            RenderAPI.create( data.name, data.filename )
+        addRender( { commit, dispatch }, data ){
+            commit( 'setRenderAddStatus', 1 );
+            RenderAPI.store( data )
             .then( function( response ){
-                commit( 'setRenderAddedStatus', 2 );
+                commit( 'setRenderAddStatus', 2 );
                 dispatch( 'loadRenders' );
+                router.push({
+                    name: 'search'
+                });
             })
             .catch( function(){
-                commit( 'setRenderAddedStatus', 3 );
+                commit( 'setRenderAddStatus', 3 );
+            });
+        },
+
+        /*
+        Updates a render
+        */
+        updateRender( { commit, dispatch }, { render_id, data } ){
+            commit( 'setRenderUpdateStatus', 1 );
+            RenderAPI.update( render_id, data )
+            .then( function( response ){
+                commit( 'setRenderUpdateStatus', 2 );
+                dispatch( 'loadRenders' );
+                router.push({
+                    name: 'renders.show',
+                    params: {
+                        render_id: render_id
+                    }
+                });
+            })
+            .catch( function(){
+                commit( 'setRenderUpdateStatus', 3 );
+            });
+        },
+
+        /*
+        Deletes a render
+        */
+        deleteRender( { commit, dispatch }, render_id ){
+            commit( 'setRenderDeleteStatus', 1 );
+            RenderAPI.delete( render_id )
+            .then( function(){
+                commit( 'setRenderDeleteStatus', 2 );
+                dispatch( 'loadRenders' );
+                router.push({
+                    name: 'search'
+                });
+            })
+            .catch( function(){
+                commit( 'setRenderDeleteStatus', 3 );
             });
         }
     },
@@ -111,8 +155,22 @@ export const renders = {
         /*
         Set the render add status
         */
-        setRenderAddedStatus( state, status ){
+        setRenderAddStatus( state, status ){
             state.renderAddStatus = status;
+        },
+
+        /*
+        Set the render update status
+        */
+        setRenderUpdateStatus( state, status ){
+            state.renderUpdateStatus = status;
+        },
+
+        /*
+        Set the render delete status
+        */
+        setRenderDeleteStatus( state, status ){
+            state.renderDeleteStatus = status;
         }
     },
 
@@ -153,6 +211,20 @@ export const renders = {
         */
         getRenderAddStatus( state ){
             return state.renderAddStatus;
+        },
+
+        /*
+        Gets the render update status
+        */
+        getRenderUpdateStatus( state ){
+            return state.renderUpdateStatus;
+        },
+
+        /*
+        Gets the render delete status
+        */
+        getRenderDeleteStatus( state ){
+            return state.renderDeleteStatus;
         }
     }
 }

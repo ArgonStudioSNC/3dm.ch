@@ -9,7 +9,7 @@
 
 <template>
 
-    <div id="home">
+    <div id="home" ref='home'>
         <template v-if="filtersLoadStatus == 2">
             <filterBarComponent></filterBarComponent>
             <renderGridComponent></renderGridComponent>
@@ -17,7 +17,7 @@
         <template v-else-if="filtersLoadStatus == 3">
             Impossible de charger les filtres
         </template>
-        <renderModalComponent ref='modal' id='render-modal'></renderModalComponent>
+        <renderModalComponent ref='modal' ></renderModalComponent>
     </div>
 
 </template>
@@ -34,27 +34,23 @@ export default {
       RenderModalComponent,
     },
 
+    props: ['render_id'],
+
     created(){
-        this.$store.dispatch( 'loadFilters' );
-
-        const params = this.$route.params;
-
-        if(params.hasOwnProperty('render_id')) {
-            this.$store.dispatch( 'loadRender', params.render_id );
-
-            window.addEventListener('DOMContentLoaded', (event) => {
-                setTimeout(() => {
-                    $(this.$refs.modal.$el).foundation('open');
-                }, 200);
-            });
-        }
     },
 
     mounted() {
-        const params = this.$route.params;
+        this.$store.dispatch( 'loadFilters' );
 
-        if (this.$route.name != 'search') {
+        if (this.$route.name == 'renders.show') {
             this.$router.replace({name: 'search'});
+            this.$store.dispatch( 'loadRender', this.render_id );
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+                setTimeout(() => {
+                    this.$refs.modal.openReveal();
+                }, 200);
+            });
         }
     },
 

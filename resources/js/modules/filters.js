@@ -25,7 +25,7 @@ export const filters = {
         */
         loadFilters( { commit } ){
             commit( 'setFiltersLoadStatus', 1 );
-            FilterAPI.all()
+            FilterAPI.index()
             .then( function( response ){
                 commit( 'setFilters', response.data);
                 commit( 'setFiltersLoadStatus', 2 );

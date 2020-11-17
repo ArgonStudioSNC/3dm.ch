@@ -15,12 +15,12 @@ use Illuminate\Http\Request;
 */
 
 Route::namespace('Auth')->prefix('v1')->group(function () {
-      Route::get('permissions', 'PermissionController');
-      Route::get('roles', 'RoleController');
+      Route::get('permissions', 'PermissionController')->name('permissions');;
+      Route::get('roles', 'RoleController')->name('roles');;
 });
 
 
-Route::namespace('API')->prefix('v1')->domain(env('APP_URL'))->group(function(){
+Route::namespace('API')->prefix('v1')->group(function(){
     Route::get('/user', function( Request $request ){
         return $request->user();
     });
@@ -37,7 +37,7 @@ Route::namespace('API')->prefix('v1')->domain('rendersurfer.' . env('APP_URL'))-
     | Method:         GET
     | Description:    Gets all of the renders in the application
     */
-    Route::get('/renders', 'RendersController@index');
+    Route::get('/renders', 'RendersController@index')->name('rendersurfer.renders.index');
 
     /*
     |-------------------------------------------------------------------------------
@@ -48,26 +48,7 @@ Route::namespace('API')->prefix('v1')->domain('rendersurfer.' . env('APP_URL'))-
     | Method:         GET
     | Description:    Gets an individual render
     */
-    Route::get('/renders/{id}', 'RendersController@show');
-
-    /*
-    |-------------------------------------------------------------------------------
-    | Get An Render Image
-    |-------------------------------------------------------------------------------
-    | URL:            /api/v1/renders/p/{size}/{filename}
-    | Method:         GET
-    | Description:    Gets a render image at the specified size
-    */
-    Route::middleware('auth:api')->get('/renders/p/{size}/{filename}', function ($size, $filename)
-    {
-        $filepath = $size.DIRECTORY_SEPARATOR.$filename;
-
-        if (!Storage::disk('rendersurfer')->exists($filepath))
-        {
-            abort('404');
-        }
-        return response()->file(storage_path('app'.DIRECTORY_SEPARATOR.'rendersurfer'.DIRECTORY_SEPARATOR.($filepath)));
-    });
+    Route::get('/renders/{id}', 'RendersController@show')->name('rendersurfer.renders.show');
 
     /*
     |-------------------------------------------------------------------------------
@@ -78,7 +59,48 @@ Route::namespace('API')->prefix('v1')->domain('rendersurfer.' . env('APP_URL'))-
     | Method:         POST
     | Description:    Adds a new render to the application
     */
-    Route::post('/renders', 'RendersController@store');
+    Route::post('/renders', 'RendersController@store')->name('rendersurfer.renders.store');
+
+    /*
+    |-------------------------------------------------------------------------------
+    | Updates an Existing Render
+    |-------------------------------------------------------------------------------
+    | URL:            /api/v1/renders/{id}
+    | Controller:     API\RendersController@update
+    | Method:         PUT
+    | Description:    Updates an existing render
+    */
+    Route::put('/renders/{id}', 'RendersController@update')->name('rendersurfer.renders.update');
+
+    /*
+    |-------------------------------------------------------------------------------
+    | Delete an Existing Render
+    |-------------------------------------------------------------------------------
+    | URL:            /api/v1/renders/{id}
+    | Controller:     API\RendersController@delete
+    | Method:         DELETE
+    | Description:    Deletes an existing render
+    */
+    Route::delete('/renders/{id}', 'RendersController@delete')->name('rendersurfer.renders.delete');
+
+    /*
+    |-------------------------------------------------------------------------------
+    | Get An Render Image
+    |-------------------------------------------------------------------------------
+    | URL:            /api/v1/renders/p/{size}/{filename}
+    | Method:         GET
+    | Description:    Gets a render image at the specified size
+    */
+    Route::get('/renders/p/{size}/{filename}', function ($size, $filename)
+    {
+        $filepath = $size.DIRECTORY_SEPARATOR.$filename;
+
+        if (!Storage::disk('rendersurfer')->exists($filepath))
+        {
+            abort('404');
+        }
+        return response()->file(storage_path('app'.DIRECTORY_SEPARATOR.'rendersurfer'.DIRECTORY_SEPARATOR.($filepath)));
+    })->name('rendersurfer.renders.picture');
 });
 
 Route::namespace('API')->prefix('v1/filters')->group(function(){
@@ -91,7 +113,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the filters in the application
     */
-    Route::get('/', 'FiltersController@index');
+    Route::get('/', 'FiltersController@index')->name('rendersurfer.filters.index');
 
     /*
     |-------------------------------------------------------------------------------
@@ -102,7 +124,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the offices in the application
     */
-    Route::get('/offices', 'FiltersController@offices');
+    Route::get('/offices', 'FiltersController@offices')->name('rendersurfer.filters.offices');
 
     /*
     |-------------------------------------------------------------------------------
@@ -113,7 +135,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the render types in the application
     */
-    Route::get('/types', 'FiltersController@types');
+    Route::get('/types', 'FiltersController@types')->name('rendersurfer.filters.types');
 
     /*
     |-------------------------------------------------------------------------------
@@ -124,7 +146,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the render styles in the application
     */
-    Route::get('/styles', 'FiltersController@styles');
+    Route::get('/styles', 'FiltersController@styles')->name('rendersurfer.filters.styles');
 
     /*
     |-------------------------------------------------------------------------------
@@ -135,7 +157,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the seasontimes in the application
     */
-    Route::get('/seasontimes', 'FiltersController@seasontimes');
+    Route::get('/seasontimes', 'FiltersController@seasontimes')->name('rendersurfer.filters.seasontimes');
 
     /*
     |-------------------------------------------------------------------------------
@@ -146,7 +168,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the weather in the application
     */
-    Route::get('/weather', 'FiltersController@weather');
+    Route::get('/weather', 'FiltersController@weather')->name('rendersurfer.filters.weather');
 
     /*
     |-------------------------------------------------------------------------------
@@ -157,7 +179,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the daytimes in the application
     */
-    Route::get('/daytimes', 'FiltersController@daytimes');
+    Route::get('/daytimes', 'FiltersController@daytimes')->name('rendersurfer.filters.daytimes');
 
     /*
     |-------------------------------------------------------------------------------
@@ -168,7 +190,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the light types in the application
     */
-    Route::get('/lights', 'FiltersController@lights');
+    Route::get('/lights', 'FiltersController@lights')->name('rendersurfer.filters.lights');
 
     /*
     |-------------------------------------------------------------------------------
@@ -179,7 +201,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the composition arts in the application
     */
-    Route::get('/compositions', 'FiltersController@compositions');
+    Route::get('/compositions', 'FiltersController@compositions')->name('rendersurfer.filters.compositions');
 
     /*
     |-------------------------------------------------------------------------------
@@ -190,7 +212,7 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the assignements types in the application
     */
-    Route::get('/assignements', 'FiltersController@assignements');
+    Route::get('/assignements', 'FiltersController@assignements')->name('rendersurfer.filters.assignements');
 
     /*
     |-------------------------------------------------------------------------------
@@ -201,5 +223,5 @@ Route::namespace('API')->prefix('v1/filters')->group(function(){
     | Method:         GET
     | Description:    Gets all of the countries in the application
     */
-    Route::get('/countries', 'FiltersController@countries');
+    Route::get('/countries', 'FiltersController@countries')->name('rendersurfer.filters.countries');
 });

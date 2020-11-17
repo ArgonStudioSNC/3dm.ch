@@ -7,7 +7,6 @@ try {
 } catch (e) {}
 
 $(function(){
-    $(document).foundation();
     $('body').css('display', 'block');
 });
 
