@@ -10,8 +10,8 @@
 */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import DefaultLayout from './layouts/Default.vue'
-import RenderFiltersLayout from './layouts/WithRenderFilters.vue'
+import DefaultLayout from '@js/layouts/Default.vue'
+import RenderFiltersLayout from '@js/layouts/WithRenderFilters.vue'
 
 /*
     Extends Vue to use Vue Router
@@ -45,12 +45,12 @@ export default new VueRouter({
                 {
                     path: 'renders/new',
                     name: 'manager.renders.new',
-                    component: Vue.component( 'RenderEdit', require( './pages/RenderEdit.vue' ) ).default
+                    component: Vue.component( 'RenderNew', require( '@js/pages/RenderNew.vue' ) ).default
                 },
                 {
                     path: 'renders/:render_id/edit',
                     name: 'manager.renders.edit',
-                    component: Vue.component( 'RenderEdit', require( './pages/RenderEdit.vue' ) ).default,
+                    component: Vue.component( 'RenderEdit', require( '@js/pages/RenderEdit.vue' ) ).default,
                     props: true
                 },
             ]
@@ -63,12 +63,12 @@ export default new VueRouter({
                 {
                     path: 'search',
                     name: 'search',
-                    component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default
+                    component: Vue.component( 'RenderSearch', require( '@js/pages/RenderSearch.vue' ) ).default
                 },
                 {
                     path: 'renders/:render_id',
                     name: 'renders.show',
-                    component: Vue.component( 'RenderSearch', require( './pages/RenderSearch.vue' ) ).default,
+                    component: Vue.component( 'RenderSearch', require( '@js/pages/RenderSearch.vue' ) ).default,
                     props: true
                 },
             ]
@@ -80,7 +80,7 @@ export default new VueRouter({
                 {
                     path: '',
                     name: 'NotFound',
-                    component: Vue.component( 'NotFound', require( './pages/404.vue' ) ).default
+                    component: Vue.component( 'NotFound', require( '@js/pages/404.vue' ) ).default
                 },
             ]
         },

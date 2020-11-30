@@ -39,7 +39,8 @@ const mix = require('laravel-mix');
       },
       resolve: {
          alias: {
-           '@': path.resolve('resources/sass')
+           '@': path.resolve('resources/sass/'),
+           '@js': path.resolve(__dirname, 'resources/js/'),
          }
        }
     })

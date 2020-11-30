@@ -81,8 +81,8 @@
 
 <script>
 import RenderCardComponent from './Card.vue';
-import { FiltersMixin } from '../../mixins/filters';
-import { MasonryMixin } from '../../mixins/masonry';
+import { FiltersMixin } from '@js/mixins/filters';
+import { MasonryMixin } from '@js/mixins/masonry';
 import _ from 'lodash';
 
 export default {

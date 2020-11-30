@@ -52,7 +52,7 @@
 
 <script>
 import FilterCategoryComponent from './Category.vue';
-import { FiltersMixin } from '../../mixins/filters';
+import { FiltersMixin } from '@js/mixins/filters';
 
 export default {
     components: {

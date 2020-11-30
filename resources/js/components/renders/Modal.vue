@@ -111,11 +111,11 @@
 </template>
 
 <script>
-import LoaderComponent from '../global/Loader';
+import LoaderComponent from '@js/components/global/Loader';
 import { mapState } from 'vuex';
-import { FiltersMixin } from '../../mixins/filters';
-import { RendersMixin } from '../../mixins/renders';
-import RenderAPI from '../../api/render.js';
+import { FiltersMixin } from '@js/mixins/filters';
+import { RendersMixin } from '@js/mixins/renders';
+import RenderAPI from '@js/api/render.js';
 
 export default {
     components: {

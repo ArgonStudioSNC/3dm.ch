@@ -5,7 +5,7 @@
 | The Vuex data store for the filters
 */
 
-import FilterAPI from '../api/filter.js';
+import FilterAPI from '@js/api/filter.js';
 
 export const filters = {
     /*

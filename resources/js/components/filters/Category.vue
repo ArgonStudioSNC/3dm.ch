@@ -77,7 +77,7 @@
 
 <script>
 import Multiselect from 'vue-multiselect'
-import { FiltersMixin } from '../../mixins/filters';
+import { FiltersMixin } from '@js/mixins/filters';
 
 export default {
     components: { Multiselect },

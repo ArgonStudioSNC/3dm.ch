@@ -5,8 +5,8 @@
 | The Vuex data store for the renders
 */
 
-import RenderAPI from '../api/render.js';
-import router from '../routes.js';
+import RenderAPI from '@js/api/render.js';
+import router from '@js/routes.js';
 
 export const renders = {
     /*

@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import RenderGridComponent from '../components/renders/GridDisplay.vue';
-import RenderModalComponent from '../components/renders/Modal.vue';
+import RenderGridComponent from '@js/components/renders/GridDisplay.vue';
+import RenderModalComponent from '@js/components/renders/Modal.vue';
 
 export default {
     components: {

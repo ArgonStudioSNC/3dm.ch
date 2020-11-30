@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import LoaderComponent from '../global/Loader';
-import RenderAPI from '../../api/render.js';
-import { MasonryMixin } from '../../mixins/masonry';
-import { RendersMixin } from '../../mixins/renders';
+import LoaderComponent from '@js/components/global/Loader';
+import RenderAPI from '@js/api/render.js';
+import { MasonryMixin } from '@js/mixins/masonry';
+import { RendersMixin } from '@js/mixins/renders';
 
 export default {
     props: {
@@ -76,7 +76,7 @@ export default {
         }
     },
 
-    created() {
+    mounted() {
         var reader = new FileReader();
         reader.onload = r => {
             this.base64Data = reader.result;
@@ -86,10 +86,8 @@ export default {
         .then( response => {
             reader.readAsDataURL(response.data);
         });
-    },
 
-    mounted() {
-        this.resizeMasonryItem(this.$refs.brick)
+        this.resizeMasonryItem(this.$refs.brick);
     },
 }
 </script>

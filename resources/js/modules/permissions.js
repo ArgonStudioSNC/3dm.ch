@@ -5,7 +5,7 @@
 | The Vuex data store for the permissions and roles
 */
 
-import AuthAPI from '../api/auth.js';
+import AuthAPI from '@js/api/auth.js';
 
 export const permissions = {
     /*

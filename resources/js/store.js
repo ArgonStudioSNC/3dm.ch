@@ -23,10 +23,10 @@ Vue.use( Vuex )
 /*
     Imports all of the modules used in the application to build the data store.
 */
-import { renders } from './modules/renders.js'
-import { filters } from './modules/filters.js'
-import { pagination } from './modules/pagination.js'
-import { permissions } from './modules/permissions.js'
+import { renders } from '@js/modules/renders.js'
+import { filters } from '@js/modules/filters.js'
+import { pagination } from '@js/modules/pagination.js'
+import { permissions } from '@js/modules/permissions.js'
 
 /*
   Exports our data store.

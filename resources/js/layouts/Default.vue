@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import FooterComponent from '../components/global/Footer.vue';
-import AuthAPI from '../api/auth.js';
+import FooterComponent from '@js/components/global/Footer.vue';
+import AuthAPI from '@js/api/auth.js';
 
 export default {
     components: {

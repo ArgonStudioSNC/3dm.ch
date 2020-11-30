@@ -42,6 +42,10 @@ export const RendersMixin = {
     },
 
     computed: {
+        getRendersLoadStatus: function() {
+            return this.$store.getters.getRendersLoadStatus;
+        },
+
         getRender: function() {
             if(this.$store.getters.getRenderLoadStatus !== 2) return null;
             return this.$store.getters.getRender;
@@ -49,6 +53,18 @@ export const RendersMixin = {
 
         getRenderLoadStatus: function() {
             return this.$store.getters.getRenderLoadStatus;
+        },
+
+        getRenderAddStatus: function() {
+            return this.$store.getters.getRenderAddStatus;
+        },
+
+        getRenderUpdateStatus: function() {
+            return this.$store.getters.getRenderUpdateStatus;
+        },
+
+        getRenderDeleteStatus: function() {
+            return this.$store.getters.getRenderDeleteStatus;
         },
     },
 }

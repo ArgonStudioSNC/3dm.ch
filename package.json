@@ -31,5 +31,7 @@
         "vuex-router-sync": "^5.0.0",
         "what-input": "^5.2.10"
     },
-    "dependencies": {}
+    "dependencies": {
+        "vue2-dropzone": "^3.6.0"
+    }
 }
