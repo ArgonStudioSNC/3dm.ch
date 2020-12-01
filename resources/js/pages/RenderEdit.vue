@@ -1,28 +1,27 @@
-<style>
+<style lang="scss">
+@import '~@/abstracts/_settings.scss';
 
+#render-edit {
+    button.alert:hover {
+        color: $white;
+        background-color: $alert-color;
+    }
+}
 </style>
 
 <template>
     <div id="render-edit">
         <div class="grid-container full">
-            <div>{{ __('manager.edit-render-title') }}</div>
+            <h2>{{ __('manager.edit-render-title') }}</h2>
             <template v-if="getRenderLoadStatus == 2">
                 <RenderFormComponent ref="renderForm" :render="getRender"></RenderFormComponent>
-                <div class="validation" v-show="!validation.is_valid">
-                    <ul>
-                        <li v-for="error in validation.errors"> {{ error }}</li>
-                    </ul>
+                <div class="callout alert small" v-show="!validation.is_valid">
+                    <ul><li v-for="error in validation.errors"> {{ error }}</li></ul>
                 </div>
-                <div class="grid-x">
-                    <div class="cell">
-                        <button class="button" v-on:click="renderUpdate()" :disabled="getRenderUpdateStatus == 1">{{ __('manager.edit-render-update') }}</button>
-                    </div>
-                    <div class="cell">
-                        <button class="button" v-on:click="renderDelete()" :disabled="getRenderDeleteStatus == 1">{{ __('manager.edit-render-delete') }}</button>
-                    </div>
-                    <div class="cell">
-                        <router-link class="button" :to="{ name: 'search' }">{{ __('manager.edit-render-cancel') }}</router-link>
-                    </div>
+                <div class="button-group">
+                    <button class="primary button" v-on:click="renderUpdate()" :disabled="getRenderUpdateStatus == 1">{{ __('manager.edit-render-update') }}</button>
+                    <router-link class="button" :to="{ name: 'search' }">{{ __('manager.edit-render-cancel') }}</router-link>
+                    <button class="clear button alert" v-on:click="renderDelete()" :disabled="getRenderDeleteStatus == 1">{{ __('manager.edit-render-delete') }}</button>
                 </div>
             </template>
             <LoaderComponent v-else></LoaderComponent>

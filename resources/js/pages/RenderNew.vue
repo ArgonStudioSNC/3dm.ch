@@ -1,24 +1,18 @@
-<style>
+<style lang="scss">
 
 </style>
 
 <template>
     <div id="render-new">
         <div class="grid-container full">
-            <div>{{ __('manager.new-render-title') }}</div>
+            <h2>{{ __('manager.new-render-title') }}</h2>
             <RenderFormComponent ref="renderForm"></RenderFormComponent>
-            <div class="validation" v-show="!validation.is_valid">
-                <ul>
-                    <li v-for="error in validation.errors"> {{ error }}</li>
-                </ul>
+            <div class="callout alert small" v-show="!validation.is_valid">
+                <ul><li v-for="error in validation.errors"> {{ error }}</li></ul>
             </div>
-            <div class="grid-x">
-                <div class="cell">
-                    <button class="button" v-on:click="renderStore()" :disabled="getRenderAddStatus == 1">{{ __('manager.new-render-store') }}</button>
-                </div>
-                <div class="cell">
-                    <router-link class="button" :to="{ name: 'search' }">{{ __('manager.new-render-cancel') }}</router-link>
-                </div>
+            <div class="button-group">
+                <button class="primary button" v-on:click="renderStore()" :disabled="getRenderAddStatus == 1">{{ __('manager.new-render-store') }}</button>
+                <router-link class="button" :to="{ name: 'search' }">{{ __('manager.new-render-cancel') }}</router-link>
             </div>
         </div>
     </div>

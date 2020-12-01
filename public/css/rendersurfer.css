@@ -327,15 +327,15 @@ textarea {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  height: 2.7066666667rem;
-  margin: 0 0 1.0666666667rem;
-  padding: 0.5333333333rem;
+  height: 2.36rem;
+  margin: 0 0 0.9333333333rem;
+  padding: 0.4666666667rem;
   border: 1px solid #cacaca;
   border-radius: 0;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(51, 51, 51, 0.1);
   font-family: inherit;
-  font-size: 1.0666666667rem;
+  font-size: 0.9333333333rem;
   font-weight: 300;
   line-height: 1.6;
   color: #333333;
@@ -379,6 +379,14 @@ input[type=search] {
   box-sizing: border-box;
 }
 
+[type=number] {
+  -moz-appearance: textfield;
+}
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 ::-moz-placeholder {
   color: #cacaca;
 }
@@ -394,15 +402,15 @@ input[type=search] {
 [type=file],
 [type=checkbox],
 [type=radio] {
-  margin: 0 0 1.0666666667rem;
+  margin: 0 0 0.9333333333rem;
 }
 
 [type=checkbox] + label,
 [type=radio] + label {
   display: inline-block;
   vertical-align: baseline;
-  margin-left: 0.5333333333rem;
-  margin-right: 1.0666666667rem;
+  margin-left: 0.4666666667rem;
+  margin-right: 0.9333333333rem;
   margin-bottom: 0;
 }
 [type=checkbox] + label[for],
@@ -412,7 +420,7 @@ input[type=search] {
 
 label > [type=checkbox],
 label > [type=radio] {
-  margin-right: 0.5333333333rem;
+  margin-right: 0.4666666667rem;
 }
 
 [type=file] {
@@ -424,16 +432,16 @@ label {
   margin: 0;
   font-size: 0.9333333333rem;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #333333;
 }
 label.middle {
-  margin: 0 0 1.0666666667rem;
-  padding: 0.6rem 0;
+  margin: 0 0 0.9333333333rem;
+  padding: 0.5333333333rem 0;
 }
 
 .help-text {
-  margin-top: -0.5333333333rem;
+  margin-top: -0.4666666667rem;
   font-size: 0.8666666667rem;
   font-style: italic;
   color: #333333;
@@ -442,7 +450,7 @@ label.middle {
 .input-group {
   display: flex;
   width: 100%;
-  margin-bottom: 1.0666666667rem;
+  margin-bottom: 0.9333333333rem;
   align-items: stretch;
 }
 .input-group > :first-child, .input-group > :first-child.input-group-button > * {
@@ -499,7 +507,7 @@ label.middle {
   height: auto;
   padding-top: 0;
   padding-bottom: 0;
-  font-size: 1.0666666667rem;
+  font-size: 0.9333333333rem;
 }
 
 fieldset {
@@ -510,7 +518,7 @@ fieldset {
 
 legend {
   max-width: 100%;
-  margin-bottom: 0.5333333333rem;
+  margin-bottom: 0.4666666667rem;
 }
 
 .fieldset {
@@ -525,9 +533,9 @@ legend {
 }
 
 select {
-  height: 2.7066666667rem;
-  margin: 0 0 1.0666666667rem;
-  padding: 0.5333333333rem;
+  height: 2.36rem;
+  margin: 0 0 0.9333333333rem;
+  padding: 0.4666666667rem;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -535,16 +543,16 @@ select {
   border-radius: 0;
   background-color: #fefefe;
   font-family: inherit;
-  font-size: 1.0666666667rem;
+  font-size: 0.9333333333rem;
   font-weight: 300;
   line-height: 1.6;
   color: #333333;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>");
   background-origin: content-box;
-  background-position: right -1.0666666667rem center;
+  background-position: right -0.9333333333rem center;
   background-repeat: no-repeat;
   background-size: 9px 6px;
-  padding-right: 1.6rem;
+  padding-right: 1.4rem;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 }
 @media screen and (min-width: 0\0 ) {
@@ -595,8 +603,8 @@ select:not([multiple]) {
 
 .form-error {
   display: none;
-  margin-top: -0.5333333333rem;
-  margin-bottom: 1.0666666667rem;
+  margin-top: -0.4666666667rem;
+  margin-bottom: 0.9333333333rem;
   font-size: 0.8rem;
   font-weight: 500;
   color: #cc4b37;
@@ -4196,8 +4204,8 @@ a.button:hover, a.button:focus {
 }
 .button-group .button {
   margin: 0;
-  margin-right: 1px;
-  margin-bottom: 1px;
+  margin-right: 2px;
+  margin-bottom: 2px;
   font-size: 0.9rem;
   flex: 0 0 auto;
 }

@@ -1,115 +1,193 @@
-<style>
+<style lang="scss">
+@import '~@/abstracts/_settings.scss';
+@import '~@/mixins';
+
+.render-form {
+    .custom-dropzone {
+        min-height: 232px;
+        border: 1px solid $medium-gray;
+        font-family: $body-font-family;
+        letter-spacing: normal;
+        color: $dark-gray;
+        transition: .3s linear;
+        padding: .5rem;
+
+        &:hover {
+            background-color: $light-gray;
+        }
+
+        .dz-preview {
+            margin: .5rem;
+            .dz-details {
+                background-color: $primary-color;
+                padding: 1em;
+                font-size:  inherit;
+                .dz-size  {
+                    margin: 0;
+                    font-size:  inherit;
+                }
+            }
+            .dz-image img {
+                @include transition(filter 0.3s);
+            }
+            &:hover .dz-image img{
+                transform: none;
+                filter: brightness(60%);
+            }
+
+            .dz-error-mark, .dz-success-mark, .dz-progress {
+                display: none;
+            }
+        }
+        .dz-preview.dz-image-preview .dz-details {
+            @include transition(opacity 0.3s);
+            background-color: transparent;
+        }
+        .dz-message  {
+            margin : 4rem 0;
+            padding: .5rem;
+        }
+    }
+
+    .render-image-box {
+        min-height: 232px;
+        border: 1px solid $medium-gray;
+        padding: .5rem;
+        img {
+            margin: .5rem;
+            height: 200px;
+            width: auto;
+        }
+    }
+}
 
 </style>
 
 <template>
     <div class="render-form">
-        <div class="grid-x" v-if="getFiltersLoadStatus == 2">
-            <div class="cell">
-                <label>{{ __('manager.render-label-name') }}
-                    <input type="text" :placeholder="__('manager.render-placeholder-name')" v-model="formFields.name">
-                </label>
-            </div>
-
-            <div class="cell">
-                <label for="render-image">{{ __('manager.render-label-file') }}</label>
-                <div id="render-image">
-                    <img v-if="render" v-bind:src="imagePreview" width="auto" height="150"/>
-                    <vue-dropzone v-else ref="fileDropzone"
-                    id="fileDropzone"
-                    :options="dropzoneOptions"
-                    v-on:vdropzone-file-added="vdropzoneFileAddedEvent"
-                    v-on:vdropzone-max-files-exceeded="vdropzoneMaxFilesExceededEvent"></vue-dropzone>
+        <template v-if="getFiltersLoadStatus == 2">
+            <div class="grid-y grid-margin-y">
+                <div class="cell">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="cell large-4">
+                            <div class="grid-y grid-margin-y">
+                                <div class="cell">
+                                    <label>{{ __('manager.render-label-name') }}
+                                        <input type="text" :placeholder="__('manager.render-placeholder-name')" v-model="formFields.name">
+                                    </label>
+                                </div>
+                                <div class="cell">
+                                    <label>{{ __('manager.render-label-year') }}
+                                        <input type="number" :placeholder="__('manager.render-placeholder-year')" v-model="formFields.year">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell large-8">
+                            <div class="grid-y grid-margin-y">
+                                <div class="cell">
+                                    <label for="render-image">{{ __('manager.render-label-file') }}</label>
+                                    <div id="render-image" class="render-image-box" v-if="render">
+                                        <img v-bind:src="imagePreview"/>
+                                    </div>
+                                    <div id="render-image" v-else>
+                                        <vue-dropzone ref="fileDropzone" class="custom-dropzone"
+                                        id="dropzone"
+                                        :options="dropzoneOptions"
+                                        v-on:vdropzone-file-added="vdropzoneFileAddedEvent"
+                                        v-on:vdropzone-max-files-exceeded="vdropzoneMaxFilesExceededEvent"></vue-dropzone>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.offices') }}
+                                <select v-model="formFields.categories['office_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.offices" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.types') }}
+                                <select v-model="formFields.categories['type_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.types" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.styles') }}
+                                <select v-model="formFields.categories['style_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.styles" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.seasontimes') }}
+                                <select v-model="formFields.categories['seasontime_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.seasontimes" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.weather') }}
+                                <select v-model="formFields.categories['weather_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.weather" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.daytimes') }}
+                                <select v-model="formFields.categories['daytime_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.daytimes" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.lights') }}
+                                <select v-model="formFields.categories['light_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.lights" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.compositions') }}
+                                <select v-model="formFields.categories['composition_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.compositions" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.assignements') }}
+                                <select v-model="formFields.categories['assignement_id']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.assignements" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <label>{{ __('filters.countries') }}
+                                <select v-model="formFields.categories['country_code']">
+                                    <option value=null>{{ __('manager.render-no-option') }}</option>
+                                    <option v-for="option in filters.countries" :key="option.code" :value="option.code">{{ option.name }}</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="cell">
-                <label>{{ __('manager.render-label-year') }}
-                    <input type="number" :placeholder="__('manager.render-placeholder-year')" v-model="formFields.year">
-                </label>
-            </div>
-
-            <div class="cell">
-                <label>{{ __('filters.offices') }}
-                    <select v-model="formFields.categories['office_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.offices" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.types') }}
-                    <select v-model="formFields.categories['type_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.types" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.styles') }}
-                    <select v-model="formFields.categories['style_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.styles" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.seasontimes') }}
-                    <select v-model="formFields.categories['seasontime_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.seasontimes" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.weather') }}
-                    <select v-model="formFields.categories['weather_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.weather" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.daytimes') }}
-                    <select v-model="formFields.categories['daytime_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.daytimes" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.lights') }}
-                    <select v-model="formFields.categories['light_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.lights" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.compositions') }}
-                    <select v-model="formFields.categories['composition_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.compositions" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.assignements') }}
-                    <select v-model="formFields.categories['assignement_id']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.assignements" :key="option.id" :value="option.id">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-            <div class="cell">
-                <label>{{ __('filters.countries') }}
-                    <select v-model="formFields.categories['country_code']">
-                        <option :value=null>{{ __('manager.render-no-option') }}</option>
-                        <option v-for="option in filters.countries" :key="option.code" :value="option.code">{{ option.name }}</option>
-                    </select>
-                </label>
-            </div>
-        </div>
+        </template>
         <LoaderComponent v-else></LoaderComponent>
     </div>
 </template>
@@ -151,12 +229,14 @@ export default {
                 },
             },
             imagePreview : null,
+            picture_url : null,
             dropzoneOptions : {
                 url : 'https://httpbin.org/post',
                 autoQueue : false,
                 maxFiles : 1,
                 thumbnailWidth : null,
-                thumbnailHeight : 150,
+                thumbnailHeight : 200,
+                dictDefaultMessage : this.dictDefaultMessage(),
             },
         }
     },
@@ -204,6 +284,24 @@ export default {
 
         getFormFields: function() {
             return this.formFields;
+        },
+
+        template : function() {
+            return `<div class="dz-preview dz-file-preview">
+                      <div class="dz-image">
+                          <div data-dz-thumbnail-bg></div>
+                      </div>
+                      <div class="dz-details">
+                          <div class="dz-size"><span data-dz-size></span></div>
+                          <div class="dz-filename"><span data-dz-name></span></div>
+                      </div>
+                      <div class="dz-error-message"><span data-dz-errormessage></span></div>
+                  </div>
+                `;
+        },
+
+        dictDefaultMessage: function() {
+            return "<i class='fa fa-cloud-upload'></i>" + '<div>' + this.__('manager.render-label-file-from-computer') + '</div>';
         },
     },
 }
