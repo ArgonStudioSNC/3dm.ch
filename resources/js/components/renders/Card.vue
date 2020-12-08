@@ -32,7 +32,7 @@
 
 <template>
     <div ref="brick" class="masonry-brick">
-        <div class="masonry-content">
+        <div ref="brickContent" class="masonry-content">
             <template v-if="base64Data">
                 <div class="render-card"  @mouseover="hover = true" @mouseleave="hover = false" :class="{ active: hover }" data-open="render-modal" v-on:click="$store.dispatch( 'loadRender', render.id )">
                     <div class="render-card-legend">
@@ -41,7 +41,7 @@
                             <span v-if="getOffice(render)">{{ getOffice(render) }}</span><span v-if="render.year">, &nbsp;{{ render.year }}</span>
                         </div>
                     </div>
-                    <img style="width:100%;" @load="resizeMasonryItem($refs.brick)" :src="base64Data" />
+                    <img style="width:100%;" :src="base64Data" />
                 </div>
             </template>
             <loaderComponent v-else></loaderComponent>
@@ -90,7 +90,11 @@ export default {
             console.error('Image ' + this.render.filename + ' from render ' + this.render.id + ' not found !');
         });
 
-        this.resizeMasonryItem(this.$refs.brick);
+        this.ro = new ResizeObserver( () => this.resizeMasonryItem(this.$refs.brick) ).observe(this.$refs.brickContent);
+    },
+
+    destroyed () {
+        delete this.ro;
     },
 }
 </script>

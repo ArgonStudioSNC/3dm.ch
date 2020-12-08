@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= filteredRendersLength">
+            <button class="center show-more button" v-on:click="showMore()" :disabled="showMoreTimeout || maxRenders >= filteredRendersLength">
                 {{ __('filters.show-more') }}
             </button>
         </div>
@@ -87,6 +87,12 @@ export default {
     },
 
     mixins: [FiltersMixin, MasonryMixin],
+
+    data () {
+        return {
+            showMoreTimeout : false,
+        }
+    },
 
     mounted(){
         this.$store.dispatch( 'resetMaxRenders' );
@@ -131,7 +137,11 @@ export default {
 
     methods: {
         showMore() {
-            this.$store.dispatch( 'showMore', 50 );
+            if (!this.showMoreTimeout){
+                this.showMoreTimeout = true;
+                this.$store.dispatch( 'showMore', 50 );
+                setTimeout(() => this.showMoreTimeout = false, 300);
+            }
         },
 
         paginate(r, p) {
