@@ -36,16 +36,16 @@ class FiltersController extends Controller
     | Description:    Gets all the filters in the application
     */
     public function index(){
-        $offices = Office::all();
+        $offices = Office::orderBy('name')->get();
         $types = Type::all();
-        $styles = Style::all();
+        $styles = Style::orderBy('name')->get();
         $seasontimes = Seasontime::all();
         $weather = Weather::all();
         $daytimes = Daytime::all();
         $lights = Light::all();
         $compositions = Composition::all();
-        $assignements = Assignement::all();
-        $countries = Country::all();
+        $assignements = Assignement::orderBy('name')->get();
+        $countries = Country::orderBy('name')->get();
         return response()->json( [
             'offices' => $offices,
             'types' => $types,
