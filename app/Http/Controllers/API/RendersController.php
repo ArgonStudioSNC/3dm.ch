@@ -63,7 +63,7 @@ class RendersController extends Controller
 
         $render = new Models\Render();
         $render->name = $request['name'];
-        if ( isset($request['year']) ) $render->year = $request['year'];
+        if ( $request->has(['year']) ) $render->year = $request['year'];
 
         $request->whenHas('categories', function($input) use ($render) {
             $render = $this->setCategories($render, $input);
@@ -90,24 +90,20 @@ class RendersController extends Controller
         $this->authorize('edit renders');
 
         $render = Models\Render::findOrFail($id);
-        error_log('enter update');
-        error_log($request['name']);
-        if ( isset($request['name']) ) $render->name = $request['name'];
-        if ( isset($request['year']) ) $render->year = $request['year'];
+        if ( $request->filled(['name']) ) $render->name = $request['name'];
+        if ( $request->has(['year']) ) $render->year = $request['year'];
 
         $request->whenHas('categories', function($input) use ($render) {
             $render = $this->setCategories($render, $input);
         });
 
-        if ( isset($request['picture']) ){
+        if ( $request->has(['picture']) ){
             $filename = $this->storeImage($request);
             $this->deleteImage($render->filename);
             $render->filename = $filename;
         }
 
-        error_log('before save');
         $render->save();
-        error_log('after save');
 
         return response()->json($render, 201);
     }
@@ -182,34 +178,34 @@ class RendersController extends Controller
     |   $categories     -> JSON with the categories ids for the render
     */
     private function setCategories($render, $categories) {
-        if (isset($categories->office_id)) {
+        if ( property_exists($categories, 'office_id') ) {
             $render->office_id =  $categories->office_id;
         }
-        if (isset($categories->type_id)) {
+        if ( property_exists($categories, 'type_id') ) {
             $render->type_id =  $categories->type_id;
         }
-        if (isset($categories->style_id)) {
+        if ( property_exists($categories, 'style_id') ) {
             $render->style_id =  $categories->style_id;
         }
-        if (isset($categories->seasontime_id)) {
+        if ( property_exists($categories, 'seasontime_id') ) {
             $render->seasontime_id =  $categories->seasontime_id;
         }
-        if (isset($categories->weather_id)) {
+        if ( property_exists($categories, 'weather_id') ) {
             $render->weather_id =  $categories->weather_id;
         }
-        if (isset($categories->daytime_id)) {
+        if ( property_exists($categories, 'daytime_id') ) {
             $render->daytime_id =  $categories->daytime_id;
         }
-        if (isset($categories->light_id)) {
+        if ( property_exists($categories, 'light_id') ) {
             $render->light_id =  $categories->light_id;
         }
-        if (isset($categories->composition_id)) {
+        if ( property_exists($categories, 'composition_id') ) {
             $render->composition_id =  $categories->composition_id;
         }
-        if (isset($categories->assignement_id)) {
+        if ( property_exists($categories, 'assignement_id') ) {
             $render->assignement_id =  $categories->assignement_id;
         }
-        if (isset($categories->country_code)) {
+        if ( property_exists($categories, 'country_code') ) {
             $render->country_code =  $categories->country_code;
         }
         return $render;

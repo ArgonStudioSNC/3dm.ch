@@ -3,8 +3,20 @@
 @import '~@/mixins';
 
 .render-grid {
-    .match-result span{
-        font-weight: $global-weight-bold;
+    .match-result {
+        span {
+            font-weight: $global-weight-bold;
+        }
+        button {
+            padding: 0 8px;
+            cursor: pointer;
+            color: lighten($black, 40%);
+            @include transition(color 0.1s);
+
+            &:hover {
+                color: $black;
+            }
+        }
     }
     .masonry-wrapper {
         margin-top: 0.8em;
@@ -34,22 +46,6 @@
     }
     .show-more {
         min-width: 260px;
-        background-color: $primary-color;
-        padding-top: 0.4em;
-        padding-bottom: 0.4em;
-        line-height: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-    }
-    button {
-        padding: 0 8px;
-        cursor: pointer;
-        color: lighten($black, 40%);
-        @include transition(color 0.1s);
-
-        &:hover {
-            color: $black;
-        }
     }
 }
 
@@ -92,11 +88,10 @@ export default {
 
     mixins: [FiltersMixin, MasonryMixin],
 
-    created(){
-        this.$store.dispatch( 'loadRenders' );
-    },
-
     mounted(){
+        this.$store.dispatch( 'resetMaxRenders' );
+        this.$store.dispatch( 'loadRenders' );
+
         this.resizeAllMasonryItems;
         /* Resize all the grid items on the load and resize events */
         var masonryEvents = ['load', 'resize'];

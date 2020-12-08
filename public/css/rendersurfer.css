@@ -3968,12 +3968,13 @@ h3 {
   display: inline-block;
   vertical-align: middle;
   margin: 0 0 1rem 0;
-  padding: 0.85em 1em;
+  padding: 0.4em 1.2em;
   border: 1px solid transparent;
   border-radius: 0;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   font-family: inherit;
   font-size: 0.9rem;
+  font-weight: inherit;
   -webkit-appearance: none;
   line-height: 1;
   text-align: center;
@@ -4153,7 +4154,7 @@ h3 {
   top: 0.4em;
   display: inline-block;
   float: right;
-  margin-left: 1em;
+  margin-left: 1.2em;
 }
 .button.dropdown.hollow::after, .button.dropdown.clear::after {
   border-top-color: #3D5D6B;
@@ -7556,4 +7557,8 @@ body {
 }
 .my-login-card .card .button {
   margin: 0;
+}
+
+.button {
+  line-height: 1.6;
 }

@@ -92,9 +92,8 @@ export default {
         toFormData(form) {
             let formData = new FormData();
             formData.append('name', form.name);
-            formData.append('picture', form.picture);
-            if (form.year) formData.append('year', form.year);
-            if (form.categories) formData.append('categories', JSON.stringify(form.categories));
+            formData.append('year', form.year);
+            formData.append('categories', JSON.stringify(form.categories));
             return formData;
         },
     },
