@@ -85,6 +85,9 @@ export default {
         RenderAPI.picture(this.render.filename, 'small')
         .then( response => {
             reader.readAsDataURL(response.data);
+        })
+        .catch( error => {
+            console.error('Image ' + this.render.filename + ' from render ' + this.render.id + ' not found !');
         });
 
         this.resizeMasonryItem(this.$refs.brick);
