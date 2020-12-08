@@ -3,8 +3,20 @@
 @import '~@/mixins';
 
 .render-grid {
-    .match-result span{
-        font-weight: $global-weight-bold;
+    .match-result {
+        span {
+            font-weight: $global-weight-bold;
+        }
+        button {
+            padding: 0 8px;
+            cursor: pointer;
+            color: lighten($black, 40%);
+            @include transition(color 0.1s);
+
+            &:hover {
+                color: $black;
+            }
+        }
     }
     .masonry-wrapper {
         margin-top: 0.8em;
@@ -34,22 +46,6 @@
     }
     .show-more {
         min-width: 260px;
-        background-color: $primary-color;
-        padding-top: 0.4em;
-        padding-bottom: 0.4em;
-        line-height: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-    }
-    button {
-        padding: 0 8px;
-        cursor: pointer;
-        color: lighten($black, 40%);
-        @include transition(color 0.1s);
-
-        &:hover {
-            color: $black;
-        }
     }
 }
 
@@ -71,7 +67,7 @@
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()" :disabled="maxRenders >= filteredRendersLength">
+            <button class="center show-more button" v-on:click="showMore()" :disabled="showMoreTimeout || maxRenders >= filteredRendersLength">
                 {{ __('filters.show-more') }}
             </button>
         </div>
@@ -92,11 +88,16 @@ export default {
 
     mixins: [FiltersMixin, MasonryMixin],
 
-    created(){
-        this.$store.dispatch( 'loadRenders' );
+    data () {
+        return {
+            showMoreTimeout : false,
+        }
     },
 
     mounted(){
+        this.$store.dispatch( 'resetMaxRenders' );
+        this.$store.dispatch( 'loadRenders' );
+
         this.resizeAllMasonryItems;
         /* Resize all the grid items on the load and resize events */
         var masonryEvents = ['load', 'resize'];
@@ -136,7 +137,11 @@ export default {
 
     methods: {
         showMore() {
-            this.$store.dispatch( 'showMore', 50 );
+            if (!this.showMoreTimeout){
+                this.showMoreTimeout = true;
+                this.$store.dispatch( 'showMore', 50 );
+                setTimeout(() => this.showMoreTimeout = false, 300);
+            }
         },
 
         paginate(r, p) {

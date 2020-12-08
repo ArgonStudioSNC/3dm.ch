@@ -4,9 +4,9 @@
 
     .multiselect {
         color: inherit;
-        font-size: 14px;
+        font-size: 0.9rem;
         line-height: inherit;
-        min-height: 1.75em;
+        min-height: 0;
     }
     .multiselect__myselect {
         position: absolute;
@@ -15,13 +15,13 @@
         cursor: pointer;
     }
     .multiselect__tags {
-        font-size: 14px;
-        min-height: 1.75em;
+        font-size: 0.9rem;
+        min-height: 0;
         color: white;
         background-color: $primary-color;
         border-radius: 0;
         border: none;
-        padding: 0.3em 0 0.3em 1.2em;
+        padding: 0.4em 1.2em;
     }
     .multiselect__content-wrapper {
         border-radius: 0;
@@ -31,9 +31,9 @@
         background-color: $white;
     }
     .multiselect__option {
-        min-height: 1.75em;
-        padding: 0.3em 0 0.3em 1.2em;
-        line-height: inherit;
+        min-height: 0;
+        padding: 0.4em 1.2em;
+        line-height: inherit ;;
         &.multiselect__option--highlight {
             background: $secondary-color;
             color: inherit;

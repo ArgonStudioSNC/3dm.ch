@@ -228,6 +228,8 @@ export default {
                     if(promise == this.lastPromise) {
                         this.reader.readAsDataURL(response.data);
                     }
+                }).catch( error => {
+                    console.error('Image ' + render.filename + ' from render ' + render.id + ' not found !');
                 });
             }
             return this.base64Data;

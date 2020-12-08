@@ -11,6 +11,10 @@ export const MasonryMixin = {
         * @param item Object A brick/tile/cell inside the masonry
         */
         resizeMasonryItem: function(item){
+            if ( !item ){
+                console.debug("resizeMasonryItem : undefined item");
+                return;
+            }
             /* Get the grid object, its row-gap, and the size of its implicit rows */
             var grid = document.getElementsByClassName('masonry')[0];
             if( grid ) {
