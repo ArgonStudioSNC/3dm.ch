@@ -14,6 +14,7 @@
 Auth::routes(['register' => false, 'password.request' => false, 'password.reset' => false]);
 
 Route::namespace('Web')->domain('rendersurfer.' . env('APP_URL'))->group(function () {
+    Route::get('/test', 'TestController@index');
     Route::get('/{vueroute?}', 'RendersurferController@index')->where('vueroute', '[\/\w\.-]*')->name('rendersurfer.index');
 });
 
