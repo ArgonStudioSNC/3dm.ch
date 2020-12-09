@@ -13,7 +13,7 @@
         padding: .5rem;
 
         &:hover {
-            background-color: $light-gray;
+            background-color: $light-brown;
         }
 
         .dz-preview {
