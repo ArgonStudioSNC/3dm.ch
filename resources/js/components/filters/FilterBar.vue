@@ -4,7 +4,7 @@
     .filter-bar {
 
         .grid-container {
-            max-width: 1024px;
+            max-width: 1050px;
             margin-right: 0;
             padding: 0;
         }
