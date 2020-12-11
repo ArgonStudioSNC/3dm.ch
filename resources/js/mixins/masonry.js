@@ -12,7 +12,7 @@ export const MasonryMixin = {
         */
         resizeMasonryItem: function(item){
             if ( !item ){
-                console.debug("resizeMasonryItem : undefined item");
+                // console.debug("resizeMasonryItem : undefined item");
                 return;
             }
             /* Get the grid object, its row-gap, and the size of its implicit rows */
