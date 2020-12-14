@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div class="cell large-auto">
-                    <filterBarComponent v-if="filtersLoadStatus == 2"></filterBarComponent>
+                    <categoriesBarComponent v-if="filtersLoadStatus == 2"></categoriesBarComponent>
                     <span v-else-if="filtersLoadStatus == 3">{{ __('filters.loading-error') }}</span>
                 </div>
             </div>
@@ -40,12 +40,12 @@
 <script>
 import FooterComponent from '@js/components/global/Footer.vue';
 import AuthAPI from '@js/api/auth.js';
-import FilterBarComponent from '@js/components/filters/FilterBar.vue';
+import CategoriesBarComponent from '@js/components/filters/CategoriesBar.vue';
 
 export default {
     components: {
       FooterComponent,
-      FilterBarComponent,
+      CategoriesBarComponent,
     },
 
     data () {

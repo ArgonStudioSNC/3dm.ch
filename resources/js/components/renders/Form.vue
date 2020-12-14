@@ -212,8 +212,8 @@ export default {
     data(){
         return {
             formFields: {
-                name: '',
-                year: '',
+                name: null,
+                year: null,
                 picture: null,
                 categories: {
                     office_id : null,

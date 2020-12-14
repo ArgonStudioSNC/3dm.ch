@@ -1,10 +1,10 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
 
-    .filter-bar {
+    .categories-bar {
 
         .grid-container {
-            max-width: 1024px;
+            max-width: 1050px;
             margin-right: 0;
             padding: 0;
         }
@@ -36,7 +36,7 @@
 </style>
 
 <template>
-    <div class="filter-bar">
+    <div class="categories-bar">
         <div class="grid-container">
             <div class="grid-x grid-margin-x grid-margin-y small-up-2 medium-up-3 large-up-4">
                 <filterCategoryComponent v-for="(options, category) in filters" :key="category" v-bind:filter="{category, options}"></filterCategoryComponent>

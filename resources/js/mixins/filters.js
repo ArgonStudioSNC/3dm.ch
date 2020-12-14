@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const FiltersMixin = {
     computed: {
         /*
@@ -12,10 +14,10 @@ export const FiltersMixin = {
             return this.$store.getters.getFiltersLoadStatus;
         },
 
-        activeFilters: function(){
+        getActiveFilters: function(){
             var filters = Object.assign({}, this.filters);
             var queryFilters = Object.assign({}, this.$store.state.route.query);
-            var activeFilters = {};
+            var getActiveFilters = {};
 
             for (var cat in queryFilters) {
                 if(filters[cat]){
@@ -28,39 +30,48 @@ export const FiltersMixin = {
                     });
 
                     if (tagArray.length) {
-                        activeFilters[cat] = tagArray;
+                        getActiveFilters[cat] = tagArray;
                     }
                 }
             }
 
-            return activeFilters;
+            return getActiveFilters;
         },
 
-        filteredRenders: function(){
-            if(this.$store.getters.getRendersLoadStatus != 2) return {};
+        getSearchQuery: function() {
+            let q = this.$store.state.route.query.q;
+            return q ? _.uniq(q.toLowerCase().split('+')) : [];
+        },
 
-            var resultRenders = Object.assign({}, this.$store.getters.getRenders);
+        filteredRenders() {
+            if (this.$store.getters.getRendersLoadStatus !== 2 || this.getFiltersLoadStatus !== 2) return {};
 
-            for (var cat in this.activeFilters){
-                for (var renderKey in resultRenders) {
-                    if (!this.filterCategoryByTag(resultRenders[renderKey], cat, this.activeFilters[cat])) {
-                        delete resultRenders[renderKey];
-                    }
-                }
+            // copy the renders Object
+            var renders = Object.assign({}, this.$store.getters.getRenders);
+            if ( !_.isEmpty(this.getActiveFilters) || !_.isEmpty(this.getSearchQuery)){
+                // apply the filters
+                this.applyFilters(renders, this.getActiveFilters);
+
+                // apply the search query
+                this.applySearchQuery(renders, this.getSearchQuery);
+
+                // order renders by name
+                renders = Object.assign({}, _.orderBy(renders, ['query_score', 'name'],['desc', 'asc']));
+            } else {
+                // shuffle the renders
+                renders = Object.assign({}, _.shuffle(renders));
             }
-            // order filters by name
-            resultRenders = _.orderBy(resultRenders, ['name'],['asc']);
 
-            return resultRenders;
+            return renders;
         },
 
-        filteredRendersLength: function() {
+        filteredRendersLength() {
             return Object.keys(this.filteredRenders).length;
         },
     },
 
     methods: {
-        filterCategoryByTag: function(render, category, tagArray) {
+        filterCategoryByTag(render, category, tagArray) {
             const dict = {
                 offices : 'office_id',
                 types : 'type_id',
@@ -82,7 +93,7 @@ export const FiltersMixin = {
             });
         },
 
-        updateFiltersForCategory: function(filtersArray, filter) {
+        updateFiltersForCategory(filtersArray, filter) {
             if (filtersArray.length == 0) this.resetFilter(filter);
             else {
                 this.$router.push({ query: Object.assign({}, this.$route.query, { [filter.category]: filtersArray.map(f => f.tag).join('|') }) });
@@ -90,15 +101,53 @@ export const FiltersMixin = {
             this.$store.dispatch( 'resetMaxRenders' );
         },
 
-        resetFilter: function(filter) {
+        resetFilter(filter) {
             var urlQuery = Object.assign({}, this.$route.query);
             delete urlQuery[filter.category];
             this.$router.push({ query: urlQuery});
         },
 
-        resetAllFilters: function() {
+        resetAllFilters() {
             this.$router.push({ query: {} });
             this.$store.dispatch( 'resetMaxRenders' );
+        },
+
+        setSearchQuery(queryString) {
+            var urlQuery;
+            if (!queryString || queryString.length == 0) {
+                urlQuery = Object.assign({}, this.$route.query);
+                delete urlQuery['q'];
+            }
+            else urlQuery = Object.assign({}, this.$route.query, { 'q': queryString.trim().replace(/\s+/g, '+') });
+
+            if (!_.isEqual(urlQuery, this.$route.query)) {
+                this.$router.push({ query: urlQuery});
+            }
+            this.$store.dispatch( 'resetMaxRenders' );
+        },
+
+        applyFilters(renders, filters) {
+            for (var cat in filters){
+                for (var key in renders) {
+                    if (!this.filterCategoryByTag(renders[key], cat, filters[cat])) {
+                        delete renders[key];
+                    }
+                }
+            }
+        },
+
+        applySearchQuery(renders, queryArray) {
+            if (queryArray.length > 0) {
+                for (var key in renders) {
+                    var score = 0;
+                    queryArray.forEach(tag => {
+                        if ( renders[key].name.includes(tag) ) {
+                            score++;
+                        }
+                    });
+                    score ? renders[key].query_score = score : delete renders[key];
+                }
+            }
         },
     }
 }
