@@ -33,7 +33,7 @@
                     background-color: $white;
                     @include transition(color 0.1s);
                     &:hover {
-                        color: $black;
+                        color: $primary-color;
                     }
                 }
             }
@@ -42,11 +42,11 @@
     button.new-render {
         padding: 0 8px;
         cursor: pointer;
-        color: lighten($black, 40%);
+        color: $medium-gray;
         @include transition(color 0.1s);
 
         &:hover {
-            color: $black;
+            color: $primary-color;
         }
     }
 }
