@@ -4,8 +4,8 @@
 
 .render-grid {
     .masonry-wrapper {
-        margin-top: 0.8em;
-        margin-bottom: 3em;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
         max-width: 100%;
         margin-right: auto;
         margin-left: auto;

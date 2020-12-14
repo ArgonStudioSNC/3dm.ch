@@ -6,5 +6,6 @@ return [
     'add-render-link' => "Ajouter un rendu",
     'edit-render-link' => "Éditer",
     'thumbnail-download-failed' => 'Erreur lors du téléchargement',
-    'thumbnail-download-retry' => 'Recharger ?'
+    'thumbnail-download-retry' => 'Recharger ?',
+    'query-placeholder' => 'Commence par taper ta recherche'
 ];
