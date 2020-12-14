@@ -141,7 +141,7 @@ export const FiltersMixin = {
                 for (var key in renders) {
                     var score = 0;
                     queryArray.forEach(tag => {
-                        if ( renders[key].name.includes(tag) ) {
+                        if ( renders[key].name.toLowerCase().includes(tag) ) {
                             score++;
                         }
                     });
