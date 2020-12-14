@@ -96,7 +96,7 @@ export default {
     */
     computed: {
         activeFiltersFromCategory: function(){
-            return this.activeFilters[this.filter.category];
+            return this.getActiveFilters[this.filter.category];
         },
 
     },

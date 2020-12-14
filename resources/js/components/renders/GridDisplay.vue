@@ -3,21 +3,6 @@
 @import '~@/mixins';
 
 .render-grid {
-    .match-result {
-        span {
-            font-weight: $global-weight-bold;
-        }
-        button {
-            padding: 0 8px;
-            cursor: pointer;
-            color: lighten($black, 40%);
-            @include transition(color 0.1s);
-
-            &:hover {
-                color: $black;
-            }
-        }
-    }
     .masonry-wrapper {
         margin-top: 0.8em;
         margin-bottom: 3em;
@@ -52,22 +37,15 @@
 </style>
 
 <template>
-    <div class="render-grid" v-show="rendersLoadStatus == 2">
-        <div class="match-result grid-x align-right">
-            <div class="cell shrink" v-if="can('add renders')">
-                <button data-close v-on:click="$router.push({ name: 'manager.renders.new' })">{{ __('search.add-render-link') }}</button>
-            </div>
-            <div class="cell shrink">
-                <span>{{ filteredRendersLength }}</span>&nbsp;{{ trans_choice("search.render-match-result", filteredRendersLength) }}
-            </div>
-        </div>
+    <div class="render-grid" v-show="getRendersLoadStatus == 2">
+        <searchBarComponent></searchBarComponent>
         <div class="masonry-wrapper">
             <div class="masonry">
-                <renderCardComponent v-for="(render, key) in compiledRenders" :key="render.id" v-bind:render="render"></renderCardComponent>
+                <renderCardComponent v-for="(render, key) in paginate(filteredRenders)" :key="render.id" v-bind:render="render"></renderCardComponent>
             </div>
         </div>
         <div class="grid-x align-center">
-            <button class="center show-more button" v-on:click="showMore()" :disabled="showMoreTimeout || maxRenders >= filteredRendersLength">
+            <button class="center show-more button" v-on:click="showMore()" :disabled="showMoreTimeout || getMaxRenders >= filteredRendersLength">
                 {{ __('filters.show-more') }}
             </button>
         </div>
@@ -76,17 +54,21 @@
 </template>
 
 <script>
+import SearchBarComponent from '@js/components/filters/SearchBar.vue';
 import RenderCardComponent from './Card.vue';
+import { RendersMixin } from '@js/mixins/renders';
 import { FiltersMixin } from '@js/mixins/filters';
+import { PaginationMixin } from '@js/mixins/pagination';
 import { MasonryMixin } from '@js/mixins/masonry';
 import _ from 'lodash';
 
 export default {
     components: {
-      RenderCardComponent,
+        SearchBarComponent,
+        RenderCardComponent,
     },
 
-    mixins: [FiltersMixin, MasonryMixin],
+    mixins: [RendersMixin, FiltersMixin, PaginationMixin, MasonryMixin],
 
     data () {
         return {
@@ -106,35 +88,6 @@ export default {
         } );
     },
 
-    /*
-    Defines the computed properties on the component.
-    */
-    computed: {
-        /*
-        Gets the renders load status
-        */
-        rendersLoadStatus(){
-            return this.$store.getters.getRendersLoadStatus;
-        },
-
-        maxRenders() {
-            return this.$store.getters.getMaxRenders;
-        },
-
-        compiledRenders() {
-            // is user filtering the renders
-            if (!_.isEmpty(this.activeFilters)) {
-                return this.paginate(this.filteredRenders, this.maxRenders);
-            } else {
-                return this.paginate(this.shuffledRenders, this.maxRenders);
-            }
-        },
-
-        shuffledRenders() {
-            return _.shuffle(this.filteredRenders);
-        }
-    },
-
     methods: {
         showMore() {
             if (!this.showMoreTimeout){
@@ -142,14 +95,6 @@ export default {
                 this.$store.dispatch( 'showMore', 50 );
                 setTimeout(() => this.showMoreTimeout = false, 300);
             }
-        },
-
-        paginate(r, p) {
-            const sliced = Object.keys(r).slice(0, p).reduce((result, key) => {
-                                result[key] = r[key];
-                                return result;
-                            }, {});
-            return sliced;
         },
     },
 }
