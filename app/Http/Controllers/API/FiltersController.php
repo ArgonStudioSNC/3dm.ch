@@ -4,16 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 
-use App\Models\Office;
-use App\Models\Type;
-use App\Models\Style;
-use App\Models\Seasontime;
-use App\Models\Weather;
-use App\Models\Daytime;
-use App\Models\Light;
-use App\Models\Composition;
-use App\Models\Assignement;
-use App\Models\Country;
+use App\Models;
 
 class FiltersController extends Controller
 {
@@ -36,16 +27,16 @@ class FiltersController extends Controller
     | Description:    Gets all the filters in the application
     */
     public function index(){
-        $offices = Office::orderBy('name')->get();
-        $types = Type::all();
-        $styles = Style::orderBy('name')->get();
-        $seasontimes = Seasontime::all();
-        $weather = Weather::all();
-        $daytimes = Daytime::all();
-        $lights = Light::all();
-        $compositions = Composition::all();
-        $assignements = Assignement::orderBy('name')->get();
-        $countries = Country::orderBy('name')->get();
+        $offices = Models\Office::all();
+        $types = Models\Type::all();
+        $styles = Models\Style::all();
+        $seasontimes = Models\Seasontime::all();
+        $weather = Models\Weather::all();
+        $daytimes = Models\Daytime::all();
+        $lights = Models\Light::all();
+        $compositions = Models\Composition::all();
+        $assignements = Models\Assignement::all();
+        $countries = Models\GeoCountry::all();
         return response()->json( [
             'offices' => $offices,
             'types' => $types,
@@ -69,7 +60,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the offices in the application
     */
     public function offices(){
-        $offices = Office::all();
+        $offices = Models\Office::all();
 
         return response()->json( $offices );
     }
@@ -83,7 +74,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the render types in the application
     */
     public function types(){
-        $types = Type::all();
+        $types = Models\Type::all();
 
         return response()->json( $types );
     }
@@ -97,7 +88,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the render styles in the application
     */
     public function styles(){
-        $styles = Style::all();
+        $styles = Models\Style::all();
 
         return response()->json( $styles );
     }
@@ -111,7 +102,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the seasontimes in the application
     */
     public function seasontimes(){
-        $seasontimes = Seasontime::all();
+        $seasontimes = Models\Seasontime::all();
 
         return response()->json( $seasontimes );
     }
@@ -125,7 +116,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the weather in the application
     */
     public function weather(){
-        $weather = Weather::all();
+        $weather = Models\Weather::all();
 
         return response()->json( $weather );
     }
@@ -139,7 +130,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the daytimes in the application
     */
     public function daytimes(){
-        $daytimes = Daytime::all();
+        $daytimes = Models\Daytime::all();
 
         return response()->json( $daytimes );
     }
@@ -153,7 +144,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the light types in the application
     */
     public function lights(){
-        $lights = Light::all();
+        $lights = Models\Light::all();
 
         return response()->json( $lights );
     }
@@ -167,7 +158,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the composition arts in the application
     */
     public function compositions(){
-        $compositions = Composition::all();
+        $compositions = Models\Composition::all();
 
         return response()->json( $compositions );
     }
@@ -181,7 +172,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the assignements types in the application
     */
     public function assignements(){
-        $assignements = Assignement::all();
+        $assignements = Models\Assignement::all();
 
         return response()->json( $assignements );
     }
@@ -195,7 +186,7 @@ class FiltersController extends Controller
     | Description:    Gets all of the countries in the application
     */
     public function countries(){
-        $countries = Country::all();
+        $countries = Models\GeoCountry::all();
 
         return response()->json( $countries );
     }

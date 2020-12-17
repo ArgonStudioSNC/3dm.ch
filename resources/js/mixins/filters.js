@@ -7,7 +7,9 @@ export const FiltersMixin = {
         */
         filters: function(){
             if(this.$store.getters.getFiltersLoadStatus !== 2) return null;
-            return this.$store.getters.getFilters;
+            var filters = _.cloneDeep(this.$store.getters.getFilters);
+            this.convertDBFiltersKeys(filters);
+            return filters;
         },
 
         getFiltersLoadStatus: function() {
@@ -25,7 +27,7 @@ export const FiltersMixin = {
 
                     var tagArray = [];
                     queryFilters[cat].forEach((tag, i) => {
-                        var filter = filters[cat].find(element => element.tag === tag);
+                        var filter = filters[cat].find(element => element.slug === tag);
                         if (filter) tagArray.push(filter);
                     });
 
@@ -86,9 +88,6 @@ export const FiltersMixin = {
             };
 
             return tagArray.some(function(tag) {
-                if (category === 'countries'){
-                    return render[dict[category]] === tag.code;
-                }
                 return render[dict[category]] === tag.id;
             });
         },
@@ -96,7 +95,7 @@ export const FiltersMixin = {
         updateFiltersForCategory(filtersArray, filter) {
             if (filtersArray.length == 0) this.resetFilter(filter);
             else {
-                this.$router.push({ query: Object.assign({}, this.$route.query, { [filter.category]: filtersArray.map(f => f.tag).join('|') }) });
+                this.$router.push({ query: Object.assign({}, this.$route.query, { [filter.category]: filtersArray.map(f => f.slug).join('|') }) });
             }
             this.$store.dispatch( 'resetMaxRenders' );
         },
@@ -148,6 +147,35 @@ export const FiltersMixin = {
                     score ? renders[key].query_score = score : delete renders[key];
                 }
             }
+        },
+
+        convertDBFiltersKeys(filters) {
+            filters['countries'].map(function(obj) {
+                obj['id'] = obj['abv']; // Assign new key
+                return obj;
+            });
+
+            // Translate the filter options
+            for (const category in filters) {
+                filters[category].map(obj => {
+                    obj['translated_name'] = this.__('filters.' + category + '-' + obj.slug);
+                });
+            }
+
+            // Order alphabeticaly
+            var nameCompare = function(a, b) {
+                // Switzerland first
+                if (a['abv'] == 'CH') return -1;
+                if (b['abv'] == 'CH') return 1;
+
+                let fa = a['translated_name'].toLowerCase();
+                let fb = b['translated_name'].toLowerCase();
+                return fa.localeCompare(fb);
+            }
+            filters['offices'].sort(nameCompare);
+            filters['styles'].sort(nameCompare);
+            filters['assignements'].sort(nameCompare);
+            filters['countries'].sort(nameCompare);
         },
     }
 }

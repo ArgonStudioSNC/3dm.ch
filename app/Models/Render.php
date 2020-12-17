@@ -87,7 +87,7 @@ class Render extends Model
      */
     public function country()
     {
-        return $this->hasOne('App\Models\country', 'code', 'country_code');
+        return $this->hasOne('App\Models\geocountry', 'abv', 'country_code');
     }
 
 }

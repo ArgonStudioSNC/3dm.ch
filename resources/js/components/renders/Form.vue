@@ -108,7 +108,7 @@
                             <label>{{ __('filters.offices') }}
                                 <select v-model="formFields.categories['office_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.offices" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.offices" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -116,7 +116,7 @@
                             <label>{{ __('filters.types') }}
                                 <select v-model="formFields.categories['type_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.types" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.types" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -124,7 +124,7 @@
                             <label>{{ __('filters.styles') }}
                                 <select v-model="formFields.categories['style_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.styles" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.styles" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -132,7 +132,7 @@
                             <label>{{ __('filters.seasontimes') }}
                                 <select v-model="formFields.categories['seasontime_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.seasontimes" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.seasontimes" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -140,7 +140,7 @@
                             <label>{{ __('filters.weather') }}
                                 <select v-model="formFields.categories['weather_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.weather" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.weather" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -148,7 +148,7 @@
                             <label>{{ __('filters.daytimes') }}
                                 <select v-model="formFields.categories['daytime_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.daytimes" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.daytimes" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -156,7 +156,7 @@
                             <label>{{ __('filters.lights') }}
                                 <select v-model="formFields.categories['light_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.lights" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.lights" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -164,7 +164,7 @@
                             <label>{{ __('filters.compositions') }}
                                 <select v-model="formFields.categories['composition_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.compositions" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.compositions" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -172,7 +172,7 @@
                             <label>{{ __('filters.assignements') }}
                                 <select v-model="formFields.categories['assignement_id']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.assignements" :key="option.id" :value="option.id">{{ option.name }}</option>
+                                    <option v-for="option in filters.assignements" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
@@ -180,7 +180,7 @@
                             <label>{{ __('filters.countries') }}
                                 <select v-model="formFields.categories['country_code']">
                                     <option :value='null'>{{ __('manager.render-no-option') }}</option>
-                                    <option v-for="option in filters.countries" :key="option.code" :value="option.code">{{ option.name }}</option>
+                                    <option v-for="option in filters.countries" :key="option.id" :value="option.id">{{ option.translated_name }}</option>
                                 </select>
                             </label>
                         </div>
