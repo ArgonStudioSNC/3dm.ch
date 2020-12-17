@@ -33,6 +33,8 @@ return [
     'reset' => 'Réinitialiser les filtres',
     'show-more' => 'Plus de résultats',
     'loading-error' => 'Impossible de charger les filtres',
+    'active-filters' => ':nb filtre actif|:nb filtres actifs',
+    'no-results' => 'Aucun filtre trouvé',
 
     /*
     |--------------------------------------------------------------------------

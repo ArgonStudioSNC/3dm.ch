@@ -98,6 +98,7 @@
                 <span>{{ placeholder }}</span>
             </span>
             <span class="multiselect__myselect" slot="caret" slot-scope="{ toggle }" @mousedown.prevent.stop="toggle"></span>
+            <span slot="noResult">{{ __('filters.no-results') }}</span>
         </multiselect>
     </div>
 </template>
@@ -129,7 +130,7 @@ export default {
         placeholder: function() {
             let placeholder = this.__('filters.' + this.filter.category);
             if (this.activeFiltersFromCategory && this.activeFiltersFromCategory.length) {
-                placeholder = placeholder + ' : ' + this.activeFiltersFromCategory.length + ' filtres actifs';
+                placeholder += ' : ' + this.trans_choice('filters.active-filters', this.activeFiltersFromCategory.length, {'nb': this.activeFiltersFromCategory.length});
             }
             return placeholder;
         },
