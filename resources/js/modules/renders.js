@@ -7,6 +7,7 @@
 
 import RenderAPI from '@js/api/render.js';
 import router from '@js/routes.js';
+import _ from 'lodash';
 
 export const renders = {
     /*
@@ -135,7 +136,8 @@ export const renders = {
         Sets the renders
         */
         setRenders( state, renders ){
-            state.renders = renders;
+            // shuffle the renders
+            state.renders = _.shuffle(renders);
         },
 
         /*

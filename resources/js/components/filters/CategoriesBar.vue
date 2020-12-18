@@ -65,7 +65,12 @@ export default {
         resetMaxRenders: function() {
             this.$store.dispatch( 'resetMaxRenders' );
         }
+    },
 
+    computed: {
+        filters() {
+            return this.getFilters;
+        },
     },
 }
 

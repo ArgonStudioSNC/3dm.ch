@@ -113,8 +113,7 @@
 <script>
 import LoaderComponent from '@js/components/global/Loader';
 import { mapState } from 'vuex';
-import { FiltersMixin } from '@js/mixins/filters';
-import { RendersMixin } from '@js/mixins/renders';
+import { RendersFiltersMixin } from '@js/mixins/rendersFilters';
 import RenderAPI from '@js/api/render.js';
 
 export default {
@@ -123,8 +122,7 @@ export default {
     },
 
     mixins: [
-        FiltersMixin,
-        RendersMixin,
+        RendersFiltersMixin,
     ],
 
     data () {
