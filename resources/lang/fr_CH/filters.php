@@ -55,6 +55,7 @@ return [
     'offices-brunecky' => 'Brunecky',
     'offices-loomn' => 'Loomn',
     'offices-bloomimages' => 'Bloomimages',
+    'offices-3dm' => '3DM',
 
     'types-interieur' => 'Intérieur',
     'types-exterieur' => 'Extérieur',
