@@ -39,7 +39,7 @@
     <div class="categories-bar">
         <div class="grid-container">
             <div class="grid-x grid-margin-x grid-margin-y small-up-2 medium-up-3 large-up-4">
-                <filterCategoryComponent v-for="(options, category) in filters" :key="category" v-bind:filter="{category, options}"></filterCategoryComponent>
+                <filterCategoryComponent v-for="(options, category) in filtersOptions" :key="category" v-bind:filter="{category, options}"></filterCategoryComponent>
                 <div class="cell">
                     <router-link class="filter-reset-button" to="/search" v-on:click.native="resetMaxRenders" tag="button">
                         <span>{{ __('filters.reset') }}</span>
@@ -72,20 +72,21 @@ export default {
     },
 
     computed: {
-        filters() {
-            var filtersArray = this.getFilters;
+        filtersOptions() {
+            var filters = this.getFilters;
 
             // for the time being, we just want to show countries with a registred render
-            var countriesSet = new Set(this.getRenders.map(r => r.country_code));
-            var countriesFilters = [];
-            var filtersArray = this.getFilters;
-            countriesSet.forEach((abv, i) => {
-                var filter = filtersArray['countries'].find(element => element.abv === abv);
-                if (filter) countriesFilters.push(filter);
-            });
-            filtersArray['countries'] = countriesFilters;
+            if (this.getRenders) {
+                var countriesSet = new Set(this.getRenders.map(r => r.country_code));
+                var countriesFilters = [];
+                countriesSet.forEach((abv, i) => {
+                    var filter = filters['countries'].find(element => element.abv === abv);
+                    if (filter) countriesFilters.push(filter);
+                });
+                filters['countries'] = countriesFilters;
+            }
 
-            return filtersArray;
+            return filters;
         },
     },
 }
