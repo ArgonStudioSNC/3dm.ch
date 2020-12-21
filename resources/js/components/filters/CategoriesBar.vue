@@ -1,37 +1,37 @@
 <style lang="scss">
 @import '~@/abstracts/_settings.scss';
 
-    .categories-bar {
+.categories-bar {
 
-        .grid-container {
-            max-width: 1050px;
-            margin-right: 0;
-            padding: 0;
-        }
+    .grid-container {
+        max-width: 1050px;
+        margin-right: 0;
+        padding: 0;
+    }
 
-        .filter-reset-button {
-            box-sizing: content-box;
+    .filter-reset-button {
+        box-sizing: content-box;
+        display: block;
+        position: relative;
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        line-height: inherit;
+        min-height: 1.75em;
+        background-color: $secondary-color;
+        color: $black;
+        font-weight: inherit;
+
+        span {
+            padding: 0.3em 0 0.3em 1.2em;
             display: block;
-            position: relative;
-            width: 100%;
-            text-align: left;
-            font-size: 14px;
-            line-height: inherit;
-            min-height: 1.75em;
-            background-color: $secondary-color;
-            color: $black;
-            font-weight: inherit;
 
-            span {
-                padding: 0.3em 0 0.3em 1.2em;
-                display: block;
-
-                &:hover {
-                    cursor: pointer;
-                }
+            &:hover {
+                cursor: pointer;
             }
         }
     }
+}
 
 </style>
 
@@ -53,19 +53,40 @@
 <script>
 import FilterCategoryComponent from './Category.vue';
 import { FiltersMixin } from '@js/mixins/filters';
+import { RendersMixin } from '@js/mixins/renders';
 
 export default {
     components: {
-      FilterCategoryComponent,
+        FilterCategoryComponent,
     },
 
-    mixins: [FiltersMixin],
+    mixins: [
+        FiltersMixin,
+        RendersMixin,
+    ],
 
     methods: {
         resetMaxRenders: function() {
             this.$store.dispatch( 'resetMaxRenders' );
         }
+    },
 
+    computed: {
+        filters() {
+            var filtersArray = this.getFilters;
+
+            // for the time being, we just want to show countries with a registred render
+            var countriesSet = new Set(this.getRenders.map(r => r.country_code));
+            var countriesFilters = [];
+            var filtersArray = this.getFilters;
+            countriesSet.forEach((abv, i) => {
+                var filter = filtersArray['countries'].find(element => element.abv === abv);
+                if (filter) countriesFilters.push(filter);
+            });
+            filtersArray['countries'] = countriesFilters;
+
+            return filtersArray;
+        },
     },
 }
 

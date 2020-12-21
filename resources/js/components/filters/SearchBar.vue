@@ -79,10 +79,12 @@
 </template>
 
 <script>
-import { FiltersMixin } from '@js/mixins/filters';
+import { RendersFiltersMixin } from '@js/mixins/rendersFilters';
 
 export default {
-    mixins: [FiltersMixin],
+    mixins: [
+        RendersFiltersMixin,
+    ],
 
     data () {
         return {

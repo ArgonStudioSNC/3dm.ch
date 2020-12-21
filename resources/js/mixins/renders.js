@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const RendersMixin = {
 
     methods: {
@@ -42,6 +44,11 @@ export const RendersMixin = {
     },
 
     computed: {
+        getRenders: function() {
+            if(this.$store.getters.getRendersLoadStatus !== 2) return null;
+            return this.$store.getters.getRenders;
+        },
+
         getRendersLoadStatus: function() {
             return this.$store.getters.getRendersLoadStatus;
         },

@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class GeoCountry extends Model
 {
         /**
          * The primary key associated with the table.
          *
          * @var string
          */
-        protected $primaryKey = 'code';
+        protected $primaryKey = 'abv';
 
         /**
          * Indicates if the IDs are auto-incrementing.

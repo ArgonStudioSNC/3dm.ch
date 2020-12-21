@@ -41,17 +41,17 @@ module.exports = {
             } catch (e) {
                 translation = key
             }
+            
+            if (translationNotFound) {
+                translation = window._translations[window._locale]['json'][key]
+                    ? window._translations[window._locale]['json'][key]
+                    : key
+            }
 
             if (plur < -1 || plur > 1 ) {
                 translation = translation.split('|')[1];
             } else {
                 translation = translation.split('|')[0];
-            }
-
-            if (translationNotFound) {
-                translation = window._translations[window._locale]['json'][key]
-                    ? window._translations[window._locale]['json'][key]
-                    : key
             }
 
             _.forEach(replace, (value, key) => {

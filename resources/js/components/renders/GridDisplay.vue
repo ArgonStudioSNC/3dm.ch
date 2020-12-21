@@ -56,8 +56,7 @@
 <script>
 import SearchBarComponent from '@js/components/filters/SearchBar.vue';
 import RenderCardComponent from './Card.vue';
-import { RendersMixin } from '@js/mixins/renders';
-import { FiltersMixin } from '@js/mixins/filters';
+import { RendersFiltersMixin } from '@js/mixins/rendersFilters';
 import { PaginationMixin } from '@js/mixins/pagination';
 import { MasonryMixin } from '@js/mixins/masonry';
 import _ from 'lodash';
@@ -68,7 +67,11 @@ export default {
         RenderCardComponent,
     },
 
-    mixins: [RendersMixin, FiltersMixin, PaginationMixin, MasonryMixin],
+    mixins: [
+        RendersFiltersMixin,
+        PaginationMixin,
+        MasonryMixin,
+    ],
 
     data () {
         return {
