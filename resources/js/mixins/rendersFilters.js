@@ -14,7 +14,7 @@ export const RendersFiltersMixin = {
             // copy the renders Object
             var renders = _.cloneDeep(this.getRenders);
 
-            if (this.getActiveFilters.length || this.getSearchQuery.length) {
+            if (Object.keys(this.getActiveFilters).length || this.getSearchQuery.length) {
                 // apply the filters
                 this.applyFilters(renders, this.getActiveFilters);
                 // apply the search query
@@ -26,7 +26,6 @@ export const RendersFiltersMixin = {
                     return a.name.localeCompare(b.name);
                 });
             }
-
             return renders;
         },
 

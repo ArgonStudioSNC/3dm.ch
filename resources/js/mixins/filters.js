@@ -19,25 +19,25 @@ export const FiltersMixin = {
         getActiveFilters: function(){
             var filters = Object.assign({}, this.getFilters);
             var queryFilters = Object.assign({}, this.$store.state.route.query);
-            var getActiveFilters = {};
+            var activeFilters = {};
 
             for (var cat in queryFilters) {
                 if(filters[cat]){
                     queryFilters[cat] = queryFilters[cat].split('|');
 
-                    var tagArray = [];
-                    queryFilters[cat].forEach((tag, i) => {
-                        var filter = filters[cat].find(element => element.slug === tag);
-                        if (filter) tagArray.push(filter);
+                    var activeFiltersArray = [];
+                    queryFilters[cat].forEach((slug, i) => {
+                        var filter = filters[cat].find(element => element.slug === slug);
+                        if (filter) activeFiltersArray.push(filter);
                     });
 
-                    if (tagArray.length) {
-                        getActiveFilters[cat] = tagArray;
+                    if (activeFiltersArray.length) {
+                        activeFilters[cat] = activeFiltersArray;
                     }
                 }
             }
 
-            return getActiveFilters;
+            return activeFilters;
         },
 
         getSearchQuery: function() {
