@@ -41,8 +41,6 @@
        -o-background-size: $background-size;
           background-size: $background-size;
 }
-
-
 // Transition
 @mixin transition($args...) {
   -webkit-transition: $args;

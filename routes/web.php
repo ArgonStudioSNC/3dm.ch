@@ -21,10 +21,7 @@ Route::namespace('Web')->domain(env('APP_URL'))->group(function () {
     Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
     Route::get('/about', 'SiteController@about')->name('www.about');
 
-    Route::get('/2021/', function () {
+    Route::get('/2021', function () {
         return view('portfolio2021');
-    });
-    Route::get('/2021/about', function () {
-        return view('about2021');
     });
 });

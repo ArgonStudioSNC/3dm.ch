@@ -51,52 +51,59 @@
                 </div>
                 <div class="col-md-9 col-xl-8">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <p>Ad'A architecture Sàrl</p>
+                        <div class="col-lg-4">
+                            <p>Ad'A Architecture Sàrl</p>
                             <p>AETC Sàrl</p>
-                            <p>Atba architecture + énergie SA</p>
+                            <p>Atba Architecture + Énergie SA</p>
                             <p>Atelier 78 Sàrl</p>
-                            <p>Ateliers du passage</p>
+                            <p>Atelier dʼArchitecture M</p>
+                            <p>Ateliers du Passage</p>
                             <p>Baeriswyl Architekten AG</p>
                             <p>Bart & Buchhofer Architekten AG</p>
                             <p>BBA Archipole SA</p>
                             <p>BBH Architectes Sàrl</p>
                             <p>Boegli Kramp Architekten AG</p>
                             <p>Bricks AG</p>
+                            <p>Brunner & Carrard SA</p>
                             <p>Bunq SA</p>
                             <p>Chappuis Architectes SA</p>
                             <p>CFF SA</p>
+                            <p>D4 Atelier d'Architecture SA</p>
+                        </div>
+
+                        <div class="col-lg-4">
                             <p>Deillon Delley Architectes SA</p>
-                            <p>Deschenaux Follonier</p>
                             <p>Dietziker Architekten GmbH</p>
-                            <p>DT-TECH architecture SA</p>
+                            <p>DT-TECH Architecture SA</p>
                             <p>Dupasquier Rebetez Architectes</p>
-                            <p>DVarchitectes & associés sa</p>
+                            <p>DVarchitectes & Associés SA</p>
                             <p>Esposito + Javet</p>
                             <p>Epure Architecture et Urbanisme SA</p>
-
-                        </div>
-                        <div class="col-lg-6">
-                                                        <p>Farra zoumboulakis & associés SA</p>
-                            <p>GDW architectes SA</p>
+                            <p>Fesselet Krampulz Architectes</p>
+                            <p>Farra Zoumboulakis & Associés SA</p>
+                            <p>GDW Architectes SA</p>
                             <p>GXM Architekten GmbH</p>
-                            <p>IPAS architectes SA</p>
+                            <p>IPAS Architectes SA</p>
                             <p>Itten + Brechbühl SA</p>
                             <p>IUB Engineering AG</p>
                             <p>Kistler Vogt Architekten AG</p>
                             <p>Lateltin Monnerat architectes SA</p>
                             <p>LVPH Architectes Sàrl</p>
-                            <p>Mangeat-Wahlen architectes Sàrl</p>
-                            <p>Meno architectes Sàrl</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p>Mangeat-Wahlen Architectes Sàrl</p>
+                            <p>Meno Architectes Sàrl</p>
                             <p>Marques AG</p>
                             <p>Maillard Immobilier SA</p>
+                            <p>Masini Entreprise Totale SA</p>
                             <p>Pierre Gianoli Architectes</p>
                             <p>Previmm Sàrl</p>
-                            <p>R2A architectes</p>
-                            <p>RBRC architectes Sàrl</p>
-                            <p>RBCH architectes Sàrl</p>
+                            <p>R2A Architectes</p>
+                            <p>RBRC Architectes Sàrl</p>
+                            <p>RBCH Architectes Sàrl</p>
                             <p>Rollimarchini Architekten AG</p>
-                            <p>Unicum ag</p>
+                            <p>Stéphane Cottet Architecte Sàrl</p>
+                            <p>Unicum AG</p>
                             <p>Wahlirüefli Architekten und Raumplaner AG</p>
                             <p>WEL Consulting Sàrl</p>
                         </div>
@@ -117,17 +124,20 @@
                         <div class="col">
                             <h3>Nathan Boder</h3>
                             <p>Fondateur & directeur<br>Architecte HES<br>
-                            <a href="mailto:nathan.boder@3dm.ch" target="_top">nathan.boder@3dm.ch</a></p>
+                            <a href="mailto:nathan.boder@3dm.ch" target="_top">nathan.boder@3dm.ch</a><br>
+                            <a href="tel:+41225754617">+41 (0)22 575 46 17</a></p>
                         </div>
                         <div class="col">
                             <h3>Michela Parrini</h3>
                             <p>Collaboratrice en visualisations architecturales<br>Architetto Università degli Studi di Firenze<br>
-                            <a href="mailto:michela.parrini@3dm.ch" target="_top">michela.parrini@3dm.ch</a></p>
+                            <a href="mailto:michela.parrini@3dm.ch" target="_top">michela.parrini@3dm.ch</a><br>
+                            <a href="tel:+41225754690">+41 (0)22 575 46 90</a></p>
                         </div>
                         <div class="col">
                             <h3>Aline Dauwalder</h3>
                             <p>Collaboratrice en visualisations architecturales<br>Architecte HES<br>
-                            <a href="mailto:aline.dauwalder@3dm.ch" target="_top">aline.dauwalder@3dm.ch</a></p>
+                            <a href="mailto:aline.dauwalder@3dm.ch" target="_top">aline.dauwalder@3dm.ch</a><br>
+                            <a href="tel:+41225754661">+41 (0)22 575 46 61</a></p>
                         </div>
                         <div class="col">
                             <h3>Loïc Charrière</h3>
@@ -172,10 +182,12 @@
                             <h3>Contact</h3>
                             <p>
                                 <a href="mailto:contact@3dm.ch" target="_top">contact@3dm.ch</a><br>
-                                <a href="tel:+41323232503">+41 (0)32 323 25 03</a>
+                                <a style="color:#6b3d3d" href="tel:+41323232503">+41 (0)32 323 25 03*</a>
                             </p>
+                            <p style="color:#6b3d3d">*3DM est en télétravail conformément aux mesures prises par le Conseil Fédéral le 13 janvier 2021. Merci d'utiliser les numéros directs indiqués dans <a href="#team" style="color:#6b3d3d; text-decoration: underline;">l'onglet Team</a>.</p>
+
                         </div>
-                        <div class="col">
+                        {{-- <div class="col">
                             <h3>Revue de presse</h3>
                             <p>
                                 TEC21 (10.01.19) : <a href="https://www.espazium.ch/werkhof-lugano" target="_blank">Siège de la voirie DSU, Lugano <i class="far fa-file-alt"></i></a><br>
@@ -186,7 +198,7 @@
                                 La Liberté (3.11.16) : <a href="https://www.lenouvelliste.ch/articles/valais/valais-central/trois-batiments-un-seul-but-616418" target="_blank">Sacré-coeur, Estavayer <i class="far fa-file-alt"></i></a><br>
                                 Der Bund (25.11.15) : <a href="https://www.derbund.ch/bern/stadt/via-felsenau-oder-die-quadratur-des-kreises/story/29261249" target="_blank">Via Felsenau, Berne <i class="far fa-file-alt"></i></a>
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
