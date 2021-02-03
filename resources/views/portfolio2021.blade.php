@@ -171,7 +171,7 @@ x.addListener(loadBackground);
     <!-- PARALLAX : EMS SAINT-SYLVE	--> {{--Compléter le nom du projet--}}
     <div id='ems-saint-sylve-1' class='portfolio-fullwidth' style="background-color: #3D5D6B;"> {{--Donner un id au projet et compléter la couleur de fond--}}
         <div class="fullwidth-container">
-            <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
+            <div class="parallax-window d-none d-sm-block" style="min-height:60vh;" data-speed=0.7>
                 <div class="parallax-slider">
                     <picture>
                         <source srcset="{{ asset('/media/renders/20210126/181_EMS-Vex_Ateliers-du-Passage@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
