@@ -43,77 +43,7 @@
         </div>
     </section>
 
-    <section id='clients' style="background-color:white;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-xl-4">
-                    <h1>Clients</h1>
-                </div>
-                <div class="col-md-9 col-xl-8">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <p>Ad'A Architecture Sàrl</p>
-                            <p>AETC Sàrl</p>
-                            <p>Atba Architecture + Énergie SA</p>
-                            <p>Atelier 78 Sàrl</p>
-                            <p>Atelier dʼArchitecture M</p>
-                            <p>Ateliers du Passage</p>
-                            <p>Baeriswyl Architekten AG</p>
-                            <p>Bart & Buchhofer Architekten AG</p>
-                            <p>BBA Archipole SA</p>
-                            <p>BBH Architectes Sàrl</p>
-                            <p>Boegli Kramp Architekten AG</p>
-                            <p>Bricks AG</p>
-                            <p>Brunner & Carrard SA</p>
-                            <p>Bunq SA</p>
-                            <p>Chappuis Architectes SA</p>
-                            <p>CFF SA</p>
-                            <p>D4 Atelier d'Architecture SA</p>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <p>Deillon Delley Architectes SA</p>
-                            <p>Dietziker Architekten GmbH</p>
-                            <p>DT-TECH Architecture SA</p>
-                            <p>Dupasquier Rebetez Architectes</p>
-                            <p>DVarchitectes & Associés SA</p>
-                            <p>Esposito + Javet</p>
-                            <p>Epure Architecture et Urbanisme SA</p>
-                            <p>Fesselet Krampulz Architectes</p>
-                            <p>Farra Zoumboulakis & Associés SA</p>
-                            <p>GDW Architectes SA</p>
-                            <p>GXM Architekten GmbH</p>
-                            <p>IPAS Architectes SA</p>
-                            <p>Itten + Brechbühl SA</p>
-                            <p>IUB Engineering AG</p>
-                            <p>Kistler Vogt Architekten AG</p>
-                            <p>Lateltin Monnerat architectes SA</p>
-                            <p>LVPH Architectes Sàrl</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <p>Mangeat-Wahlen Architectes Sàrl</p>
-                            <p>Meno Architectes Sàrl</p>
-                            <p>Marques AG</p>
-                            <p>Maillard Immobilier SA</p>
-                            <p>Masini Entreprise Totale SA</p>
-                            <p>Pierre Gianoli Architectes</p>
-                            <p>Previmm Sàrl</p>
-                            <p>R2A Architectes</p>
-                            <p>RBRC Architectes Sàrl</p>
-                            <p>RBCH Architectes Sàrl</p>
-                            <p>Rollimarchini Architekten AG</p>
-                            <p>Stéphane Cottet Architecte Sàrl</p>
-                            <p>Unicum AG</p>
-                            <p>Wahlirüefli Architekten und Raumplaner AG</p>
-                            <p>WEL Consulting Sàrl</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id='team' style="background-color:var(--light-brown);">
+    <section id='team' style="background-color:white;">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-xl-4">
@@ -158,7 +88,7 @@
         </div>
     </section>
 
-    <section id='contact' style="background-color:white;">
+    <section id='contact' style="background-color:var(--light-brown);">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-xl-4">
@@ -199,6 +129,88 @@
                                 Der Bund (25.11.15) : <a href="https://www.derbund.ch/bern/stadt/via-felsenau-oder-die-quadratur-des-kreises/story/29261249" target="_blank">Via Felsenau, Berne <i class="far fa-file-alt"></i></a>
                             </p>
                         </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='clients' style="background-color:white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xl-4">
+                    <h1>Clients</h1>
+                </div>
+                <div class="col-md-9 col-xl-8">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Ad'A Architecture Sàrl</p>
+                            <p>AETC Sàrl</p>
+                            <p>Arches 2000 SA</p>
+                            <p>Architecture M. Buren Sàrl</p>
+                            <p>Atba Architecture + Énergie SA</p>
+                            <p>Atelier 78 Sàrl</p>
+                            <p>Atelier dʼArchitecture M Sàrl</p>
+                            <p>Ateliers du Passage</p>
+                            <p>B Architecture Sàrl</p>
+                            <p>Baeriswyl Architekten AG</p>
+                            <p>Bart & Buchhofer Architekten AG</p>
+                            <p>BAT-MANN Constructeur Intégral SA</p>
+                            <p>BBA Archipole SA</p>
+                            <p>BBH Architectes Sàrl</p>
+                            <p>Boegli Kramp Architekten AG</p>
+                            <p>Bricks AG</p>
+                            <p>Brunner & Carrard SA</p>
+                            <p>Bunq SA</p>
+                            <p>Chappuis Architectes SA</p>
+                            <p>CFF SA</p>
+                            <p>D4 Atelier d'Architecture SA</p>
+                            <p>David Weibel Architecte</p>
+                            <p>Deillon Delley Architectes SA</p>
+                            <p>Deschenaux Follonier</p>
+                            <p>Dietziker Architekten GmbH</p>
+                            <p>DT-TECH Architecture SA</p>
+                            <p>Dupasquier Rebetez Architectes</p>
+                            <p>DVarchitectes & Associés SA</p>
+                            <p>Envar Sàrl</p>
+                            <p>Erard Schüll Architectes</p>
+                            <p>Esposito + Javet</p>
+                            <p>Epure Architecture et Urbanisme SA</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>Fesselet Krampulz Architectes</p>
+                            <p>Farra Zoumboulakis & Associés SA</p>
+                            <p>GDW Architectes SA</p>
+                            <p>GXM Architekten GmbH</p>
+                            <p>IPAS Architectes SA</p>
+                            <p>Itten + Brechbühl SA</p>
+                            <p>IUB Engineering AG</p>
+                            <p>IMJU SA</p>
+                            <p>Kaufmann Menuiserie SA</p>
+                            <p>Kistler Vogt Architekten AG</p>
+                            <p>Lateltin Monnerat architectes SA</p>
+                            <p>LVPH Architectes Sàrl</p>
+                            <p>Mangeat-Wahlen Architectes Sàrl</p>
+                            <p>Meno Architectes Sàrl</p>
+                            <p>Marques AG</p>
+                            <p>Maillard Immobilier SA</p>
+                            <p>Masini Entreprise Totale SA</p>
+                            <p>Muller Immobilier</p>
+                            <p>Pascal Heyraud Sàrl</p>
+                            <p>Pierre Gianoli Architectes</p>
+                            <p>Pierre Liechti Architectes SA</p>
+                            <p>Previmm Sàrl</p>
+                            <p>R2A Architectes</p>
+                            <p>RBRC Architectes Sàrl</p>
+                            <p>RBCH Architectes Sàrl</p>
+                            <p>Rollimarchini Architekten AG</p>
+                            <p>RK Studio Architekten GmbH</p>
+                            <p>Stéphane Cottet Architecte Sàrl</p>
+                            <p>Supero sàrl</p>
+                            <p>Unicum AG</p>
+                            <p>Wahlirüefli Architekten und Raumplaner AG</p>
+                            <p>WEL Consulting Sàrl</p>
+                        </div>
                     </div>
                 </div>
             </div>
