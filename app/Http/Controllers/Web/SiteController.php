@@ -14,7 +14,7 @@ class SiteController extends Controller
      */
     public function portfolio()
     {
-        return view('portfolio');
+        return view('website/portfolio');
     }
 
     /**
@@ -24,6 +24,16 @@ class SiteController extends Controller
      */
     public function about()
     {
-        return view('about');
+        return view('website/about');
+    }
+
+    /**
+     * Show the website calculator page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function calculator()
+    {
+        return view('website/calculator');
     }
 }

@@ -1,11 +1,17 @@
-// Fonts
+// FONTS
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400&display=swap');
 
-@import 'meyers-reset';
+// CSS NORMALIZE
+@import 'node_modules/normalize.css/normalize';
+
+// MIXINS
 @import 'mixins';
 
-// Bootstrap
+// BOOTSTRAP
 @import '~bootstrap/scss/bootstrap';
+
+// STYLESHEETS
+@import 'website/variables';
 @import 'website/navbar';
 @import 'website/splashscreen';
 @import 'website/404';

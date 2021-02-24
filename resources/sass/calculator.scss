@@ -1,0 +1,15 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400&display=swap');
+
+// CSS NORMALIZE
+@import 'node_modules/normalize.css/normalize';
+
+// MIXINS
+@import 'mixins';
+
+// FONDATION SITES
+@import 'website/settings';
+@import 'node_modules/foundation-sites/assets/foundation';
+
+// STYLESHEETS
+@import 'website/calculator';

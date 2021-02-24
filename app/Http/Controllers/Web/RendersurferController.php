@@ -24,6 +24,6 @@ class RendersurferController extends Controller
      */
     public function index()
     {
-        return view('rendersurfer');
+        return view('rendersurfer/app');
     }
 }

@@ -1,11 +1,9 @@
-@use  'base';
-
 #splashscreen {
 	position: fixed;
 	z-index: 50;
 	height: 100vh;
 	width: 100vw;
-	background-color: base.$theme-blue;
+	background-color: $theme-blue;
 
 	.my-flex-logo {
 		height: 100%;

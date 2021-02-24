@@ -1,5 +1,3 @@
-@use  'base';
-
 #about {
     @include media-breakpoint-up(md){
         h1 {

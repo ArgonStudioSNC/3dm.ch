@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -11,8 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/website.js') }}"></script>
-    <script src="{{ mix('js/website.vanilla.js') }}" defer></script>
+    <script src="{{ mix('js/vendor.js') }}" defer></script>
+    <script src="{{ mix('js/website.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/bf8f37f6e5.js" crossorigin="anonymous" defer></script>
 
     <!-- Styles -->
@@ -27,6 +28,5 @@
 
 <body style="display: none;">
     @yield('content')
-    @yield ('scripts', '')
 </body>
 </html>

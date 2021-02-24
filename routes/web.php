@@ -20,8 +20,9 @@ Route::namespace('Web')->domain('rendersurfer.' . env('APP_URL'))->group(functio
 Route::namespace('Web')->domain(env('APP_URL'))->group(function () {
     Route::get('/', 'SiteController@portfolio')->name('www.portfolio');
     Route::get('/about', 'SiteController@about')->name('www.about');
+    Route::get('/calculator', 'SiteController@calculator')->name('www.calculator');
 
     Route::get('/2021', function () {
-        return view('portfolio2021');
+        return view('website/portfolio2021');
     });
 });
