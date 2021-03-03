@@ -64,7 +64,7 @@
 export default {
     data () {
         return {
-            image_src: '/media/404-yeti.svg',
+            image_src: '/storage/404-yeti.svg',
         }
     },
 }

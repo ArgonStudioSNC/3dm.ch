@@ -1,2 +1,6 @@
 *
+!/icons/*
+!/renders
+!/videos
+!404-yeti.svg
 !.gitignore

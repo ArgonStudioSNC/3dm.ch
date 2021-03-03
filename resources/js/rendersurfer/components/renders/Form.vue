@@ -301,7 +301,7 @@ export default {
         },
 
         dictDefaultMessage: function() {
-            return "<i class='fa fa-cloud-upload'></i>" + '<div>' + this.__('manager.render-label-file-from-computer') + '</div>';
+            return "<i class='fas fa-cloud-upload-alt'></i>" + '<div>' + this.__('manager.render-label-file-from-computer') + '</div>';
         },
     },
 }

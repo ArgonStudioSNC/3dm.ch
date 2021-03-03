@@ -1,0 +1,26 @@
+.section {
+    //height: 100vh;
+    padding: 20px 0;
+    &.theme-1 {
+        background-color: $white;
+        color: $primary-color;
+    }
+    &.theme-2 {
+        background-color: $primary-color;
+        color: $white;
+    }
+    &.theme-3 {
+        padding: 10px;
+        color: $white;
+        text-align: right;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include background-size(cover);
+    }
+}
+
+.subheader, .line {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: solid 2px;
+}

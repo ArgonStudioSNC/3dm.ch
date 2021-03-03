@@ -40,7 +40,7 @@ export default {
 
     data () {
         return {
-            image_src: '/media/branding/3dm-logo-normal.svg',
+            image_src: '/storage/icons/3dm-logo-normal.svg',
         }
     },
 

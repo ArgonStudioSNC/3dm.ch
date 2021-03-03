@@ -11,7 +11,6 @@
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}" defer></script>
     <script src="{{ mix('js/website.js') }}" defer></script>
-    <script src="https://kit.fontawesome.com/bf8f37f6e5.js" crossorigin="anonymous" defer></script>
 
     <!-- Styles -->
     <link href="{{ mix('css/website.css') }}" rel="stylesheet" type="text/css">

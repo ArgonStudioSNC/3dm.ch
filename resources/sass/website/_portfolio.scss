@@ -136,13 +136,9 @@
 
 	.down-arrow {
 		z-index: 10;
-		width: 100%;
 		position: absolute;
-		bottom: -1px;
-
-		img {
-			height: 2.5rem;
-		}
+		bottom: 0;
+		height: 2.5rem;
 	}
 }
 

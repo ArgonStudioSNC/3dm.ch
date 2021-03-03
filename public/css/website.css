@@ -10640,11 +10640,8 @@ html, body {
 @media (min-width: 576px) {
   .down-arrow {
     z-index: 10;
-    width: 100%;
     position: absolute;
-    bottom: -1px;
-  }
-  .down-arrow img {
+    bottom: 0;
     height: 2.5rem;
   }
 }
