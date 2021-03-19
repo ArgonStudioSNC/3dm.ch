@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('page-title')3DM - Visualisations architecturales</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>@yield('page-title'){{ config('app.name') }}</title>
 
     <!-- Scripts -->
     <script src="{{ mix('js/manifest.js') }}"></script>
@@ -22,7 +25,7 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body style="display: none;">
+<body>
     @yield('content')
 </body>
 </html>

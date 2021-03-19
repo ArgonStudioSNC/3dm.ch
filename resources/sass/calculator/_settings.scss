@@ -144,11 +144,11 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.2;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: 1.2rem;
 $header-styles: (
   small: (
-    'h2': ('fs': 35, 'lh': 1.2, 'mt': 0, 'mb': 0),
-    'h4': ('fs': 20, 'lh': 1.2, 'mt': 0, 'mb': 0),
+    'h2': ('fs': 35, 'lh': 1.2, 'mt': 0, 'mb': 1.2rem),
+    'h4': ('fs': 20, 'lh': 1.2, 'mt': 0, 'mb': 1.2rem),
   ),
 );
 $header-text-rendering: optimizeLegibility;
@@ -194,7 +194,7 @@ $subheader-lineheight: 1.2;
 $subheader-color: inherit;
 $subheader-font-weight: 500;
 $subheader-margin-top: 0.2rem;
-$subheader-margin-bottom: 0.5rem;
+$subheader-margin-bottom: 0;
 $stat-font-size: 2.5rem;
 $cite-color: $dark-gray;
 $cite-font-size: rem-calc(13);
@@ -302,7 +302,7 @@ $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-transition: background-color 0.15s ease-out, color 0.15s ease-out;
 $button-responsive-expanded: false;
 
 // 12. Button Group
@@ -423,7 +423,7 @@ $fieldset-border: 1px solid $medium-gray;
 $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
-$form-spacing: rem-calc(16);
+$form-spacing: rem-calc(18);
 $helptext-color: $black;
 $helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
@@ -441,8 +441,8 @@ $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(16);
-$input-font-weight: $global-weight-normal;
+$input-font-size: $global-font-size;
+$input-font-weight: 400;
 $input-line-height: $global-lineheight;
 $input-background: $white;
 $input-background-focus: $white;
@@ -454,7 +454,7 @@ $input-shadow: inset 0 1px 2px rgba($black, 0.1);
 $input-shadow-focus: 0 0 5px $medium-gray;
 $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
-$input-number-spinners: true;
+$input-number-spinners: false;
 $input-radius: $global-radius;
 $form-button-radius: $global-radius;
 

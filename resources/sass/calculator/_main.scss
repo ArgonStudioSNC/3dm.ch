@@ -1,15 +1,49 @@
-.section {
-    //height: 100vh;
-    padding: 20px 0;
-    &.theme-1 {
+.chevron {
+    width: 1.5rem;
+    &--up {
+        @include rotate(180);
+    }
+}
+
+#fullpage {
+    .carousel {
+        margin-top: $header-margin-bottom;
+    }
+    .theme-1 {
         background-color: $white;
         color: $primary-color;
+        .button {
+            border: 2px solid $primary-color;
+            &:hover {
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+        select {
+            background-image: url('/storage/icons/vector.svg#chevron-blue');
+            option {
+                background-color: $white;
+            }
+        }
     }
-    &.theme-2 {
+    .theme-2 {
         background-color: $primary-color;
         color: $white;
+        .button {
+            border: 2px solid $white;
+            &:hover {
+                background-color: $white;
+                color: $primary-color;
+            }
+        }
+        select {
+            background-image: url('/storage/icons/vector.svg#chevron-white');
+            option {
+                background-color: $primary-color;
+            }
+        }
     }
-    &.theme-3 {
+    .theme-3 {
         padding: 10px;
         color: $white;
         text-align: right;
@@ -17,10 +51,126 @@
         background-position: center center;
         @include background-size(cover);
     }
+
+    .input-container, .select-container {
+        position: relative;
+        padding-left: 0;
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid;
+        color: inherit;
+        label.error {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0.5rem;
+            color: $alert-color;
+            font-size: $global-font-size;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .select-container {
+        label.error {
+            margin-right: 1.5rem;
+        }
+    }
+    select, input {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: inherit;
+        background-color: inherit;
+        box-shadow: none;
+        height: auto;
+        @include placeholder {
+            color: inherit;
+            opacity: 1;
+        }
+    }
+    select {
+        cursor: pointer;
+        padding-right: 1rem;
+        background-size: 1rem;
+        background-position-x: right -1rem;
+        text-indent: -2px;
+        option {
+            height: auto;
+            padding: 0;
+        }
+    }
+
+    .button-group {
+        margin-top: $header-margin-bottom;
+        max-width: 250px;
+    }
+    .button {
+        max-width: 250px;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0;
+        height: 40px;
+        border-radius: 20px;
+        margin-bottom: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:focus {
+            background-color: inherit;
+            color: inherit;
+        }
+    }
+
+    .underlined {
+        padding-bottom: $header-margin-bottom;
+        border-bottom: solid 2px;
+    }
 }
 
-.subheader, .line {
-    margin-top: 1.2rem;
-    padding-top: 1.2rem;
-    border-top: solid 2px;
+#slide-1 {
+    .my-logo {
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            max-width: 150px;
+            height: auto;
+        }
+    }
+}
+#slide-4 {
+    .title {
+        margin-bottom: $header-margin-bottom;
+    }
+}
+#slide-5 {
+    .select-container {
+        padding-top: rem-calc(18);
+        padding-bottom: rem-calc(18);
+    }
+    .total {
+        margin-top: 2rem;
+    }
+}
+#slide-8 {
+    .coworker {
+        margin-bottom: $header-margin-bottom;
+    }
+}
+
+#my-fp-nav {
+    position: fixed;
+    z-index: 100;
+    bottom: $global-padding;
+    stroke: $primary-color;
+    button {
+        cursor: pointer;
+        &:disabled {
+            opacity: 50%;
+        }
+    }
 }

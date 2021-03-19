@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('page-title')3DM - Visualisations architecturales</title>
+    <title>@yield('page-title'){{ config('app.name') }}</title>
 
     <!-- Scripts -->
     <script src="{{ mix('js/manifest.js') }}"></script>

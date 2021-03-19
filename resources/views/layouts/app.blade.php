@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('page-title')3DM - Visualisations architecturales</title>
+    <title>@yield('page-title'){{ config('app.name') }}</title>
 
     <!-- Scripts -->
     <script src="{{ mix('js/manifest.js') }}"></script>

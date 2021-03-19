@@ -27,7 +27,7 @@ Route::namespace('API')->prefix('v1')->group(function(){
 });
 
 
-Route::namespace('API')->prefix('v1')->domain('rendersurfer.' . env('APP_URL'))->group(function(){
+Route::namespace('API')->domain('rendersurfer.' . env('APP_URL'))->prefix('v1')->group(function(){
     /*
     |-------------------------------------------------------------------------------
     | Get All Renders
@@ -103,7 +103,7 @@ Route::namespace('API')->prefix('v1')->domain('rendersurfer.' . env('APP_URL'))-
     })->name('rendersurfer.renders.picture');
 });
 
-Route::namespace('API')->prefix('v1/filters')->group(function(){
+Route::namespace('API')->domain('rendersurfer.' . env('APP_URL'))->prefix('v1/filters')->group(function(){
     /*
     |-------------------------------------------------------------------------------
     | Get All Filters

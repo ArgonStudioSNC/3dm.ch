@@ -1,0 +1,20 @@
+$half-grid-margin-gutters: (small: 20px,medium: 30px);
+.embla {
+    &.is-draggable {
+        cursor: move;
+        cursor: grab;
+    }
+
+    &.is-dragging {
+        cursor: grabbing;
+    }
+}
+.embla__container {
+    @include xy-gutters($half-grid-margin-gutters, $negative:true);
+    display: flex;
+}
+.embla__slide {
+    @include xy-gutters($half-grid-margin-gutters, 'padding');
+    position: relative;
+    min-width: 80vw;
+}
