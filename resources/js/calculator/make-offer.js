@@ -17,3 +17,8 @@ function makeOffer() {
     let result = styles[style] * quantity;
     $('#output-total').html(new Intl.NumberFormat('fr-CH', { style: 'currency', currency: 'CHF' }).format(result));
 }
+
+// Apply the stared style from carousel
+$('.switch-input').change(function() {
+    $('#select-style').val(this.value).change();
+});

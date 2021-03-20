@@ -1,11 +1,15 @@
 .chevron {
-    width: 1.5rem;
+    height: 1rem;
+    width: auto;
     &--up {
         @include rotate(180);
     }
 }
 
 #fullpage {
+    .section {
+        @include xy-gutters($grid-container-padding, padding, top bottom, false);
+    }
     .carousel {
         margin-top: $header-margin-bottom;
     }
@@ -102,17 +106,16 @@
     }
 
     .button-group {
-        margin-top: $header-margin-bottom;
         max-width: 250px;
     }
     .button {
+        @include xy-gutters($grid-margin-gutters, margin, top, false);
         max-width: 250px;
         font-size: 20px;
         font-weight: 500;
         padding: 0;
         height: 40px;
         border-radius: 20px;
-        margin-bottom: 0.9rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -124,6 +127,7 @@
 
     .underlined {
         padding-bottom: $header-margin-bottom;
+        margin-bottom: $header-margin-bottom;
         border-bottom: solid 2px;
     }
 }
@@ -138,13 +142,41 @@
             right: 0;
             margin: auto;
             max-width: 150px;
-            height: auto;
+            max-height: 100%;
+            @include breakpoint(medium) {
+                max-width: 250px;
+            }
         }
     }
 }
+#slide-2 {
+    background-image: url('/storage/calculator/196_Thun_BB_Ext@1280.jpg');
+    @include breakpoint(medium) {
+        background-image: url('/storage/calculator/196_Thun_BB_Ext@2560.jpg');
+    }
+}
+#slide-9 {
+    background-position-x: right -100px !important;
+    background-position-y: bottom 0 !important;
+    background-image: url('/storage/calculator/render-centre-scolaire-vernets-exterieur-bbharchitectes-2018@1280.jpg');
+    @include breakpoint(medium) {
+        background-position-x: center !important;
+        background-image: url('/storage/calculator/render-centre-scolaire-vernets-exterieur-bbharchitectes-2018@2560.jpg');
+    }
+}
 #slide-4 {
-    .title {
-        margin-bottom: $header-margin-bottom;
+    .style-star {
+        margin: 0;
+        height: 1.5rem;
+        fill: white;
+        @include transition(fill 0.2s);
+        svg {
+            height: 100%;
+            width: auto;
+        }
+    }
+    input:checked ~ .style-star {
+        fill: $primary-color;
     }
 }
 #slide-5 {
@@ -153,7 +185,7 @@
         padding-bottom: rem-calc(18);
     }
     .total {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 }
 #slide-8 {
@@ -163,14 +195,17 @@
 }
 
 #my-fp-nav {
+    @include xy-gutters($grid-container-padding, margin, bottom, false);
+    height: 1rem;
     position: fixed;
     z-index: 100;
-    bottom: $global-padding;
+    bottom: 0;
     stroke: $primary-color;
     button {
+        margin-right: 4px;
         cursor: pointer;
         &:disabled {
-            opacity: 50%;
+            opacity: 0.5;
         }
     }
 }

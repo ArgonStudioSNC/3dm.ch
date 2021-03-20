@@ -120,7 +120,7 @@ $breakpoints-hidpi: (
   hidpi-3: 3
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xxlarge);
 
 // 3. The Grid
 // -----------
@@ -147,7 +147,7 @@ $header-lineheight: 1.2;
 $header-margin-bottom: 1.2rem;
 $header-styles: (
   small: (
-    'h2': ('fs': 35, 'lh': 1.2, 'mt': 0, 'mb': 1.2rem),
+    'h2': ('fs': 35, 'lh': 1.2, 'mt': 0, 'mb': 0),
     'h4': ('fs': 20, 'lh': 1.2, 'mt': 0, 'mb': 1.2rem),
   ),
 );
@@ -873,10 +873,12 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
+  small: 40px
+);
+$grid-padding-gutters: $grid-margin-gutters;
+$grid-container-padding: (
   small: 40px,
   medium: 60px
 );
-$grid-padding-gutters: $grid-margin-gutters;
-$grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
