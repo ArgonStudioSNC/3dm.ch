@@ -14,7 +14,7 @@ class SiteController extends Controller
      */
     public function portfolio()
     {
-        return view('website/portfolio');
+        return view('website/portfolio-2021');
     }
 
     /**

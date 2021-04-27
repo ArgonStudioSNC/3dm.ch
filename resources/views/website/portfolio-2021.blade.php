@@ -6,11 +6,6 @@
         top: auto!important;
         bottom: 0!important;
         transform: translate(calc(-50% + 8px), 0)!important;
-
-        @media (max-aspect-ratio: 10/7) {
-            width: auto!important;
-            height: 100vh!important;
-        }
     }
     #home-fullscreen::after {
         background-position-y: bottom!important;
@@ -32,7 +27,7 @@
 <div id='parallax-mirror-container' class='d-none d-sm-block'></div>
 
 <!-- COVER FULLSCREEN @Tablette and @Desktop -->
-<div id='home-fullscreen' data-img="{{ URL::asset('/storage/renders/20210126/196_Thun_BB_Ext@2560.jpg') }}" class="d-none d-sm-flex justify-content-center">
+<div id='home-fullscreen' data-img="{{ URL::asset('/storage/renders/v-2021/196_Thun_BB_Ext@2560.jpg') }}" class="d-none d-sm-flex justify-content-center">
     @php
     $browser = new WhichBrowser\Parser(getallheaders());
     @endphp
@@ -61,7 +56,7 @@
         <div class="d-flex">
             <picture>
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/196_Thun_BB_Ext@640.jpg') }}" alt='Rendu extérieur du projet Comadur-Areal à Thun, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/196_Thun_BB_Ext@640.jpg') }}" alt='Rendu extérieur du projet Comadur-Areal à Thun, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend' style="background-color: var(--light-brown);">
@@ -76,12 +71,12 @@
     <div id='dorfkern-ipsach' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/156_Ipsach_WR_Int@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/156_Ipsach_WR_Int@640.jpg') }}" alt='Rendu intérieur du projet Dorfkern à Ipsach, projet réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/156_Ipsach_WR_Int@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/156_Ipsach_WR_Int@640.jpg') }}" alt='Rendu intérieur du projet Dorfkern à Ipsach, projet réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/156_Ipsach_WR_Ext@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/156_Ipsach_WR_Ext@640.jpg') }}" alt='Rendu extérieur du projet Dorfkern à Ipsach, projet réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/156_Ipsach_WR_Ext@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/156_Ipsach_WR_Ext@640.jpg') }}" alt='Rendu extérieur du projet Dorfkern à Ipsach, projet réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -98,14 +93,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/20210126/191_Alt_Landi_Baeriswyl@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2021/191_Alt_Landi_Baeriswyl@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu intérieur de Alte Landi, projet réalisé par Baeriswyl Architekten AG'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/191_Alt_Landi_Baeriswyl@640.jpg') }}" alt='Rendu intérieur de Alte Landi, projet réalisé par Baeriswyl Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/191_Alt_Landi_Baeriswyl@640.jpg') }}" alt='Rendu intérieur de Alte Landi, projet réalisé par Baeriswyl Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend' style="color: var(--white); background-color: #3D5D6B;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Alte Landi</h1> {{--Compléter le titre--}}
@@ -120,12 +115,12 @@
     <div id='salle-de-sport-triple' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/172_Lac-Noir_Epure_Ext@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/172_Lac-Noir_Epure_Ext@640.jpg') }}" alt='Rendu extérieur de la salle de sport triple, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/172_Lac-Noir_Epure_Ext@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/172_Lac-Noir_Epure_Ext@640.jpg') }}" alt='Rendu extérieur de la salle de sport triple, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/172_Lac-Noir_Epure_Int@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/172_Lac-Noir_Epure_Int@640.jpg') }}" alt='Rendu intérieur de la salle de sport triple, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/172_Lac-Noir_Epure_Int@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/172_Lac-Noir_Epure_Int@640.jpg') }}" alt='Rendu intérieur de la salle de sport triple, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -142,14 +137,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:60vh;" data-speed=0.7>
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/20210126/181_EMS-Vex_Ateliers-du-Passage@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2021/181_EMS-Vex_Ateliers-du-Passage@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Rendu intérieur de l'EMS Saint-Sylve, projet réalisé par Les ateliers du passage SÀRL"> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/181_EMS-Vex_Ateliers-du-Passage@640.jpg') }}" alt="Rendu intérieur de l'EMS Saint-Sylve, projet réalisé par Les ateliers du passage SÀRL"> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/181_EMS-Vex_Ateliers-du-Passage@640.jpg') }}" alt="Rendu intérieur de l'EMS Saint-Sylve, projet réalisé par Les ateliers du passage SÀRL"> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend' style="color: var(--white); background-color: #3D5D6B;"> {{--Compléter la couleur de la vignette--}}
                 <h1>EMS Saint-Sylve</h1> {{--Compléter le titre--}}
@@ -164,12 +159,12 @@
     <div id='allee-bruehl-mattenstrasse' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/155_Mattenstrasse_BB_Ext@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/155_Mattenstrasse_BB_Ext@640.jpg') }}" alt='Rendu extérieur du projet Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/155_Mattenstrasse_BB_Ext@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/155_Mattenstrasse_BB_Ext@640.jpg') }}" alt='Rendu extérieur du projet Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/155_Mattenstrasse_BB_Int@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/155_Mattenstrasse_BB_Int@640.jpg') }}" alt='Rendu intérieur du projet Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/155_Mattenstrasse_BB_Int@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/155_Mattenstrasse_BB_Int@640.jpg') }}" alt='Rendu intérieur du projet Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -186,14 +181,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/20210126/196_Thun_BB_Int@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2021/196_Thun_BB_Int@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Rendu intérieur du projet Comadur-Areal à Thun, projet réalisé par Bart & Buchhofer Architekten AG"> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/196_Thun_BB_Int@640.jpg') }}" alt="Rendu intérieur du projet Comadur-Areal à Thun, projet réalisé par Bart & Buchhofer Architekten AG"> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/196_Thun_BB_Int@640.jpg') }}" alt="Rendu intérieur du projet Comadur-Areal à Thun, projet réalisé par Bart & Buchhofer Architekten AG"> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend' style="color: var(--white); background-color: #3D5D6B;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Comadur-Areal</h1> {{--Compléter le titre--}}
@@ -208,22 +203,22 @@
     <div id='bluefactory' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P4@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P4@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P4@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P4@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P6@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P6@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P6@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P6@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P5@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P5@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P5@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P5@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P2@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/119_Bluefactory_BBA_P2@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P2@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/119_Bluefactory_BBA_P2@640.jpg') }}" alt='Rendu de Blufactory à Fribourg, projet réalisé par BBA Archipole SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -240,14 +235,14 @@
             <div class="parallax-window d-none d-sm-block" data-position-y="bottom" style="min-height:85vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/20210126/178_Versoix_BBH@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2021/178_Versoix_BBH@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur des logements Pré-Colomb à Versoix, projet réalisé par BBH Architectes Sàrl'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/178_Versoix_BBH@640.jpg') }}" alt='Rendu extérieur des logements Pré-Colomb à Versoix, projet réalisé par BBH Architectes Sàrl'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/178_Versoix_BBH@640.jpg') }}" alt='Rendu extérieur des logements Pré-Colomb à Versoix, projet réalisé par BBH Architectes Sàrl'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend' style="color: var(--white); background-color: #3D5D6B;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Logements Pré-Colomb</h1> {{--Compléter le titre--}}
@@ -262,22 +257,22 @@
     <div id='poste-martigny' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_Int_3@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_Int_3@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_Int_3@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_Int_3@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_EXT@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_EXT@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_EXT@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_EXT@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_Int_2@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_Int_2@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_Int_2@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_Int_2@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_Int_1@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/194_Martigny_dvarchitectes_Int_1@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_Int_1@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/194_Martigny_dvarchitectes_Int_1@640.jpg') }}" alt='Rendu du bâtiment de la Poste à Martigny, projet réalisé par dvarchitectes & associés SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -294,14 +289,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/20210126/133_Raiffeisen_Epure@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2021/133_Raiffeisen_Epure@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu intérieur de la banque Raiffeisen à Assens, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/133_Raiffeisen_Epure@640.jpg') }}" alt='Rendu intérieur de la banque Raiffeisen à Assens, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/133_Raiffeisen_Epure@640.jpg') }}" alt='Rendu intérieur de la banque Raiffeisen à Assens, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend' style="color: var(--white); background-color: #3D5D6B;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Banque Raiffeisen </h1> {{--Compléter le titre--}}
@@ -316,12 +311,12 @@
     <div id='centre-technique-et-logistique' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/198_Oiken_Epure_Int_1@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/198_Oiken_Epure_Int_1@640.jpg') }}" alt='Rendu intérieur 1 du centre technique et logistique de Sierre, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/198_Oiken_Epure_Int_1@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/198_Oiken_Epure_Int_1@640.jpg') }}" alt='Rendu intérieur 1 du centre technique et logistique de Sierre, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/20210126/198_Oiken_Epure_Int_2@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/198_Oiken_Epure_Int_2@640.jpg') }}" alt='Rendu intérieur 2 du centre technique et logistique de Sierre, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2021/198_Oiken_Epure_Int_2@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/198_Oiken_Epure_Int_2@640.jpg') }}" alt='Rendu intérieur 2 du centre technique et logistique de Sierre, projet réalisé par Epure Architecture et Urbanisme SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -338,14 +333,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:90vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/20210126/123_Unionsgasse_KV@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2021/123_Unionsgasse_KV@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur à la Unionsgasse 18 à Bienne, projet réalisé par Kistler Vogt Architekten AG'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/20210126/123_Unionsgasse_KV@640.jpg') }}" alt='Rendu extérieur à la Unionsgasse 18 à Bienne, projet réalisé par Kistler Vogt Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2021/123_Unionsgasse_KV@640.jpg') }}" alt='Rendu extérieur à la Unionsgasse 18 à Bienne, projet réalisé par Kistler Vogt Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend' style="color: var(--white); background-color: #3D5D6B;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Unionsgasse 18</h1> {{--Compléter le titre--}}

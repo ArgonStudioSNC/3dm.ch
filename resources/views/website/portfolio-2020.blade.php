@@ -13,7 +13,7 @@
 <div id='parallax-mirror-container' class='d-none d-sm-block'></div>
 
 <!-- COVER FULLSCREEN @Tablette and @Desktop -->
-<div id='home-fullscreen' data-img="{{ URL::asset('/storage/renders/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@2560.jpg') }}" class="d-none d-sm-flex justify-content-center">
+<div id='home-fullscreen' data-img="{{ URL::asset('/storage/renders/v-2020/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@2560.jpg') }}" class="d-none d-sm-flex justify-content-center">
     @php
     $browser = new WhichBrowser\Parser(getallheaders());
     @endphp
@@ -42,7 +42,7 @@
         <div class="d-flex">
             <picture>
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@640.jpg') }}" alt='Rendu du projet Dorfkern de Ipsach, projet architectural réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-dorfkern-ipsach-ipsach-rollimarchiniarchitectessarl-2019@640.jpg') }}" alt='Rendu du projet Dorfkern de Ipsach, projet architectural réalisé par ARGE Wahliruefli und Rollimarchini'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend' style="background-color: #ECDDE0;">
@@ -57,12 +57,12 @@
     <div id='ecole-neirivue' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-construction-nouvelle-ecole-neirivue-frontal-bbharchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-construction-nouvelle-ecole-neirivue-frontal-bbharchitectes-2019@640.jpg') }}" alt='Rendu frontal de la nouvelle école de Neirivue, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-construction-nouvelle-ecole-neirivue-frontal-bbharchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-construction-nouvelle-ecole-neirivue-frontal-bbharchitectes-2019@640.jpg') }}" alt='Rendu frontal de la nouvelle école de Neirivue, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-construction-nouvelle-ecole-neirivue-place-bbharchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-construction-nouvelle-ecole-neirivue-place-bbharchitectes-2019@640.jpg') }}" alt='Rendu de la place de la nouvelle école de Neirivue, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-construction-nouvelle-ecole-neirivue-place-bbharchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-construction-nouvelle-ecole-neirivue-place-bbharchitectes-2019@640.jpg') }}" alt='Rendu de la place de la nouvelle école de Neirivue, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -79,14 +79,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-centre-national-sport-macolin-exterieur-kistlervogtpartenairesarchitectessa-2019@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-centre-national-sport-macolin-exterieur-kistlervogtpartenairesarchitectessa-2019@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur du centre de sport national de Macolin, projet réalisé par BBH Architectes'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-centre-national-sport-macolin-exterieur-kistlervogtpartenairesarchitectessa-2019@640.jpg') }}" alt='Rendu extérieur du centre de sport national de Macolin, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-centre-national-sport-macolin-exterieur-kistlervogtpartenairesarchitectessa-2019@640.jpg') }}" alt='Rendu extérieur du centre de sport national de Macolin, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #9CAAB5;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Centre national de sport</h1> {{--Compléter le titre--}}
@@ -101,12 +101,12 @@
     <div id='mattenstrasse' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-allebruhlmattenstresse-bienne-exterieur-bartbuchhoferarchitektenag-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-allebruhlmattenstresse-bienne-exterieur-bartbuchhoferarchitektenag-2019@640.jpg') }}" alt='Rendu extérieur d Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-allebruhlmattenstresse-bienne-exterieur-bartbuchhoferarchitektenag-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-allebruhlmattenstresse-bienne-exterieur-bartbuchhoferarchitektenag-2019@640.jpg') }}" alt='Rendu extérieur d Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-allebruhlmattenstresse-bienne-interieur-bartbuchhoferarchitektenag-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-allebruhlmattenstresse-bienne-interieur-bartbuchhoferarchitektenag-2019@640.jpg') }}" alt='Rendu intérieur d Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-allebruhlmattenstresse-bienne-interieur-bartbuchhoferarchitektenag-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-allebruhlmattenstresse-bienne-interieur-bartbuchhoferarchitektenag-2019@640.jpg') }}" alt='Rendu intérieur d Allee-/ Brühl-/ Mattenstrasse à Bienne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -123,14 +123,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-centre-scolaire-chateau-d-eau-marly-exterieur-bbharchitectes-2019@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-centre-scolaire-chateau-d-eau-marly-exterieur-bbharchitectes-2019@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur du centre scolaire château d’eau de Marly, projet réalisé par BBH Architectes'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-centre-scolaire-chateau-d-eau-marly-exterieur-bbharchitectes-2019@640.jpg') }}" alt='Rendu extérieur du centre scolaire château d’eau de Marly, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-centre-scolaire-chateau-d-eau-marly-exterieur-bbharchitectes-2019@640.jpg') }}" alt='Rendu extérieur du centre scolaire château d’eau de Marly, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #E2C0B3;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Centre scolaire château d’eau</h1> {{--Compléter le titre--}}
@@ -145,22 +145,22 @@
     <div id='allschwil' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-wegmatten-allschwil-interieur-p1-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-wegmatten-allschwil-interieur-p1-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 1 intérieur du projet Wegmatten à Allschwil , projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-interieur-p1-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-interieur-p1-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 1 intérieur du projet Wegmatten à Allschwil , projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-wegmatten-allschwil-exterieur-p1-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-wegmatten-allschwil-exterieur-p1-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 1 extérieur du projet Wegmatten à Allschwil, projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-exterieur-p1-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-exterieur-p1-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 1 extérieur du projet Wegmatten à Allschwil, projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-wegmatten-allschwil-interieur-p2-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-wegmatten-allschwil-interieur-p2-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 2 intérieur du projet Wegmatten à Allschwil, projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-interieur-p2-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-interieur-p2-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 2 intérieur du projet Wegmatten à Allschwil, projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-wegmatten-allschwil-exterieur-p2-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-wegmatten-allschwil-exterieur-p2-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 2 extérieur du projet Wegmatten à Allschwil, projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-exterieur-p2-lvpharchitectessarlbricks-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-wegmatten-allschwil-exterieur-p2-lvpharchitectessarlbricks-2019@640.jpg') }}" alt='Rendu du point de vue 2 extérieur du projet Wegmatten à Allschwil, projet réalisé par LVPH Architectes Sàrl + Bricks'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -177,14 +177,14 @@
             <div class="parallax-window d-none d-sm-block" data-position-y="bottom" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-centre-scolaire-vernets-exterieur-bbharchitectes-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-centre-scolaire-vernets-exterieur-bbharchitectes-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur du centre scolaire des Vernets à Genève, projet réalisé par BBH Architectes'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-centre-scolaire-vernets-exterieur-bbharchitectes-2018@640.jpg') }}" alt='Rendu extérieur du centre scolaire des Vernets à Genève , projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-centre-scolaire-vernets-exterieur-bbharchitectes-2018@640.jpg') }}" alt='Rendu extérieur du centre scolaire des Vernets à Genève , projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #E9CA90;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Centre scolaire des Vernets</h1> {{--Compléter le titre--}}
@@ -199,12 +199,12 @@
     <div id='hes-so valais' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-he-so-valais-sion-exterieur-chappuisarchitectessa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-he-so-valais-sion-exterieur-chappuisarchitectessa-2019@640.jpg') }}" alt='Rendu extérieur de la haute école spécialisée de Suisse occidentale à Sion, projet réalisé par Chappuis Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-he-so-valais-sion-exterieur-chappuisarchitectessa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-he-so-valais-sion-exterieur-chappuisarchitectessa-2019@640.jpg') }}" alt='Rendu extérieur de la haute école spécialisée de Suisse occidentale à Sion, projet réalisé par Chappuis Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-he-so-valais-sion-interieur-chappuisarchitectessa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-he-so-valais-sion-interieur-chappuisarchitectessa-2019@640.jpg') }}" alt='Rendu intérieur de la haute école spécialisée de Suisse occidentale à Sion , projet réalisé par Chappuis Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-he-so-valais-sion-interieur-chappuisarchitectessa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-he-so-valais-sion-interieur-chappuisarchitectessa-2019@640.jpg') }}" alt='Rendu intérieur de la haute école spécialisée de Suisse occidentale à Sion , projet réalisé par Chappuis Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -221,14 +221,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-ziegeleiplatz-steffisburg-bartbuchhoferarchitektenag-2017@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-ziegeleiplatz-steffisburg-bartbuchhoferarchitektenag-2017@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu de nuit de la Ziegeleiplatz à Steffisburg , projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-ziegeleiplatz-steffisburg-bartbuchhoferarchitektenag-2017@640.jpg') }}" alt='Rendu de nuit de la Ziegeleiplatz à Steffisburg , projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-ziegeleiplatz-steffisburg-bartbuchhoferarchitektenag-2017@640.jpg') }}" alt='Rendu de nuit de la Ziegeleiplatz à Steffisburg , projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #CCBABC;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Ziegeleiplatz</h1> {{--Compléter le titre--}}
@@ -243,12 +243,12 @@
     <div id='les hutins' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-les-huttins-confignon-bunqarchitectes-exterieur-p2-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-les-huttins-confignon-bunqarchitectes-exterieur-p2-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 2 des Hutins à Confignon, projet réalisé par Bunq Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-les-huttins-confignon-bunqarchitectes-exterieur-p2-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-les-huttins-confignon-bunqarchitectes-exterieur-p2-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 2 des Hutins à Confignon, projet réalisé par Bunq Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-les-huttins-confignon-bunqarchitectes-exterieur-p1-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-les-huttins-confignon-bunqarchitectes-exterieur-p1-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 1 des Hutins à Confignon , projet réalisé par Bunq Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-les-huttins-confignon-bunqarchitectes-exterieur-p1-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-les-huttins-confignon-bunqarchitectes-exterieur-p1-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 1 des Hutins à Confignon , projet réalisé par Bunq Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -265,14 +265,14 @@
             <div class="parallax-window d-none d-sm-block" data-position-y='bottom' style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-nouvelle-sacre-coeur-estavayer-le-lac-bartbuchhoferarchitekten-2016@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-nouvelle-sacre-coeur-estavayer-le-lac-bartbuchhoferarchitekten-2016@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur de la nouvelle école du Sacré-Cœur à Estavayer-le-Lac , projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-nouvelle-sacre-coeur-estavayer-le-lac-bartbuchhoferarchitekten-2016@640.jpg') }}" alt='Rendu extérieur de la nouvelle école du Sacré-Cœur à Estavayer-le-Lac , projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-nouvelle-sacre-coeur-estavayer-le-lac-bartbuchhoferarchitekten-2016@640.jpg') }}" alt='Rendu extérieur de la nouvelle école du Sacré-Cœur à Estavayer-le-Lac , projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #B18584;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Nouvelle école du Sacré-Cœur</h1> {{--Compléter le titre--}}
@@ -287,22 +287,22 @@
     <div id='gare cff' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-gare-cff-bex-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-gare-cff-bex-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 1 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 1 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-gare-cff-bex-p2-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-gare-cff-bex-p2-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 2 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-p2-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-p2-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 2 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-gare-cff-bex-p3-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-gare-cff-bex-p3-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 3 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-p3-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-p3-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 3 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-gare-cff-bex-p4-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-gare-cff-bex-p4-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 4 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-p4-iubengineeringsa-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-gare-cff-bex-p4-iubengineeringsa-2019@640.jpg') }}" alt='Rendu extérieur du point de vue 4 de la gare de Bex, projet réalisé par CFF SA + IUB Engineering SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -319,14 +319,14 @@
             <div class="parallax-window d-none d-sm-block" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-mep-colovray-nyon-bunqarchitectessa-2019@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-mep-colovray-nyon-bunqarchitectessa-2019@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu intérieur du complexe multisports et parc des sports de Colovray à Nyon, projet réalisé par Bunq Architectes SA'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-mep-colovray-nyon-bunqarchitectessa-2019@640.jpg') }}" alt='Rendu intérieur du complexe multisports et parc des sports de Colovray à Nyon, projet réalisé par Bunq Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-mep-colovray-nyon-bunqarchitectessa-2019@640.jpg') }}" alt='Rendu intérieur du complexe multisports et parc des sports de Colovray à Nyon, projet réalisé par Bunq Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #C4CCD1;"> {{--Compléter la couleur de la vignette--}}
                 <h1>MEP Colovray</h1> {{--Compléter le titre--}}
@@ -341,12 +341,12 @@
     <div id='amphipole' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-amphipole-unil-lausanne-exterieur-bartbuchhoferarchitektenag-2016@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-amphipole-unil-lausanne-exterieur-bartbuchhoferarchitektenag-2016@640.jpg') }}" alt='Rendu extérieur de l Amphipôle de l université de Lausanne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-amphipole-unil-lausanne-exterieur-bartbuchhoferarchitektenag-2016@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-amphipole-unil-lausanne-exterieur-bartbuchhoferarchitektenag-2016@640.jpg') }}" alt='Rendu extérieur de l Amphipôle de l université de Lausanne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-amphipole-unil-lausanne-interieur-bartbuchhoferarchitektenag-2016@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-amphipole-unil-lausanne-interieur-bartbuchhoferarchitektenag-2016@640.jpg') }}" alt='Rendu intérieur de l Amphipôle de l université de Lausanne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-amphipole-unil-lausanne-interieur-bartbuchhoferarchitektenag-2016@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-amphipole-unil-lausanne-interieur-bartbuchhoferarchitektenag-2016@640.jpg') }}" alt='Rendu intérieur de l Amphipôle de l université de Lausanne, projet réalisé par Bart & Buchhofer Architekten AG'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -363,14 +363,14 @@
             <div class="parallax-window d-none d-sm-block" data-position-y="bottom" data-speed="1" style="min-height:60vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-etablissement-medico-social-siviriez-rollimarchiniarchitectessarl-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-etablissement-medico-social-siviriez-rollimarchiniarchitectessarl-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur de l établissement médico-social de Siviriez, projet réalisé par Rollimarchini architectes Sàrl'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-etablissement-medico-social-siviriez-rollimarchiniarchitectessarl-2018@640.jpg') }}" alt='Rendu extérieur de l établissement médico-social de Siviriez, projet réalisé par Rollimarchini architectes Sàrl'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-etablissement-medico-social-siviriez-rollimarchiniarchitectessarl-2018@640.jpg') }}" alt='Rendu extérieur de l établissement médico-social de Siviriez, projet réalisé par Rollimarchini architectes Sàrl'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #EFE3CE;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Etablissement médico-social</h1> {{--Compléter le titre--}}
@@ -385,12 +385,12 @@
     <div id='ambassade suisse' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-embassade-suisse-chine-exterieur-chappuisarchitectessa-2018@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-embassade-suisse-chine-exterieur-chappuisarchitectessa-2018@640.jpg') }}" alt='Rendu extérieur de l embassade de Suisse à Beijing en Chine, projet réalisé par Chappuis Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-embassade-suisse-chine-exterieur-chappuisarchitectessa-2018@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-embassade-suisse-chine-exterieur-chappuisarchitectessa-2018@640.jpg') }}" alt='Rendu extérieur de l embassade de Suisse à Beijing en Chine, projet réalisé par Chappuis Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-embassade-suisse-chine-interieur-chappuisarchitectessa-2018@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-embassade-suisse-chine-interieur-chappuisarchitectessa-2018@640.jpg') }}" alt='Rendu extérieur de l embassade de Suisse à Beijing en Chine, projet réalisé par Chappuis Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-embassade-suisse-chine-interieur-chappuisarchitectessa-2018@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-embassade-suisse-chine-interieur-chappuisarchitectessa-2018@640.jpg') }}" alt='Rendu extérieur de l embassade de Suisse à Beijing en Chine, projet réalisé par Chappuis Architectes SA'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -407,14 +407,14 @@
             <div class="parallax-window d-none d-sm-block" data-position-y="bottom" style="min-height:75vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-centre-scolaire-champsec-sion-bbharchitectes-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-centre-scolaire-champsec-sion-bbharchitectes-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par BBH Architectes'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-centre-scolaire-champsec-sion-bbharchitectes-2018@640.jpg') }}" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-centre-scolaire-champsec-sion-bbharchitectes-2018@640.jpg') }}" alt='Rendu extérieur du centre scolaire de Champsec à Sion, projet réalisé par BBH Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #DAB394;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Centre scolaire de Champsec</h1> {{--Compléter le titre--}}
@@ -429,12 +429,12 @@
     <div id='passerelle' class='portfolio-bordered'> {{--Donner un id au projet--}}
         <div class="d-flex flex-wrap flex-column flex-sm-row">
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-passerelle-mobilite-douce-crissier-jour-mangeatwahlenarchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-passerelle-mobilite-douce-crissier-jour-mangeatwahlenarchitectes-2019@640.jpg') }}" alt='Rendu de jour de la passerelle mobilité douce à Crissier, projet réalisé par Mangeat Wahlen Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-passerelle-mobilite-douce-crissier-jour-mangeatwahlenarchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{--Compléter le chemin source @1280x--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-passerelle-mobilite-douce-crissier-jour-mangeatwahlenarchitectes-2019@640.jpg') }}" alt='Rendu de jour de la passerelle mobilité douce à Crissier, projet réalisé par Mangeat Wahlen Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <picture class="flex-child">
-                <source srcset="{{ asset('/storage/renders/render-passerelle-mobilite-douce-crissier-nuit-mangeatwahlenarchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-passerelle-mobilite-douce-crissier-nuit-mangeatwahlenarchitectes-2019@640.jpg') }}" alt='Rendu de nuit de la passerelle mobilité douce à Crissier, projet réalisé par Mangeat Wahlen Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <source srcset="{{ asset('/storage/renders/v-2020/render-passerelle-mobilite-douce-crissier-nuit-mangeatwahlenarchitectes-2019@1280.jpg') }}" media="(min-width: 1200px)"/> {{-- Compléter le chemin source @1280x --}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-passerelle-mobilite-douce-crissier-nuit-mangeatwahlenarchitectes-2019@640.jpg') }}" alt='Rendu de nuit de la passerelle mobilité douce à Crissier, projet réalisé par Mangeat Wahlen Architectes'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
         </div>
         <div class='legend'style="background-color: var(--light-brown);">
@@ -451,14 +451,14 @@
             <div class="parallax-window d-none d-sm-block" data-position-y="bottom" style="min-height:85vh;">
                 <div class="parallax-slider">
                     <picture>
-                        <source srcset="{{ asset('/storage/renders/render-rue-du-milieu-bienne-bartbuchhoferarchitectessa-previmm-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
+                        <source srcset="{{ asset('/storage/renders/v-2020/render-rue-du-milieu-bienne-bartbuchhoferarchitectessa-previmm-2018@2560.jpg') }}" media="(min-width: 576px)"/> {{--Compléter le chemin source @2560x--}}
                         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt='Rendu extérieur de la Rue du Milieu à Bienne, projet réalisé par Bart & Buchhofer Architectes SA + Previmm'> {{--Compléter le texte alternatif--}}
                     </picture>
                 </div>
             </div>
             <picture class="d-sm-none">
                 <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(min-width: 576px)"/>
-                <img class="img-fluid" src="{{ asset('/storage/renders/render-rue-du-milieu-bienne-bartbuchhoferarchitectessa-previmm-2018@640.jpg') }}" alt='Rendu extérieur de la Rue du Milieu à Bienne, projet réalisé par Bart & Buchhofer Architectes SA + Previmm'> {{--Compléter le chemin source @640x et texte alternatif--}}
+                <img class="img-fluid" src="{{ asset('/storage/renders/v-2020/render-rue-du-milieu-bienne-bartbuchhoferarchitectessa-previmm-2018@640.jpg') }}" alt='Rendu extérieur de la Rue du Milieu à Bienne, projet réalisé par Bart & Buchhofer Architectes SA + Previmm'> {{--Compléter le chemin source @640x et texte alternatif--}}
             </picture>
             <div class='legend'style="background-color: #E5E4AE;"> {{--Compléter la couleur de la vignette--}}
                 <h1>Rue du Milieu</h1> {{--Compléter le titre--}}
