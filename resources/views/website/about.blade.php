@@ -53,26 +53,35 @@
                     <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col">
                             <h3>Nathan Boder</h3>
-                            <p>Fondateur & directeur<br>Architecte HES<br>
-                            <a href="mailto:nathan.boder@3dm.ch" target="_top">nathan.boder@3dm.ch</a><br>
-                            <a href="tel:+41225754617">+41 (0)22 575 46 17</a></p>
+                            <p>
+                                Fondateur & directeur<br>
+                                Architecte HES<br>
+                                <a href="mailto:nathan.boder@3dm.ch" target="_top">nathan.boder@3dm.ch</a>
+                            </p>
                         </div>
                         <div class="col">
                             <h3>Michela Parrini</h3>
-                            <p>Collaboratrice en visualisations architecturales<br>Architetto Università degli Studi di Firenze<br>
-                            <a href="mailto:michela.parrini@3dm.ch" target="_top">michela.parrini@3dm.ch</a><br>
-                            <a href="tel:+41225754690">+41 (0)22 575 46 90</a></p>
+                            <p>
+                                Collaboratrice en visualisations architecturales<br>
+                                Architetto Università degli Studi di Firenze<br>
+                                <a href="mailto:michela.parrini@3dm.ch" target="_top">michela.parrini@3dm.ch</a>
+                            </p>
                         </div>
                         <div class="col">
                             <h3>Aline Dauwalder</h3>
-                            <p>Collaboratrice en visualisations architecturales<br>Architecte HES<br>
-                            <a href="mailto:aline.dauwalder@3dm.ch" target="_top">aline.dauwalder@3dm.ch</a><br>
-                            <a href="tel:+41225754661">+41 (0)22 575 46 61</a></p>
+                            <p>
+                                Collaboratrice en visualisations architecturales<br>
+                                Architecte HES<br>
+                                <a href="mailto:aline.dauwalder@3dm.ch" target="_top">aline.dauwalder@3dm.ch</a>
+                            </p>
                         </div>
                         <div class="col">
                             <h3>Loïc Charrière</h3>
-                            <p>Développement informatique<br>Ingénieur Informaticien HES<br>
-                            <a href="mailto:loic@argonstudio.ch" target="_top">loic@argonstudio.ch</a></p>
+                            <p>
+                                Développement informatique<br>
+                                Ingénieur Informaticien HES<br>
+                                <a href="mailto:loic@argonstudio.ch" target="_top">loic@argonstudio.ch</a>
+                            </p>
                         </div>
                     </div>
                     <div class="row">
@@ -112,10 +121,8 @@
                             <h3>Contact</h3>
                             <p>
                                 <a href="mailto:contact@3dm.ch" target="_top">contact@3dm.ch</a><br>
-                                <a style="color:#6b3d3d" href="tel:+41323232503">+41 (0)32 323 25 03*</a>
+                                <a href="tel:+41323232503">+41 (0)32 323 25 03</a>
                             </p>
-                            <p style="color:#6b3d3d">*3DM est en télétravail conformément aux mesures prises par le Conseil Fédéral le 13 janvier 2021. Merci d'utiliser les numéros directs indiqués dans <a href="#team" style="color:#6b3d3d; text-decoration: underline;">l'onglet Team</a>.</p>
-
                         </div>
                         {{-- <div class="col">
                             <h3>Revue de presse</h3>
