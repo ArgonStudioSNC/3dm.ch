@@ -1,6 +1,5 @@
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 .multiselect {
     color: inherit;

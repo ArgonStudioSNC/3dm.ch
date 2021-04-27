@@ -1,5 +1,4 @@
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 #render-filters-layout {
     margin-top: 1.5em;

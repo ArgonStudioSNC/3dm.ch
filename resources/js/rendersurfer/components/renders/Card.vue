@@ -1,6 +1,5 @@
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
-@import '~@/mixins';
+@import '~@sass/_mixins';
 
 .render-card {
     max-width: 100%;

@@ -1,5 +1,4 @@
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 #default-layout {
     margin-top: 1.5em;

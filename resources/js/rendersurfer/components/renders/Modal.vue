@@ -1,6 +1,5 @@
 <style scoped lang="scss">
-@import '~@/rendersurfer/_settings.scss';
-@import '~@/mixins';
+@import '~@sass/_mixins';
 
 .reveal {
     padding: 1rem 0;

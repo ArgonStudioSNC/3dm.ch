@@ -1,5 +1,4 @@
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 .not-found {
     position: absolute;

@@ -1,8 +1,6 @@
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 .categories-bar {
-
     .grid-container {
         max-width: 1050px;
         margin-right: 0;

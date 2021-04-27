@@ -1,5 +1,4 @@
 <style scoped lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 .loading-container {
     .loading-bars {

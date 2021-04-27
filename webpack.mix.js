@@ -19,23 +19,27 @@ mix
         ]
     })
 
-    .sass('resources/sass/website.scss', 'css')
     .sass('resources/sass/rendersurfer.scss', 'css')
+    .sass('resources/sass/website.scss', 'css')
     .sass('resources/sass/calculator.scss', 'css')
 
-    .js('resources/js/website.js', 'js')
     .js('resources/js/rendersurfer.js', 'js')
+    .js('resources/js/website.js', 'js')
     .js('resources/js/calculator.js', 'js')
 
-    .vue({ version: 2, extractStyles: false})
+    .vue({
+        version: 2,
+        extractStyles: true,
+        globalStyles: 'resources/sass/rendersurfer/_settings.scss'
+    })
 
     .alias({
-        '@': path.resolve('resources/sass/'),
+        '@sass': path.resolve(__dirname, 'resources/sass/'),
         '@js': path.resolve(__dirname, 'resources/js/')
     })
 
     .options({
-        processCssUrls: false
+        processCssUrls: false,
     })
 
     .purifyCss(true)

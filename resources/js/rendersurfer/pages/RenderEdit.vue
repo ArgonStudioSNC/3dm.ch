@@ -1,5 +1,4 @@
 <style lang="scss">
-@import '~@/rendersurfer/_settings.scss';
 
 #render-edit {
     button.alert:hover {
