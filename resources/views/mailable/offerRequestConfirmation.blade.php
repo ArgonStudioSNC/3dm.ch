@@ -15,7 +15,7 @@
         <div class="grid-container" style="margin: 0;padding: 0;padding-right: 1em;padding-left: 1em;max-width: 570px;margin-left: auto;margin-right: auto;">
             <div class="grid-x grid-margin-y" style="margin: 0;padding: 0;display: flex;flex-flow: row wrap;margin-top: -1em;margin-bottom: -1em;">
                 <div class="cell" style="margin: 0;padding: 0;flex: 0 0 auto;min-height: 0px;min-width: 0px;width: 100%;height: auto;margin-top: 1em;margin-bottom: 1em;">
-                    <svg width="auto" height="3.5em" viewBox="0 0 295.925 109.932"> style="vertical-align: middle;">
+                    <svg width="auto" height="3.5em" viewBox="0 0 295.925 109.932" style="vertical-align: middle;">
                         <path d="M21.39,42.96V54.949H74.468l-17.787,23.6,9.561,7.22L98.506,42.96Z" transform="translate(-21.39 -42.911)" fill="#3d5d6b"/>
                         <path d="M83.159,75.98l-7.232,9.586A26.55,26.55,0,1,1,33.4,106.846H21.39A38.564,38.564,0,1,0,83.159,75.98" transform="translate(-21.39 -35.454)" fill="#3d5d6b"/>
                         <path d="M130.043,42.96H94.09V152.842h11.989V54.949h23.953a42.953,42.953,0,0,1,0,85.905l-11.964.025v11.964h11.964a54.941,54.941,0,1,0,.012-109.882" transform="translate(-4.973 -42.911)" fill="#3d5d6b"/>
