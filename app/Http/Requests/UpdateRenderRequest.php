@@ -26,7 +26,7 @@ class UpdateRenderRequest extends FormRequest
         return [
             'name'          => 'sometimes|max:64',
             'year'          => 'nullable|digits:4|integer|min:1950|max:'.(date('Y')+1),
-            'picture'       => 'sometimes|image|max:3072',
+            'picture'       => 'sometimes|image|max:20480',
             'categories'    => 'nullable',
         ];
     }

@@ -26,7 +26,7 @@ class StoreRenderRequest extends FormRequest
         return [
             'name'          => 'required|max:64',
             'year'          => 'nullable|digits:4|integer|min:1950|max:'.(date('Y')+1),
-            'picture'       => 'required|image|max:3072',
+            'picture'       => 'required|image|max:20480',
             'categories'    => 'nullable',
         ];
     }

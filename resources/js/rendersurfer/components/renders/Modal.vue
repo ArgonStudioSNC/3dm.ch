@@ -187,7 +187,7 @@ export default {
             if (this.getRenderLoadStatus != 2) return;
             console.log('downloading');
 
-            RenderAPI.picture(filename, 'original').then( response => {
+            RenderAPI.picture(filename, 'large').then( response => {
                 const url = URL.createObjectURL(response.data);
                 const a = document.createElement('a');
                 a.href = url;

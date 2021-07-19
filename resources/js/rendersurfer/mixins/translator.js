@@ -23,6 +23,8 @@ module.exports = {
             }
 
             _.forEach(replace, (value, key) => {
+                console.log(value);
+                console.log(key);
                 translation = translation.replace(':' + key, value)
             })
 
@@ -41,7 +43,7 @@ module.exports = {
             } catch (e) {
                 translation = key
             }
-            
+
             if (translationNotFound) {
                 translation = window._translations[window._locale]['json'][key]
                     ? window._translations[window._locale]['json'][key]
