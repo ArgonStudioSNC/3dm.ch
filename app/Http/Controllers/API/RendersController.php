@@ -144,7 +144,11 @@ class RendersController extends Controller
 
         $filename = date('YmdHis').'_'.uniqid().'.'.$fileExt;
 
-        $file->storeAs('original',$filename,'rendersurfer');
+        $largeImage = Image::make($file)->resize(2560, 1440, function ($constraint) {
+            $constraint->aspectRatio();
+        })->encode($fileExt);
+
+        Storage::disk('rendersurfer')->put('large'.'/'.$filename, $largeImage);
 
         $smallImage = Image::make($file)->resize(600, null, function ($constraint) {
             $constraint->aspectRatio();
@@ -164,7 +168,7 @@ class RendersController extends Controller
     |   $filename   -> The filename of the image to delete
     */
     private function deleteImage( $filename ) {
-        Storage::disk('rendersurfer')->move( 'original' . '/' . $filename, 'deleted' . '/' .  $filename );
+        Storage::disk('rendersurfer')->move( 'large' . '/' . $filename, 'deleted' . '/' .  $filename );
         Storage::disk('rendersurfer')->delete( 'small' . '/' .  $filename );
     }
 

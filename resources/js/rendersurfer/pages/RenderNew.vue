@@ -65,16 +65,16 @@ export default {
             Picture is required and has to be an Image of maximum 3Mb
             */
             const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/svg'];
-            const maxImageSize = 3 * 1024 * 1024;
+            const maxImageSizeMb = 20;
             if( !form.picture ){
                 this.validation.is_valid = false;
                 this.validation.errors.push( this.__('validations.picture-required') );
             }else if( !acceptedImageTypes.includes(form.picture['type']) ){
                 this.validation.is_valid = false;
                 this.validation.errors.push( this.__('validations.picture-type') );
-            }else if( form.picture.size > maxImageSize ){
+            }else if( form.picture.size > maxImageSizeMb * 1024 * 1024){
                 this.validation.is_valid = false;
-                this.validation.errors.push( this.__('validations.picture-maxsize') );
+                this.validation.errors.push( this.__('validations.picture-maxsize', {'nbr': maxImageSizeMb} ));
             }
 
             /*

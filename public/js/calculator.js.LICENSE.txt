@@ -4,7 +4,7 @@
  */
 
 /*!
- * fullPage 3.1.0
+ * fullPage 3.1.2
  * https://github.com/alvarotrigo/fullPage.js
  *
  * @license GPLv3 for open source use only
