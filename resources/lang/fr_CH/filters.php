@@ -98,7 +98,7 @@ return [
     'assignements-ecole' => 'École',
     'assignements-culture' => 'Culture',
     'assignements-urbanisme' => 'Urbanisme',
-
+    'assignements-administration' => 'Administration',
 
     'countries-switzerland' => 'Suisse',
     'countries-afghanistan' => 'Afghanistan',

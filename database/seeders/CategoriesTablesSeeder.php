@@ -173,6 +173,9 @@ class CategoriesTablesSeeder extends Seeder
              ['id' => 7,
               'name' => 'Urbanisme',
               'tag' => 'urbanisme',],
+             ['id' => 8,
+              'name' => 'Administration',
+              'tag' => 'administration',],
          ]);
 
          DB::table('countries')->delete();
