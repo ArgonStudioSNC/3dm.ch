@@ -45,6 +45,9 @@ class CategoriesTablesSeeder extends Seeder
              ['id' => 10,
               'name' => 'Bloomimages',
               'tag' => 'bloomimages',],
+             ['id' => 11,
+              'name' => '3DM',
+              'tag' => '3dm',],
          ]);
 
          DB::table('types')->delete();
@@ -60,17 +63,14 @@ class CategoriesTablesSeeder extends Seeder
          DB::table('styles')->delete();
          DB::table('styles')->insert([
              ['id' => 1,
-              'name' => 'Réaliste',
-              'tag' => 'realiste',],
+              'name' => 'Hyperréaliste',
+              'tag' => 'hyperrealiste',],
              ['id' => 2,
-              'name' => 'Graphique',
-              'tag' => 'graphique',],
-             ['id' => 3,
-              'name' => 'Peinture',
-              'tag' => 'peinture',],
-             ['id' => 4,
               'name' => 'Illustration',
               'tag' => 'illustration',],
+             ['id' => 4,
+              'name' => 'Réaliste',
+              'tag' => 'realiste',],
              ['id' => 5,
               'name' => 'Maquette',
               'tag' => 'maquette',],
@@ -139,9 +139,6 @@ class CategoriesTablesSeeder extends Seeder
 
          DB::table('compositions')->delete();
          DB::table('compositions')->insert([
-             ['id' => 1,
-              'name' => 'Central',
-              'tag' => 'central',],
              ['id' => 2,
               'name' => 'Frontal',
               'tag' => 'frontal',],

@@ -65,6 +65,7 @@ return [
     'styles-peinture' => 'Peinture',
     'styles-illustration' => 'Illustration',
     'styles-maquette' => 'Maquette',
+    'styles-hyperrealiste' => 'Hyperréaliste',
 
     'seasontimes-printemps' => 'Printemps',
     'seasontimes-ete' => 'Été',
