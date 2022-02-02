@@ -99,7 +99,7 @@
                         </div>
                     </div>
 
-                    <img class="img-fluid" src="{{ asset('/storage/videos/3dm-office.gif') }}" alt="[Image de l'équipe 3DM]">
+                    <img class="img-fluid" src="{{ asset('/storage/videos/3dm-office-2022.gif') }}" alt="[Image de l'équipe 3DM]">
                 </div>
             </div>
         </div>
