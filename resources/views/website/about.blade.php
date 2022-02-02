@@ -76,6 +76,14 @@
                             </p>
                         </div>
                         <div class="col">
+                            <h3>Justine Meyer</h3>
+                            <p>
+                                Stagiaire en visualisation architecturale<br>
+                                Architecte HES<br>
+                                <a href="mailto:justine.meyer@3dm.ch" target="_top">justine.meyer@3dm.ch</a>
+                            </p>
+                        </div>
+                        <div class="col">
                             <h3>Loïc Charrière</h3>
                             <p>
                                 Développement informatique<br>
@@ -181,20 +189,24 @@
                             <p>DVarchitectes & Associés SA</p>
                             <p>Envar Sàrl</p>
                             <p>Erard Schüll Architectes</p>
+                            <p>ESPÈCE Architecture</p>
                             <p>Esposito + Javet</p>
                             <p>Epure Architecture et Urbanisme SA</p>
-                        </div>
-                        <div class="col-lg-6">
                             <p>Fesselet Krampulz Architectes</p>
                             <p>Farra Zoumboulakis & Associés SA</p>
                             <p>GDW Architectes SA</p>
+                        </div>
+                        <div class="col-lg-6">
                             <p>GXM Architekten GmbH</p>
                             <p>IPAS Architectes SA</p>
                             <p>Itten + Brechbühl SA</p>
                             <p>IUB Engineering AG</p>
                             <p>IMJU SA</p>
+                            <p>Joris Pasquier Architecte Sàrl</p>
                             <p>Kaufmann Menuiserie SA</p>
                             <p>Kistler Vogt Architekten AG</p>
+                            <p>Klötzli Friedli Landschaftsarchitekten AG</p>
+                            <p>Knopf & Sauteur Architectes SA</p>
                             <p>Lateltin Monnerat architectes SA</p>
                             <p>LVPH Architectes Sàrl</p>
                             <p>Mangeat-Wahlen Architectes Sàrl</p>
@@ -203,6 +215,8 @@
                             <p>Maillard Immobilier SA</p>
                             <p>Masini Entreprise Totale SA</p>
                             <p>Muller Immobilier</p>
+                            <p>Page Architectes SA</p>
+                            <p>Pannett & Locher Architectes sàrl</p>
                             <p>Pascal Heyraud Sàrl</p>
                             <p>Pierre Gianoli Architectes</p>
                             <p>Pierre Liechti Architectes SA</p>
@@ -212,6 +226,7 @@
                             <p>RBCH Architectes Sàrl</p>
                             <p>Rollimarchini Architekten AG</p>
                             <p>RK Studio Architekten GmbH</p>
+                            <p>Saudan Tinguely Architectes Sàrl</p>
                             <p>Stéphane Cottet Architecte Sàrl</p>
                             <p>Supero sàrl</p>
                             <p>Unicum AG</p>
