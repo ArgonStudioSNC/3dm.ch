@@ -19,7 +19,7 @@
         "embla-carousel": "^4.5.3",
         "es6-promise": "^4.2.8",
         "foundation-sites": "^6.7.4",
-        "fullpage.js": "^3.1.2",
+        "fullpage.js": "^4.0.5",
         "jquery": "^3.6.0",
         "jquery-validation": "^1.19.3",
         "laravel-mix": "^6.0.41",
